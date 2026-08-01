@@ -1,0 +1,157 @@
+{
+  "version": 2,
+  "projectType": "tattoo",
+  "sections": [
+    "header",
+    "heroContact",
+    "dividerArtists",
+    "artists",
+    "dividerGallery",
+    "gallery",
+    "dividerSpaces",
+    "spaces",
+    "dividerPress",
+    "press",
+    "dividerLocation",
+    "location",
+    "dividerStory",
+    "story",
+    "dividerFaq",
+    "faq",
+    "footer",
+    "cookieBanner",
+    "booking",
+    "artistGallery",
+    "legalPage"
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "label": "Home",
+      "path": "index.html",
+      "sections": [
+        "header",
+        "heroContact",
+        "dividerArtists",
+        "artists",
+        "dividerGallery",
+        "gallery",
+        "dividerPress",
+        "press",
+        "dividerLocation",
+        "location",
+        "dividerFaq",
+        "faq",
+        "footer",
+        "cookieBanner"
+      ]
+    },
+    {
+      "id": "our-story",
+      "label": "Our Story",
+      "path": "our-story/index.html",
+      "sections": [
+        "header",
+        "dividerStory",
+        "story",
+        "footer",
+        "cookieBanner"
+      ]
+    },
+    {
+      "id": "booking",
+      "label": "Booking",
+      "path": "booking/index.html",
+      "sections": [
+        "header",
+        "booking",
+        "footer",
+        "cookieBanner"
+      ]
+    },
+    {
+      "id": "accessibility",
+      "label": "Accessibility",
+      "path": "accessibility/index.html",
+      "sections": [
+        "header",
+        "legalPage",
+        "footer",
+        "cookieBanner"
+      ],
+      "legalDoc": "accessibility"
+    },
+    {
+      "id": "privacy-policy",
+      "label": "Privacy Policy",
+      "path": "privacy-policy/index.html",
+      "sections": [
+        "header",
+        "legalPage",
+        "footer",
+        "cookieBanner"
+      ],
+      "legalDoc": "privacyPolicy"
+    },
+    {
+      "id": "terms-of-service",
+      "label": "Terms of Service",
+      "path": "terms-of-service/index.html",
+      "sections": [
+        "header",
+        "legalPage",
+        "footer",
+        "cookieBanner"
+      ],
+      "legalDoc": "termsOfService"
+    },
+    {
+      "id": "artist-diane-basler-white",
+      "label": "Diane Basler-White",
+      "path": "diane-basler-white/index.html",
+      "sections": [
+        "header",
+        "artistGallery",
+        "footer",
+        "cookieBanner"
+      ],
+      "artistSlug": "diane-basler-white"
+    },
+    {
+      "id": "artist-ori-reyes",
+      "label": "Ori Reyes",
+      "path": "ori-reyes/index.html",
+      "sections": [
+        "header",
+        "artistGallery",
+        "footer",
+        "cookieBanner"
+      ],
+      "artistSlug": "ori-reyes"
+    },
+    {
+      "id": "artist-stephanie-avila",
+      "label": "Stephanie Avila",
+      "path": "stephanie-avila/index.html",
+      "sections": [
+        "header",
+        "artistGallery",
+        "footer",
+        "cookieBanner"
+      ],
+      "artistSlug": "stephanie-avila"
+    },
+    {
+      "id": "artist-mike",
+      "label": "Mike",
+      "path": "mike/index.html",
+      "sections": [
+        "header",
+        "artistGallery",
+        "footer",
+        "cookieBanner"
+      ],
+      "artistSlug": "mike"
+    }
+  ]
+}
