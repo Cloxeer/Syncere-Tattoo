@@ -19,7 +19,6 @@
     "dividerFaq",
     "faq",
     "footer",
-    "cookieBanner",
     "booking",
     "artistGallery",
     "legalPage"
@@ -42,8 +41,7 @@
         "location",
         "dividerFaq",
         "faq",
-        "footer",
-        "cookieBanner"
+        "footer"
       ]
     },
     {
@@ -54,8 +52,7 @@
         "header",
         "dividerStory",
         "story",
-        "footer",
-        "cookieBanner"
+        "footer"
       ]
     },
     {
@@ -65,8 +62,7 @@
       "sections": [
         "header",
         "booking",
-        "footer",
-        "cookieBanner"
+        "footer"
       ]
     },
     {
@@ -76,8 +72,7 @@
       "sections": [
         "header",
         "legalPage",
-        "footer",
-        "cookieBanner"
+        "footer"
       ],
       "legalDoc": "accessibility"
     },
@@ -88,8 +83,7 @@
       "sections": [
         "header",
         "legalPage",
-        "footer",
-        "cookieBanner"
+        "footer"
       ],
       "legalDoc": "privacyPolicy"
     },
@@ -100,8 +94,7 @@
       "sections": [
         "header",
         "legalPage",
-        "footer",
-        "cookieBanner"
+        "footer"
       ],
       "legalDoc": "termsOfService"
     },
@@ -112,8 +105,7 @@
       "sections": [
         "header",
         "artistGallery",
-        "footer",
-        "cookieBanner"
+        "footer"
       ],
       "artistSlug": "diane-basler-white"
     },
@@ -124,8 +116,7 @@
       "sections": [
         "header",
         "artistGallery",
-        "footer",
-        "cookieBanner"
+        "footer"
       ],
       "artistSlug": "ori-reyes"
     },
@@ -136,8 +127,7 @@
       "sections": [
         "header",
         "artistGallery",
-        "footer",
-        "cookieBanner"
+        "footer"
       ],
       "artistSlug": "stephanie-avila"
     },
@@ -148,8 +138,7 @@
       "sections": [
         "header",
         "artistGallery",
-        "footer",
-        "cookieBanner"
+        "footer"
       ],
       "artistSlug": "mike"
     }

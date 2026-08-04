@@ -1565,15 +1565,6 @@ body.bb-lightbox-open { overflow: hidden; }
   </div>
 </footer>
 
-<div class="bb-cookie-banner" id="tattoo-cookie-banner" role="dialog" aria-label="Cookie consent" hidden data-halite-section="cookieBanner">
-  <div class="bb-cookie-banner-inner">
-    <p class="bb-cookie-banner-text">
-      <span data-halite-path='["labels","cookieText"]'>By using this website, you agree to our use of cookies. We use cookies to provide you with a great experience and to help our website run effectively.</span>
-    </p>
-    <button type="button" class="bb-cookie-banner-close" id="tattoo-cookie-accept"><span data-halite-path='["labels","cookieClose"]'>Close</span></button>
-  </div>
-</div>
-
 <script>
 (function() {
   document.querySelectorAll('img').forEach(function(img) {
@@ -1638,20 +1629,6 @@ body.bb-lightbox-open { overflow: hidden; }
   });
 
 
-  var cookieBanner = document.getElementById('tattoo-cookie-banner');
-  var cookieAccept = document.getElementById('tattoo-cookie-accept');
-  var cookieKey = 'tattoo-cookie-consent';
-  if (cookieBanner) {
-    if (!window.localStorage.getItem(cookieKey)) {
-      cookieBanner.hidden = false;
-    }
-    if (cookieAccept) {
-      cookieAccept.addEventListener('click', function() {
-        window.localStorage.setItem(cookieKey, 'accepted');
-        cookieBanner.hidden = true;
-      });
-    }
-  }
 
 
 
