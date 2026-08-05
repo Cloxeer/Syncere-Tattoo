@@ -78,7 +78,7 @@
   },
   "assets": {
     "logo": "/images/syncere/logo-white.png",
-    "hero": "/images/Divider2.jpg",
+    "hero": "/images/Hero.jpg",
     "grandStreet": "/images/syncere/grand-street.jpg",
     "foreverCare": "/images/syncere/forever-care.jpg",
     "location": "/images/syncere/location.jpg",
@@ -97,23 +97,23 @@
     "instagramHandle": "@synceretattoo_nm",
     "images": [
       {
-        "src": "/images/Screenshot 2026-08-05 110515-1785949662753.png",
+        "src": "/images/Gallery1.png",
         "alt": "Syncere Tattoo work"
       },
       {
-        "src": "/images/Screenshot 2026-08-05 110530-1785949662937.png",
+        "src": "/images/Gallery2.png",
         "alt": "Syncere Tattoo work"
       },
       {
-        "src": "/images/Screenshot 2026-08-05 110655-1785949663069.png",
+        "src": "/images/Gallery3.png",
         "alt": "Syncere Tattoo work"
       },
       {
-        "src": "/images/Screenshot 2026-08-05 110557-1785949663017.png",
+        "src": "/images/Gallery4.png",
         "alt": "Syncere Tattoo work"
       },
       {
-        "src": "/images/Screenshot 2026-08-05 110545-1785949662974.png",
+        "src": "/images/Gallery5.png",
         "alt": "Syncere Tattoo work"
       }
     ]
@@ -149,7 +149,7 @@
       "specialty": "Specializes in black & gray, floral designs, and realism.",
       "bio": "<strong>Diane</strong> has been tattooing since 2004 and founded Syncere Tattoo in her hometown of Las Cruces. Known for intricate black and gray work, florals, and realism, she has guested at conventions across the country and built one of the longest-running studios in the city.",
       "galleryUrl": "https://www.instagram.com/diane_synceretattoo/",
-      "image": "/images/owner-1785224876490.jpg",
+      "image": "/images/DianeBaslerWhite.jpg",
       "galleryImages": [
         "/images/syncere/artists/diane-basler-white/gallery/01.jpg",
         "/images/syncere/artists/diane-basler-white/gallery/02.jpg",
@@ -165,7 +165,7 @@
       "specialty": "Custom tattoos with a focus on client comfort and detail.",
       "bio": "Ori is celebrated for thoughtful, detailed work and a calm, welcoming presence in the chair. Clients praise her speed, precision, and ability to make every appointment feel relaxed from start to finish.",
       "galleryUrl": "https://www.instagram.com/inkbyori/",
-      "image": "/images/ori-1785224869479.jpg",
+      "image": "/images/OriReyes.jpg",
       "galleryImages": [
         "/images/syncere/artists/ori-reyes/gallery/01.jpg",
         "/images/syncere/artists/ori-reyes/gallery/02.jpg",
@@ -181,7 +181,7 @@
       "specialty": "Fine line detail and custom illustrative work.",
       "bio": "Stephanie is known for walking clients through the process with care — especially helpful for first-timers. Her work shines in smaller pieces and finely detailed tattoos that hold up beautifully over time.",
       "galleryUrl": "https://www.instagram.com/avilainkk/",
-      "image": "/images/4-1785224873186.jpg",
+      "image": "/images/StephanieAvila.jpg",
       "galleryImages": [
         "/images/syncere/artists/stephanie-avila/gallery/01.jpg",
         "/images/syncere/artists/stephanie-avila/gallery/02.jpg",
@@ -197,7 +197,7 @@
       "specialty": "Versatile custom tattooing across multiple styles.",
       "bio": "Mike brings a steady hand and collaborative approach to every piece. Whether you're building on existing work or starting something new, he works with you to refine the design until it's right.",
       "galleryUrl": "https://www.instagram.com/_madmik3_/",
-      "image": "/images/mike-1785224880413.jpg",
+      "image": "/images/Mike.jpg",
       "galleryImages": [
         "/images/syncere/artists/mike/gallery/01.jpg",
         "/images/syncere/artists/mike/gallery/02.jpg",
@@ -282,11 +282,11 @@
       "alt": "Tattoo aftercare"
     },
     "artists": {
-      "src": "/images/Divider3.jpg",
+      "src": "/images/Divider2.jpg",
       "alt": "Syncere Tattoo artists"
     },
     "gallery": {
-      "src": "/images/Divider8.jpg",
+      "src": "/images/Divider3.jpg",
       "alt": "Syncere Tattoo on Instagram"
     },
     "spaces": {
@@ -294,7 +294,7 @@
       "alt": "Syncere Tattoo studio space"
     },
     "press": {
-      "src": "/images/Gallery1.jpg",
+      "src": "/images/Divider5.jpg",
       "alt": "Syncere Tattoo client reviews"
     },
     "location": {
@@ -306,7 +306,7 @@
       "alt": "Syncere Tattoo story"
     },
     "faq": {
-      "src": "/images/syncere/IMG_8904.JPG",
+      "src": "/images/syncere/Divider8.jpg",
       "alt": "Syncere Tattoo FAQ"
     }
   },
