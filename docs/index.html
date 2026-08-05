@@ -545,28 +545,37 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* One centred photo per view, native swipe on every device (iPhone-style),
+   flanking arrows on tablet/desktop, dots below. Scales 13"–30". */
 .bb-gallery-media {
+  position: relative;
   margin: 3rem auto 0;
   width: 100%;
-  max-width: 18rem;
+  max-width: min(88vw, 26rem);
 }
 
 .bb-gallery-carousel-viewport {
   overflow: hidden;
   width: 100%;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.bb-gallery-carousel-viewport.is-dragging {
+  cursor: grabbing;
 }
 
 .bb-gallery-carousel-track {
   display: flex;
-  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
 .bb-gallery-strip-item {
   position: relative;
-  height: 18rem;
-  width: 100%;
   flex: 0 0 100%;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.05);
@@ -576,11 +585,51 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   width: 100%;
   height: 100%;
   object-fit: cover;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.bb-gallery-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 0;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.bb-gallery-carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.82);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.bb-gallery-carousel-arrow svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.bb-gallery-carousel-arrow--prev {
+  left: -1.375rem;
+}
+
+.bb-gallery-carousel-arrow--next {
+  right: -1.375rem;
 }
 
 .bb-gallery-carousel-dots {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1.25rem;
 }
@@ -602,32 +651,28 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   transform: scale(1.15);
 }
 
+/* Tablet and up: reveal the arrows and give the frame more room. */
 @media (min-width: 768px) {
   .bb-gallery-media {
-    max-width: 64rem;
+    max-width: min(70vw, 30rem);
   }
 
-  .bb-gallery-carousel-viewport {
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+  .bb-gallery-carousel-arrow {
+    display: inline-flex;
   }
 
-  .bb-gallery-carousel-track {
-    gap: 1rem;
-    transition: none;
-    transform: none !important;
+  .bb-gallery-carousel-arrow--prev {
+    left: -3.5rem;
   }
 
-  .bb-gallery-strip-item {
-    height: 16rem;
-    width: 12rem;
-    flex: 0 0 12rem;
+  .bb-gallery-carousel-arrow--next {
+    right: -3.5rem;
   }
+}
 
-  .bb-gallery-carousel-dots {
-    display: none;
+@media (min-width: 1280px) {
+  .bb-gallery-media {
+    max-width: 32rem;
   }
 }
 
@@ -1656,7 +1701,7 @@ body.bb-lightbox-open { overflow: hidden; }
 
 <div class="bb-divider" data-bb-parallax data-halite-section="dividerGallery" aria-hidden="true">
   <div class="bb-divider-media">
-    <img data-halite-path='["dividers","gallery","src"]' data-halite-image="true" src="images/syncere/IMG_8905.JPG" class="bb-divider-img" alt="Syncere Tattoo on Instagram" loading="lazy"/>
+    <img data-halite-path='["dividers","gallery","src"]' data-halite-image="true" src="images/Divider8.jpg" class="bb-divider-img" alt="Syncere Tattoo on Instagram" loading="lazy"/>
   </div>
   <div class="bb-divider-overlay" aria-hidden="true"></div>
 </div>
@@ -1668,24 +1713,30 @@ body.bb-lightbox-open { overflow: hidden; }
     <div class="bb-gallery-carousel-viewport" aria-live="polite">
       <div class="bb-gallery-carousel-track">
         <div class="bb-gallery-strip-item" data-gallery-slide="0">
-      <img data-halite-path='["gallery","images","0","src"]' data-halite-image="true" src="images/Gallery1.jpg" alt="Syncere Tattoo work" loading="lazy"/>
+      <img data-halite-path='["gallery","images","0","src"]' data-halite-image="true" src="images/Screenshot 2026-08-05 110515-1785949662753.png" alt="Syncere Tattoo work" loading="lazy" style="object-fit:contain;transform:translate(-1.99%, 0%) scale(1.0755);transform-origin:center center"/>
     </div>
 <div class="bb-gallery-strip-item" data-gallery-slide="1">
-      <img data-halite-path='["gallery","images","1","src"]' data-halite-image="true" src="images/syncere/forever-care.jpg" alt="Syncere Tattoo work" loading="lazy"/>
+      <img data-halite-path='["gallery","images","1","src"]' data-halite-image="true" src="images/Screenshot 2026-08-05 110530-1785949662937.png" alt="Syncere Tattoo work" loading="lazy" style="object-fit:contain;transform:scale(1.0408);transform-origin:center center"/>
     </div>
 <div class="bb-gallery-strip-item" data-gallery-slide="2">
-      <img data-halite-path='["gallery","images","2","src"]' data-halite-image="true" src="images/syncere/grand-street.jpg" alt="Syncere Tattoo studio" loading="lazy"/>
+      <img data-halite-path='["gallery","images","2","src"]' data-halite-image="true" src="images/Screenshot 2026-08-05 110655-1785949663069.png" alt="Syncere Tattoo work" loading="lazy" style="object-fit:contain;transform:translate(0%, -0.38%) scale(1.1584);transform-origin:center center"/>
     </div>
 <div class="bb-gallery-strip-item" data-gallery-slide="3">
-      <img data-halite-path='["gallery","images","3","src"]' data-halite-image="true" src="images/syncere/location.jpg" alt="Syncere Tattoo Las Cruces" loading="lazy"/>
+      <img data-halite-path='["gallery","images","3","src"]' data-halite-image="true" src="images/Screenshot 2026-08-05 110557-1785949663017.png" alt="Syncere Tattoo work" loading="lazy" style="object-fit:contain;transform:translate(-0.71%, -2.14%) scale(1.0715);transform-origin:center center"/>
+    </div>
+<div class="bb-gallery-strip-item" data-gallery-slide="4">
+      <img data-halite-path='["gallery","images","4","src"]' data-halite-image="true" src="images/Screenshot 2026-08-05 110545-1785949662974.png" alt="Syncere Tattoo work" loading="lazy" style="object-fit:contain;transform:translate(0%, 8.57%) scale(1.1547);transform-origin:center center"/>
     </div>
       </div>
     </div>
+    <button type="button" class="bb-gallery-carousel-arrow bb-gallery-carousel-arrow--prev" data-gallery-arrow="prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button type="button" class="bb-gallery-carousel-arrow bb-gallery-carousel-arrow--next" data-gallery-arrow="next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
     <div class="bb-gallery-carousel-dots" role="tablist" aria-label="Gallery photos">
       <button type="button" class="bb-gallery-carousel-dot is-active" data-gallery-dot="0" aria-label="Show photo 1" aria-selected="true"></button>
 <button type="button" class="bb-gallery-carousel-dot" data-gallery-dot="1" aria-label="Show photo 2" aria-selected="false"></button>
 <button type="button" class="bb-gallery-carousel-dot" data-gallery-dot="2" aria-label="Show photo 3" aria-selected="false"></button>
 <button type="button" class="bb-gallery-carousel-dot" data-gallery-dot="3" aria-label="Show photo 4" aria-selected="false"></button>
+<button type="button" class="bb-gallery-carousel-dot" data-gallery-dot="4" aria-label="Show photo 5" aria-selected="false"></button>
     </div>
   </div>
   <div class="bb-gallery-actions">
@@ -1703,7 +1754,7 @@ body.bb-lightbox-open { overflow: hidden; }
 
 <div class="bb-divider" data-bb-parallax data-halite-section="dividerPress" aria-hidden="true">
   <div class="bb-divider-media">
-    <img data-halite-path='["dividers","press","src"]' data-halite-image="true" src="images/Divider8.jpg" class="bb-divider-img" alt="Syncere Tattoo client reviews" loading="lazy"/>
+    <img data-halite-path='["dividers","press","src"]' data-halite-image="true" src="images/Gallery1.jpg" class="bb-divider-img" alt="Syncere Tattoo client reviews" loading="lazy"/>
   </div>
   <div class="bb-divider-overlay" aria-hidden="true"></div>
 </div>
@@ -2040,87 +2091,93 @@ body.bb-lightbox-open { overflow: hidden; }
     var carousel = document.querySelector('[data-halite-gallery-carousel]');
     if (!carousel) return;
 
+    var viewport = carousel.querySelector('.bb-gallery-carousel-viewport');
     var track = carousel.querySelector('.bb-gallery-carousel-track');
     var items = carousel.querySelectorAll('.bb-gallery-strip-item');
     var dots = carousel.querySelectorAll('.bb-gallery-carousel-dot');
-    if (!track || !items.length) return;
+    var prevArrow = carousel.querySelector('[data-gallery-arrow="prev"]');
+    var nextArrow = carousel.querySelector('[data-gallery-arrow="next"]');
+    if (!viewport || !track || !items.length) return;
 
-    var mobileQuery = window.matchMedia('(max-width: 767px)');
-    var reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    var currentIndex = 0;
-    var intervalId = null;
-    var autoplayDelay = 5000;
+    var count = items.length;
+    var index = 0;
 
-    function setActive(index) {
-      currentIndex = index;
-      if (mobileQuery.matches) {
-        track.style.transform = 'translate3d(-' + (currentIndex * 100) + '%, 0, 0)';
-      } else {
-        track.style.transform = '';
-      }
+    // Slide the track. offsetPercent is a live drag offset while the finger is down.
+    function render(offsetPercent) {
+      track.style.transform = 'translate3d(' + (-index * 100 + (offsetPercent || 0)) + '%, 0, 0)';
+    }
+
+    function updateDots() {
       dots.forEach(function(dot, dotIndex) {
-        var isActive = dotIndex === currentIndex;
+        var isActive = dotIndex === index;
         dot.classList.toggle('is-active', isActive);
         dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
       });
     }
 
-    function nextSlide() {
-      setActive((currentIndex + 1) % items.length);
-    }
-
-    function stopAutoplay() {
-      if (intervalId !== null) {
-        window.clearInterval(intervalId);
-        intervalId = null;
-      }
-    }
-
-    function startAutoplay() {
-      stopAutoplay();
-      if (mobileQuery.matches && !reducedMotionQuery.matches && items.length > 1) {
-        intervalId = window.setInterval(nextSlide, autoplayDelay);
-      }
-    }
-
-    function syncLayout() {
-      if (mobileQuery.matches) {
-        setActive(currentIndex);
-        startAutoplay();
-      } else {
-        stopAutoplay();
-        track.style.transform = '';
-      }
+    // Wraps both ways: past the last photo loops to the first, before the first loops to the last.
+    function goTo(target) {
+      index = (target % count + count) % count;
+      track.style.transition = '';
+      render(0);
+      updateDots();
     }
 
     dots.forEach(function(dot) {
       dot.addEventListener('click', function() {
-        var index = Number(dot.getAttribute('data-gallery-dot'));
-        if (!Number.isNaN(index)) {
-          setActive(index);
-          startAutoplay();
-        }
+        var i = Number(dot.getAttribute('data-gallery-dot'));
+        if (!Number.isNaN(i)) goTo(i);
       });
     });
+    if (prevArrow) prevArrow.addEventListener('click', function() { goTo(index - 1); });
+    if (nextArrow) nextArrow.addEventListener('click', function() { goTo(index + 1); });
 
-    if (!mobileQuery.matches) {
-      carousel.addEventListener('mouseenter', stopAutoplay);
-      carousel.addEventListener('mouseleave', startAutoplay);
+    // Hold-and-drag / swipe, finger-following like the Photos app. Works for touch and mouse.
+    var dragging = false;
+    var startX = 0;
+    var width = 1;
+    var moved = false;
+
+    function dragStart(x) {
+      dragging = true;
+      moved = false;
+      startX = x;
+      width = viewport.clientWidth || 1;
+      track.style.transition = 'none';
+      viewport.classList.add('is-dragging');
+    }
+    function dragMove(x) {
+      if (!dragging) return;
+      var delta = x - startX;
+      if (Math.abs(delta) > 3) moved = true;
+      render((delta / width) * 100);
+    }
+    function dragEnd(x) {
+      if (!dragging) return;
+      dragging = false;
+      viewport.classList.remove('is-dragging');
+      track.style.transition = '';
+      var delta = x - startX;
+      var threshold = width * 0.15;
+      if (delta <= -threshold) goTo(index + 1);
+      else if (delta >= threshold) goTo(index - 1);
+      else render(0);
     }
 
-    mobileQuery.addEventListener('change', function() {
-      syncLayout();
-      if (mobileQuery.matches) {
-        carousel.removeEventListener('mouseenter', stopAutoplay);
-        carousel.removeEventListener('mouseleave', startAutoplay);
-      } else {
-        carousel.addEventListener('mouseenter', stopAutoplay);
-        carousel.addEventListener('mouseleave', startAutoplay);
-      }
-    });
-    reducedMotionQuery.addEventListener('change', syncLayout);
+    viewport.addEventListener('touchstart', function(e) { dragStart(e.touches[0].clientX); }, { passive: true });
+    viewport.addEventListener('touchmove', function(e) { dragMove(e.touches[0].clientX); }, { passive: true });
+    viewport.addEventListener('touchend', function(e) { dragEnd((e.changedTouches[0] || {}).clientX || startX); });
 
-    syncLayout();
+    viewport.addEventListener('pointerdown', function(e) { if (e.pointerType !== 'touch') dragStart(e.clientX); });
+    window.addEventListener('pointermove', function(e) { if (e.pointerType !== 'touch') dragMove(e.clientX); });
+    window.addEventListener('pointerup', function(e) { if (e.pointerType !== 'touch') dragEnd(e.clientX); });
+
+    // Swallow the click that ends a drag so it never counts as a tap on a photo.
+    viewport.addEventListener('click', function(e) {
+      if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
+    }, true);
+
+    goTo(0);
   })();
 
   (function initDividerParallax() {

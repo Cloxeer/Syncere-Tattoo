@@ -545,28 +545,37 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* One centred photo per view, native swipe on every device (iPhone-style),
+   flanking arrows on tablet/desktop, dots below. Scales 13"–30". */
 .bb-gallery-media {
+  position: relative;
   margin: 3rem auto 0;
   width: 100%;
-  max-width: 18rem;
+  max-width: min(88vw, 26rem);
 }
 
 .bb-gallery-carousel-viewport {
   overflow: hidden;
   width: 100%;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.bb-gallery-carousel-viewport.is-dragging {
+  cursor: grabbing;
 }
 
 .bb-gallery-carousel-track {
   display: flex;
-  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
 .bb-gallery-strip-item {
   position: relative;
-  height: 18rem;
-  width: 100%;
   flex: 0 0 100%;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.05);
@@ -576,11 +585,51 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   width: 100%;
   height: 100%;
   object-fit: cover;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.bb-gallery-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 0;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.bb-gallery-carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.82);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.bb-gallery-carousel-arrow svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.bb-gallery-carousel-arrow--prev {
+  left: -1.375rem;
+}
+
+.bb-gallery-carousel-arrow--next {
+  right: -1.375rem;
 }
 
 .bb-gallery-carousel-dots {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1.25rem;
 }
@@ -602,32 +651,28 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   transform: scale(1.15);
 }
 
+/* Tablet and up: reveal the arrows and give the frame more room. */
 @media (min-width: 768px) {
   .bb-gallery-media {
-    max-width: 64rem;
+    max-width: min(70vw, 30rem);
   }
 
-  .bb-gallery-carousel-viewport {
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+  .bb-gallery-carousel-arrow {
+    display: inline-flex;
   }
 
-  .bb-gallery-carousel-track {
-    gap: 1rem;
-    transition: none;
-    transform: none !important;
+  .bb-gallery-carousel-arrow--prev {
+    left: -3.5rem;
   }
 
-  .bb-gallery-strip-item {
-    height: 16rem;
-    width: 12rem;
-    flex: 0 0 12rem;
+  .bb-gallery-carousel-arrow--next {
+    right: -3.5rem;
   }
+}
 
-  .bb-gallery-carousel-dots {
-    display: none;
+@media (min-width: 1280px) {
+  .bb-gallery-media {
+    max-width: 32rem;
   }
 }
 

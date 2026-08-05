@@ -97,20 +97,24 @@
     "instagramHandle": "@synceretattoo_nm",
     "images": [
       {
-        "src": "/images/Gallery1.jpg",
+        "src": "/images/Screenshot 2026-08-05 110515-1785949662753.png",
         "alt": "Syncere Tattoo work"
       },
       {
-        "src": "/images/syncere/forever-care.jpg",
+        "src": "/images/Screenshot 2026-08-05 110530-1785949662937.png",
         "alt": "Syncere Tattoo work"
       },
       {
-        "src": "/images/syncere/grand-street.jpg",
-        "alt": "Syncere Tattoo studio"
+        "src": "/images/Screenshot 2026-08-05 110655-1785949663069.png",
+        "alt": "Syncere Tattoo work"
       },
       {
-        "src": "/images/syncere/location.jpg",
-        "alt": "Syncere Tattoo Las Cruces"
+        "src": "/images/Screenshot 2026-08-05 110557-1785949663017.png",
+        "alt": "Syncere Tattoo work"
+      },
+      {
+        "src": "/images/Screenshot 2026-08-05 110545-1785949662974.png",
+        "alt": "Syncere Tattoo work"
       }
     ]
   },
@@ -282,7 +286,7 @@
       "alt": "Syncere Tattoo artists"
     },
     "gallery": {
-      "src": "/images/syncere/IMG_8905.JPG",
+      "src": "/images/Divider8.jpg",
       "alt": "Syncere Tattoo on Instagram"
     },
     "spaces": {
@@ -290,7 +294,7 @@
       "alt": "Syncere Tattoo studio space"
     },
     "press": {
-      "src": "/images/Divider8.jpg",
+      "src": "/images/Gallery1.jpg",
       "alt": "Syncere Tattoo client reviews"
     },
     "location": {
@@ -774,6 +778,86 @@
         "y": 0.019,
         "width": 100,
         "height": 75.024
+      }
+    },
+    "gallery.images.4": {
+      "objectPosition": "50% 50%",
+      "objectFit": "contain",
+      "rotation": 0,
+      "scale": 1.1547,
+      "offset": {
+        "x": 0,
+        "y": 8.57
+      },
+      "area": {
+        "x": -22.464,
+        "y": -0.725,
+        "width": 144.928,
+        "height": 86.603
+      }
+    },
+    "gallery.images.3": {
+      "objectPosition": "50% 50%",
+      "objectFit": "contain",
+      "rotation": 0,
+      "scale": 1.0715,
+      "offset": {
+        "x": -0.71,
+        "y": -2.14
+      },
+      "area": {
+        "x": -17.515,
+        "y": 5.338,
+        "width": 136.986,
+        "height": 93.324
+      }
+    },
+    "gallery.images.2": {
+      "objectPosition": "50% 50%",
+      "objectFit": "contain",
+      "rotation": 0,
+      "scale": 1.1584,
+      "offset": {
+        "x": 0,
+        "y": -0.38
+      },
+      "area": {
+        "x": -17.568,
+        "y": 7.168,
+        "width": 135.135,
+        "height": 86.327
+      }
+    },
+    "gallery.images.1": {
+      "objectPosition": "50% 50%",
+      "objectFit": "contain",
+      "rotation": 0,
+      "scale": 1.0408,
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "area": {
+        "x": -25.758,
+        "y": 1.959,
+        "width": 151.515,
+        "height": 96.083
+      }
+    },
+    "gallery.images.0": {
+      "objectPosition": "50% 50%",
+      "objectFit": "contain",
+      "rotation": 0,
+      "scale": 1.0755,
+      "offset": {
+        "x": -1.99,
+        "y": 0
+      },
+      "area": {
+        "x": -22.739,
+        "y": 3.508,
+        "width": 151.515,
+        "height": 92.984
       }
     }
   }
