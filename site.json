@@ -129,10 +129,11 @@
   "story": {
     "title": "OUR STORY",
     "paragraphs": [
-      "Syncere Tattoo has been part of the Las Cruces community for over a decade — one of the longest-running studios in the city. What started as owner Diane Basler-White's passion for tattooing in 2004 grew into a state-licensed shop built on custom work, cleanliness, and a welcoming chair.",
-      "From fine line and florals to black and gray realism, our artists cover a range of styles and collaborate with every client to refine a design that fits. Whether it's your first tattoo or your twentieth, we take the time to get it right.",
-      "We've tattooed locals, travelers passing through southern New Mexico, and clients who found us through word of mouth and Instagram. The studio on Espina Street is where that work happens — a creative space rooted in Las Cruces and open to anyone ready for their next piece.",
-      "Book through synceretattoo@gmail.com, call (575) 524-0190, or follow @synceretattoo_nm to see fresh work from Diane, Ori, Stephanie, and Mike. We're here when you're ready."
+      "Welcome to our tattoo Family - Established in 2007, Syncere Tattoo is the oldest tattoo studio in Las Cruces, New Mexico. For nearly two decades, we’ve built our reputation on exceptional craftsmanship, professionalism, and creating an environment where every client feels comfortable, respected, and welcome.",
+      "At Syncere Tattoo, we believe getting tattooed is more than just an appointment — it’s an experience. Whether you’re celebrating a milestone, honoring a loved one, or simply bringing an idea to life, we’re committed to creating meaningful, high-quality artwork that you’ll be proud to wear for a lifetime..",
+      "Our artists specialize in a wide variety of styles, including black and grey realism, high-contrast black and grey, religious and faith-based artwork, fine line, script, intricate micro tattoos, American Traditional, bold color, geometric designs, mandalas, cover-ups, and fully custom pieces. We also love creating the weird, creepy, dark, and horror-inspired tattoos that let our clients’ imaginations run wild.",
+      "You can find a link to each artist portfolio in the profiles below to find which artist best suits you.\n",
+      "More than anything, we strive to be a studio where everyone feels at home. From your first consultation to the final tattoo, our goal is to provide an experience that’s welcoming, collaborative, and centered around quality.\n\nwe’re honored to be part of your journey and look forward to creating something truly unforgettable."
     ]
   },
   "booking": {
@@ -302,7 +303,7 @@
       "alt": "Syncere Tattoo location"
     },
     "story": {
-      "src": "/images/syncere/book-cover.jpg",
+      "src": "/images/syncere/IMG_8894.jpg",
       "alt": "Syncere Tattoo story"
     },
     "faq": {
@@ -858,6 +859,44 @@
         "y": 3.508,
         "width": 151.515,
         "height": 92.984
+      }
+    },
+    "assets.hero": {
+      "objectPosition": "50% 50%",
+      "rotation": 0,
+      "scale": 1,
+      "objectFit": "cover",
+      "mobile": {
+        "objectPosition": "50% 50%",
+        "objectFit": "contain",
+        "rotation": 0,
+        "scale": 1.3326,
+        "offset": {
+          "x": 7.6,
+          "y": -0.28
+        },
+        "area": {
+          "x": -7.604,
+          "y": 12.691,
+          "width": 100,
+          "height": 75.041
+        }
+      }
+    },
+    "dividers.story": {
+      "objectPosition": "50% 50%",
+      "objectFit": "contain",
+      "rotation": 0,
+      "scale": 1.8201,
+      "offset": {
+        "x": 1.84,
+        "y": -13.92
+      },
+      "area": {
+        "x": 0.629,
+        "y": 30.176,
+        "width": 95.238,
+        "height": 54.943
       }
     }
   }
