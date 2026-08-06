@@ -78,7 +78,7 @@
   },
   "assets": {
     "logo": "/images/syncere/logo-white.png",
-    "hero": "/images/Hero.jpg",
+    "hero": "/images/hero-1786033129853.jpg",
     "grandStreet": "/images/syncere/grand-street.jpg",
     "foreverCare": "/images/syncere/forever-care.jpg",
     "location": "/images/syncere/location.jpg",
@@ -97,7 +97,7 @@
     "instagramHandle": "@synceretattoo_nm",
     "images": [
       {
-        "src": "/images/Gallery1.png",
+        "src": "/images/tatoo5-1786033120837.png",
         "alt": "Syncere Tattoo work"
       },
       {
@@ -151,10 +151,10 @@
       "galleryUrl": "https://www.instagram.com/diane_synceretattoo/",
       "image": "/images/DianeBaslerWhite.jpg",
       "galleryImages": [
-        "/images/syncere/artists/diane-basler-white/gallery/01.jpg",
-        "/images/syncere/artists/diane-basler-white/gallery/02.jpg",
-        "/images/syncere/artists/diane-basler-white/gallery/03.jpg",
-        "/images/syncere/artists/diane-basler-white/gallery/04.jpg",
+        "/images/tattoo 1-1786033123095.jpg",
+        "/images/tattoo2-1786033123131.jpg",
+        "/images/tattoo3-1786033123162.jpg",
+        "/images/tattoo4-1786033123193.jpg",
         "/images/syncere/artists/diane-basler-white/gallery/05.jpg",
         "/images/syncere/artists/diane-basler-white/gallery/06.jpg"
       ]
