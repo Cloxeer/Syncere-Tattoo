@@ -1145,10 +1145,10 @@ imageDisplay:
     rotation: 0
     scale: 1.8201
     offset:
-      x: 1.84
-      y: -13.92
+      x: 1.59
+      y: -12.82
     area:
-      x: 0.629
-      y: 30.176
+      x: 0.868
+      y: 29.572
       width: 95.238
       height: 54.943
