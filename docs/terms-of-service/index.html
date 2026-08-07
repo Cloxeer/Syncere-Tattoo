@@ -894,13 +894,31 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
 
 .bb-story-grid {
   margin: 3rem auto 0;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   max-width: 64rem;
   gap: 2.5rem;
 }
 
+/* Mobile: flatten columns so paragraphs read 1→2→3… via `order`. */
+.bb-story-col {
+  display: contents;
+}
+
 @media (min-width: 768px) {
-  .bb-story-grid { grid-template-columns: repeat(2, 1fr); }
+  .bb-story-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+
+  /* Independent stacks — odd leftover sits under the right column with the
+     same 2.5rem gap as every other pair (no stretched grid-row gap). */
+  .bb-story-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
 }
 
 .bb-story-paragraph {

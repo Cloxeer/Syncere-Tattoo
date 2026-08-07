@@ -894,13 +894,31 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
 
 .bb-story-grid {
   margin: 3rem auto 0;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   max-width: 64rem;
   gap: 2.5rem;
 }
 
+/* Mobile: flatten columns so paragraphs read 1→2→3… via `order`. */
+.bb-story-col {
+  display: contents;
+}
+
 @media (min-width: 768px) {
-  .bb-story-grid { grid-template-columns: repeat(2, 1fr); }
+  .bb-story-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+
+  /* Independent stacks — odd leftover sits under the right column with the
+     same 2.5rem gap as every other pair (no stretched grid-row gap). */
+  .bb-story-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
 }
 
 .bb-story-paragraph {
@@ -1547,17 +1565,22 @@ body.bb-lightbox-open { overflow: hidden; }
 </div>
 
 <section id="story" class="bb-story bb-content-section" data-halite-section="story">
+  <style>.bb-story-paragraph[data-story-order="0"]{order:0}.bb-story-paragraph[data-story-order="1"]{order:1}.bb-story-paragraph[data-story-order="2"]{order:2}.bb-story-paragraph[data-story-order="3"]{order:3}.bb-story-paragraph[data-story-order="4"]{order:4}</style>
   <div class="bb-story-inner">
     <h2 class="bb-section-title bb-section-title-center"><span data-halite-path='["story","title"]'>OUR STORY</span></h2>
     <div class="bb-story-grid">
-      <p data-halite-path='["story","paragraphs","0"]' data-halite-rich="true" class="bb-story-paragraph">Welcome to our tattoo Family - Established in 2007, Syncere Tattoo is the oldest tattoo studio in Las Cruces, New Mexico. For nearly two decades, we’ve built our reputation on exceptional craftsmanship, professionalism, and creating an environment where every client feels comfortable, respected, and welcome.</p>
-<p data-halite-path='["story","paragraphs","1"]' data-halite-rich="true" class="bb-story-paragraph">At Syncere Tattoo, we believe getting tattooed is more than just an appointment — it’s an experience. Whether you’re celebrating a milestone, honoring a loved one, or simply bringing an idea to life, we’re committed to creating meaningful, high-quality artwork that you’ll be proud to wear for a lifetime..</p>
-<p data-halite-path='["story","paragraphs","2"]' data-halite-rich="true" class="bb-story-paragraph">Our artists specialize in a wide variety of styles, including black and grey realism, high-contrast black and grey, religious and faith-based artwork, fine line, script, intricate micro tattoos, American Traditional, bold color, geometric designs, mandalas, cover-ups, and fully custom pieces. We also love creating the weird, creepy, dark, and horror-inspired tattoos that let our clients’ imaginations run wild.</p>
-<p data-halite-path='["story","paragraphs","3"]' data-halite-rich="true" class="bb-story-paragraph">You can find a link to each artist portfolio in the profiles below to find which artist best suits you.
+      <div class="bb-story-col bb-story-col-left">
+        <p data-halite-path='["story","paragraphs","0"]' data-halite-rich="true" class="bb-story-paragraph" data-story-order="0">Welcome to our tattoo Family - Established in 2007, Syncere Tattoo is the oldest tattoo studio in Las Cruces, New Mexico. For nearly two decades, we’ve built our reputation on exceptional craftsmanship, professionalism, and creating an environment where every client feels comfortable, respected, and welcome.</p>
+<p data-halite-path='["story","paragraphs","2"]' data-halite-rich="true" class="bb-story-paragraph" data-story-order="2">Our artists specialize in a wide variety of styles, including black and grey realism, high-contrast black and grey, religious and faith-based artwork, fine line, script, intricate micro tattoos, American Traditional, bold color, geometric designs, mandalas, cover-ups, and fully custom pieces. We also love creating the weird, creepy, dark, and horror-inspired tattoos that let our clients’ imaginations run wild.</p>
+      </div>
+      <div class="bb-story-col bb-story-col-right">
+        <p data-halite-path='["story","paragraphs","1"]' data-halite-rich="true" class="bb-story-paragraph" data-story-order="1">At Syncere Tattoo, we believe getting tattooed is more than just an appointment — it’s an experience. Whether you’re celebrating a milestone, honoring a loved one, or simply bringing an idea to life, we’re committed to creating meaningful, high-quality artwork that you’ll be proud to wear for a lifetime..</p>
+<p data-halite-path='["story","paragraphs","3"]' data-halite-rich="true" class="bb-story-paragraph" data-story-order="3">You can find a link to each artist portfolio in the profiles below to find which artist best suits you.
 </p>
-<p data-halite-path='["story","paragraphs","4"]' data-halite-rich="true" class="bb-story-paragraph">More than anything, we strive to be a studio where everyone feels at home. From your first consultation to the final tattoo, our goal is to provide an experience that’s welcoming, collaborative, and centered around quality.
+<p data-halite-path='["story","paragraphs","4"]' data-halite-rich="true" class="bb-story-paragraph" data-story-order="4">More than anything, we strive to be a studio where everyone feels at home. From your first consultation to the final tattoo, our goal is to provide an experience that’s welcoming, collaborative, and centered around quality.
 
 we’re honored to be part of your journey and look forward to creating something truly unforgettable.</p>
+      </div>
     </div>
     <div class="bb-legal-top">
       <a href="#story" class="bb-legal-nav-link"><span data-halite-path='["labels","topLink"]'>Top</span></a>
