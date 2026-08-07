@@ -367,13 +367,13 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   position: absolute;
   inset: -30% 0;
   height: 160%;
+  will-change: transform;
 }
 
 .bb-divider-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  will-change: transform;
 }
 
 .bb-divider-overlay {
@@ -686,7 +686,7 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
     transition: none;
   }
 
-  .bb-divider-img {
+  .bb-divider-media {
     will-change: auto;
   }
 }
@@ -1995,15 +1995,6 @@ body.bb-lightbox-open { overflow: hidden; }
   </div>
 </footer>
 
-<div class="bb-cookie-banner" id="tattoo-cookie-banner" role="dialog" aria-label="Cookie consent" hidden data-halite-section="cookieBanner">
-  <div class="bb-cookie-banner-inner">
-    <p class="bb-cookie-banner-text">
-      <span data-halite-path='["labels","cookieText"]'>By using this website, you agree to our use of cookies. We use cookies to provide you with a great experience and to help our website run effectively.</span>
-    </p>
-    <button type="button" class="bb-cookie-banner-close" id="tattoo-cookie-accept"><span data-halite-path='["labels","cookieClose"]'>Close</span></button>
-  </div>
-</div>
-
 <script>
 (function() {
   document.querySelectorAll('img').forEach(function(img) {
@@ -2094,20 +2085,6 @@ body.bb-lightbox-open { overflow: hidden; }
     });
   });
 
-  var cookieBanner = document.getElementById('tattoo-cookie-banner');
-  var cookieAccept = document.getElementById('tattoo-cookie-accept');
-  var cookieKey = 'tattoo-cookie-consent';
-  if (cookieBanner) {
-    if (!window.localStorage.getItem(cookieKey)) {
-      cookieBanner.hidden = false;
-    }
-    if (cookieAccept) {
-      cookieAccept.addEventListener('click', function() {
-        window.localStorage.setItem(cookieKey, 'accepted');
-        cookieBanner.hidden = true;
-      });
-    }
-  }
 
 
   (function initGalleryCarousel() {
@@ -2211,15 +2188,20 @@ body.bb-lightbox-open { overflow: hidden; }
     var parallaxIntensity = 1.5;
     var ticking = false;
 
+    // Parallax moves .bb-divider-media so the img keeps its crop transform
+    // (scale/offset). Writing transform on the img used to wipe that crop on scroll.
+    // Shift is clamped to the media's overflow so the band never flashes empty black.
     function updateParallax() {
       var viewportHeight = window.innerHeight;
       dividers.forEach(function(divider) {
-        var img = divider.querySelector('.bb-divider-img');
-        if (!img) return;
+        var media = divider.querySelector('.bb-divider-media');
+        if (!media) return;
         var rect = divider.getBoundingClientRect();
         var progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
-        var shift = (progress - 0.5) * rect.height * parallaxIntensity;
-        img.style.transform = 'translate3d(0, ' + shift + 'px, 0)';
+        var rawShift = (progress - 0.5) * rect.height * parallaxIntensity;
+        var maxShift = Math.max(0, (media.offsetHeight - divider.offsetHeight) / 2);
+        var shift = Math.max(-maxShift, Math.min(maxShift, rawShift));
+        media.style.transform = 'translate3d(0, ' + shift + 'px, 0)';
       });
       ticking = false;
     }
@@ -2234,9 +2216,9 @@ body.bb-lightbox-open { overflow: hidden; }
     function syncParallax() {
       if (reducedMotionQuery.matches) {
         dividers.forEach(function(divider) {
-          var img = divider.querySelector('.bb-divider-img');
-          if (img) {
-            img.style.transform = '';
+          var media = divider.querySelector('.bb-divider-media');
+          if (media) {
+            media.style.transform = '';
           }
         });
         return;
