@@ -78,7 +78,7 @@
   },
   "assets": {
     "logo": "/images/syncere/logo-white.png",
-    "hero": "/images/hero3-1786070100160.png",
+    "hero": "/images/hero2-1786033129914.jpg",
     "grandStreet": "/images/syncere/grand-street.jpg",
     "foreverCare": "/images/syncere/forever-care.jpg",
     "location": "/images/syncere/location.jpg",
@@ -97,7 +97,7 @@
     "instagramHandle": "@synceretattoo_nm",
     "images": [
       {
-        "src": "/images/tatoo5-1786033120837.png",
+        "src": "/images/diane-1.png",
         "alt": "Syncere Tattoo work"
       },
       {
@@ -152,12 +152,11 @@
       "galleryUrl": "https://www.instagram.com/diane_synceretattoo/",
       "image": "/images/DianeBaslerWhite.jpg",
       "galleryImages": [
-        "/images/tattoo 1-1786033123095.jpg",
-        "/images/tattoo2-1786033123131.jpg",
-        "/images/tattoo3-1786033123162.jpg",
-        "/images/tattoo4-1786033123193.jpg",
-        "/images/syncere/artists/diane-basler-white/gallery/05.jpg",
-        "/images/syncere/artists/diane-basler-white/gallery/06.jpg"
+        "/images/diane-1.png",
+        "/images/diane-2.jpg",
+        "/images/diane-3.jpg",
+        "/images/diane-4.jpg",
+        "/images/diane-5.jpg"
       ]
     },
     {
@@ -168,12 +167,11 @@
       "galleryUrl": "https://www.instagram.com/inkbyori/",
       "image": "/images/OriReyes.jpg",
       "galleryImages": [
-        "/images/syncere/artists/ori-reyes/gallery/01.jpg",
-        "/images/syncere/artists/ori-reyes/gallery/02.jpg",
-        "/images/syncere/artists/ori-reyes/gallery/03.jpg",
-        "/images/syncere/artists/ori-reyes/gallery/04.jpg",
-        "/images/syncere/artists/ori-reyes/gallery/05.jpg",
-        "/images/syncere/artists/ori-reyes/gallery/06.jpg"
+        "/images/ori-5.jpg",
+        "/images/ori-2.jpg",
+        "/images/ori-3.jpg",
+        "/images/ori-4.jpg",
+        "/images/ori-1.jpg"
       ]
     },
     {
@@ -184,12 +182,11 @@
       "galleryUrl": "https://www.instagram.com/avilainkk/",
       "image": "/images/StephanieAvila.jpg",
       "galleryImages": [
-        "/images/syncere/artists/stephanie-avila/gallery/01.jpg",
-        "/images/syncere/artists/stephanie-avila/gallery/02.jpg",
-        "/images/syncere/artists/stephanie-avila/gallery/03.jpg",
-        "/images/syncere/artists/stephanie-avila/gallery/04.jpg",
-        "/images/syncere/artists/stephanie-avila/gallery/05.jpg",
-        "/images/syncere/artists/stephanie-avila/gallery/06.jpg"
+        "/images/steph-4.jpg",
+        "/images/steph-2.jpg",
+        "/images/steph-3.jpg",
+        "/images/steph-1.jpg",
+        "/images/steph-5.jpg"
       ]
     },
     {
@@ -200,12 +197,11 @@
       "galleryUrl": "https://www.instagram.com/_madmik3_/",
       "image": "/images/Mike.jpg",
       "galleryImages": [
-        "/images/syncere/artists/mike/gallery/01.jpg",
-        "/images/syncere/artists/mike/gallery/02.jpg",
-        "/images/syncere/artists/mike/gallery/03.jpg",
-        "/images/syncere/artists/mike/gallery/04.jpg",
-        "/images/syncere/artists/mike/gallery/05.jpg",
-        "/images/syncere/artists/mike/gallery/06.jpg"
+        "/images/mikey-3.jpg",
+        "/images/mikey-2.jpg",
+        "/images/mikey-1.jpg",
+        "/images/mikey-4.jpg",
+        "/images/mikey-5.jpg"
       ]
     }
   ],

@@ -545,139 +545,75 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* One centred photo per view, native swipe on every device (iPhone-style),
-   flanking arrows on tablet/desktop, dots below. Scales 13"–30". */
-.bb-gallery-media {
-  position: relative;
+/* Follow Us: one photo per artist, spread across a grid. Each card links to that
+   artist's gallery and captions their name. 1-up on phones, 2-up on tablet, 4-up wide. */
+.bb-follow-grid {
   margin: 3rem auto 0;
+  display: grid;
   width: 100%;
-  max-width: min(88vw, 26rem);
+  max-width: 64rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
-.bb-gallery-carousel-viewport {
-  overflow: hidden;
-  width: 100%;
-  cursor: grab;
-  touch-action: pan-y;
+@media (min-width: 640px) {
+  .bb-follow-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.bb-gallery-carousel-viewport.is-dragging {
-  cursor: grabbing;
+@media (min-width: 1024px) {
+  .bb-follow-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
-.bb-gallery-carousel-track {
-  display: flex;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
-}
-
-.bb-gallery-strip-item {
+.bb-follow-card {
   position: relative;
-  flex: 0 0 100%;
-  width: 100%;
-  aspect-ratio: 1 / 1;
+}
+
+.bb-follow-card-media {
+  position: relative;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.05);
 }
 
-.bb-gallery-strip-item img {
+.bb-follow-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  -webkit-user-drag: none;
-  user-select: none;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.bb-gallery-carousel-arrow {
+.bb-follow-card:hover .bb-follow-card-img {
+  transform: scale(1.05);
+}
+
+.bb-follow-card-scrim {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.55);
-  color: #fff;
-  padding: 0;
-  cursor: pointer;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0) 55%);
+}
+
+.bb-follow-card-name {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
   z-index: 2;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #fff;
 }
 
-.bb-gallery-carousel-arrow:hover {
-  background: rgba(0, 0, 0, 0.82);
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-.bb-gallery-carousel-arrow svg {
-  width: 1.35rem;
-  height: 1.35rem;
-}
-
-.bb-gallery-carousel-arrow--prev {
-  left: -1.375rem;
-}
-
-.bb-gallery-carousel-arrow--next {
-  right: -1.375rem;
-}
-
-.bb-gallery-carousel-dots {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
-}
-
-.bb-gallery-carousel-dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 9999px;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-}
-
-.bb-gallery-carousel-dot.is-active {
-  background: #fff;
-  border-color: #fff;
-  transform: scale(1.15);
-}
-
-/* Tablet and up: reveal the arrows and give the frame more room. */
-@media (min-width: 768px) {
-  .bb-gallery-media {
-    max-width: min(70vw, 30rem);
-  }
-
-  .bb-gallery-carousel-arrow {
-    display: inline-flex;
-  }
-
-  .bb-gallery-carousel-arrow--prev {
-    left: -3.5rem;
-  }
-
-  .bb-gallery-carousel-arrow--next {
-    right: -3.5rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .bb-gallery-media {
-    max-width: 32rem;
-  }
+.bb-follow-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bb-gallery-carousel-track {
+  .bb-follow-card-img {
     transition: none;
   }
 
@@ -1306,10 +1242,11 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* Five uniform slots: a 2x2 square up top, then the fifth centred beneath it. */
 .bb-artist-gallery-grid {
   margin: 4rem auto 0;
   display: grid;
-  max-width: 64rem;
+  max-width: 44rem;
   grid-template-columns: 1fr;
   align-items: start;
   gap: 2rem;
@@ -1317,6 +1254,13 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
 
 @media (min-width: 640px) {
   .bb-artist-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Fifth photo spans the row but keeps one-column width, centred under the square. */
+  .bb-artist-gallery-figure:nth-child(5) {
+    grid-column: 1 / -1;
+    width: calc(50% - 1rem);
+    justify-self: center;
+  }
 }
 
 .bb-artist-gallery-figure {
@@ -1328,12 +1272,15 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
 .bb-artist-gallery-image-wrap {
   position: relative;
   width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
 }
 
 .bb-artist-gallery-image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
@@ -1546,7 +1493,7 @@ body.bb-lightbox-open { overflow: hidden; }
   --color-accent: #ffffff;
   --color-background: #000000;
   --color-surface: #151515;
-  --hero-image: url('../images/hero3-1786070100160.png');
+  --hero-image: url('../images/hero2-1786033129914.jpg');
 }
 
 </style>
@@ -1715,7 +1662,6 @@ we’re honored to be part of your journey and look forward to creating somethin
       }
     });
   });
-
 
 
 

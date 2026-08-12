@@ -545,139 +545,75 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* One centred photo per view, native swipe on every device (iPhone-style),
-   flanking arrows on tablet/desktop, dots below. Scales 13"–30". */
-.bb-gallery-media {
-  position: relative;
+/* Follow Us: one photo per artist, spread across a grid. Each card links to that
+   artist's gallery and captions their name. 1-up on phones, 2-up on tablet, 4-up wide. */
+.bb-follow-grid {
   margin: 3rem auto 0;
+  display: grid;
   width: 100%;
-  max-width: min(88vw, 26rem);
+  max-width: 64rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
-.bb-gallery-carousel-viewport {
-  overflow: hidden;
-  width: 100%;
-  cursor: grab;
-  touch-action: pan-y;
+@media (min-width: 640px) {
+  .bb-follow-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.bb-gallery-carousel-viewport.is-dragging {
-  cursor: grabbing;
+@media (min-width: 1024px) {
+  .bb-follow-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
-.bb-gallery-carousel-track {
-  display: flex;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
-}
-
-.bb-gallery-strip-item {
+.bb-follow-card {
   position: relative;
-  flex: 0 0 100%;
-  width: 100%;
-  aspect-ratio: 1 / 1;
+}
+
+.bb-follow-card-media {
+  position: relative;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.05);
 }
 
-.bb-gallery-strip-item img {
+.bb-follow-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  -webkit-user-drag: none;
-  user-select: none;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.bb-gallery-carousel-arrow {
+.bb-follow-card:hover .bb-follow-card-img {
+  transform: scale(1.05);
+}
+
+.bb-follow-card-scrim {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.55);
-  color: #fff;
-  padding: 0;
-  cursor: pointer;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0) 55%);
+}
+
+.bb-follow-card-name {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
   z-index: 2;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #fff;
 }
 
-.bb-gallery-carousel-arrow:hover {
-  background: rgba(0, 0, 0, 0.82);
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-.bb-gallery-carousel-arrow svg {
-  width: 1.35rem;
-  height: 1.35rem;
-}
-
-.bb-gallery-carousel-arrow--prev {
-  left: -1.375rem;
-}
-
-.bb-gallery-carousel-arrow--next {
-  right: -1.375rem;
-}
-
-.bb-gallery-carousel-dots {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
-}
-
-.bb-gallery-carousel-dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 9999px;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-}
-
-.bb-gallery-carousel-dot.is-active {
-  background: #fff;
-  border-color: #fff;
-  transform: scale(1.15);
-}
-
-/* Tablet and up: reveal the arrows and give the frame more room. */
-@media (min-width: 768px) {
-  .bb-gallery-media {
-    max-width: min(70vw, 30rem);
-  }
-
-  .bb-gallery-carousel-arrow {
-    display: inline-flex;
-  }
-
-  .bb-gallery-carousel-arrow--prev {
-    left: -3.5rem;
-  }
-
-  .bb-gallery-carousel-arrow--next {
-    right: -3.5rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .bb-gallery-media {
-    max-width: 32rem;
-  }
+.bb-follow-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bb-gallery-carousel-track {
+  .bb-follow-card-img {
     transition: none;
   }
 
@@ -1306,10 +1242,11 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* Five uniform slots: a 2x2 square up top, then the fifth centred beneath it. */
 .bb-artist-gallery-grid {
   margin: 4rem auto 0;
   display: grid;
-  max-width: 64rem;
+  max-width: 44rem;
   grid-template-columns: 1fr;
   align-items: start;
   gap: 2rem;
@@ -1317,6 +1254,13 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
 
 @media (min-width: 640px) {
   .bb-artist-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Fifth photo spans the row but keeps one-column width, centred under the square. */
+  .bb-artist-gallery-figure:nth-child(5) {
+    grid-column: 1 / -1;
+    width: calc(50% - 1rem);
+    justify-self: center;
+  }
 }
 
 .bb-artist-gallery-figure {
@@ -1328,12 +1272,15 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
 .bb-artist-gallery-image-wrap {
   position: relative;
   width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
 }
 
 .bb-artist-gallery-image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
@@ -1546,7 +1493,7 @@ body.bb-lightbox-open { overflow: hidden; }
   --color-accent: #ffffff;
   --color-background: #000000;
   --color-surface: #151515;
-  --hero-image: url('./images/hero3-1786070100160.png');
+  --hero-image: url('./images/hero2-1786033129914.jpg');
 }
 
 </style>
@@ -1565,7 +1512,7 @@ body.bb-lightbox-open { overflow: hidden; }
 <section id="syncere" class="bb-hero-contact">
   <div class="bb-hero-contact-hero" data-halite-section="hero">
     <div class="bb-hero-contact-bg" aria-hidden="true">
-      <img src="./images/hero3-1786070100160.png" alt="" class="bb-hero-contact-bg-img" data-halite-path='["assets","hero"]' data-halite-image="true"/>
+      <img src="./images/hero2-1786033129914.jpg" alt="" class="bb-hero-contact-bg-img" data-halite-path='["assets","hero"]' data-halite-image="true"/>
       <div class="bb-hero-contact-overlay" aria-hidden="true"></div>
     </div>
     <div class="bb-hero-contact-intro">
@@ -1727,34 +1674,38 @@ body.bb-lightbox-open { overflow: hidden; }
 <section id="gallery" class="bb-gallery bb-content-section" data-halite-section="gallery">
   <h2 class="bb-section-title bb-section-title-center"><span data-halite-path='["gallery","title"]'>FOLLOW US</span></h2>
   <p class="bb-gallery-subtitle"><span data-halite-path='["gallery","subtitle"]'>Fresh work, flash, and behind-the-scenes from the Syncere team</span></p>
-  <div class="bb-gallery-media" data-halite-gallery-carousel>
-    <div class="bb-gallery-carousel-viewport" aria-live="polite">
-      <div class="bb-gallery-carousel-track">
-        <div class="bb-gallery-strip-item" data-gallery-slide="0">
-      <img data-halite-path='["gallery","images","0","src"]' data-halite-image="true" src="./images/tatoo5-1786033120837.png" alt="Syncere Tattoo work" loading="lazy" style="object-fit:contain;transform:translate(-1.99%, 0%) scale(1.0755);transform-origin:center center"/>
-    </div>
-<div class="bb-gallery-strip-item" data-gallery-slide="1">
-      <img data-halite-path='["gallery","images","1","src"]' data-halite-image="true" src="./images/Gallery2.png" alt="Syncere Tattoo work" loading="lazy" style="object-fit:contain;transform:scale(1.0408);transform-origin:center center"/>
-    </div>
-<div class="bb-gallery-strip-item" data-gallery-slide="2">
-      <img data-halite-path='["gallery","images","2","src"]' data-halite-image="true" src="./images/Gallery3.png" alt="Syncere Tattoo work" loading="lazy" style="object-fit:contain;transform:translate(0%, -0.38%) scale(1.1584);transform-origin:center center"/>
-    </div>
-<div class="bb-gallery-strip-item" data-gallery-slide="3">
-      <img data-halite-path='["gallery","images","3","src"]' data-halite-image="true" src="./images/Gallery4.png" alt="Syncere Tattoo work" loading="lazy" style="object-fit:contain;transform:translate(-0.71%, -2.14%) scale(1.0715);transform-origin:center center"/>
-    </div>
-<div class="bb-gallery-strip-item" data-gallery-slide="4">
-      <img data-halite-path='["gallery","images","4","src"]' data-halite-image="true" src="./images/Gallery5.png" alt="Syncere Tattoo work" loading="lazy" style="object-fit:contain;transform:translate(0%, 8.57%) scale(1.1547);transform-origin:center center"/>
-    </div>
+  <div class="bb-follow-grid">
+    <div class="bb-follow-card">
+      <div class="bb-follow-card-media">
+        <img data-halite-path='["artists","0","galleryImages","0"]' data-halite-image="true" src="./images/diane-1.png" class="bb-follow-card-img" alt="Tattoo by DIANE BASLER-WHITE" loading="lazy"/>
+        <span class="bb-follow-card-scrim" aria-hidden="true"></span>
+        <span class="bb-follow-card-name"><span data-halite-path='["artists","0","name"]'>DIANE BASLER-WHITE</span></span>
+        <a href="diane-basler-white/index.html" class="bb-follow-card-link" aria-label="View DIANE BASLER-WHITE gallery"></a>
       </div>
     </div>
-    <button type="button" class="bb-gallery-carousel-arrow bb-gallery-carousel-arrow--prev" data-gallery-arrow="prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <button type="button" class="bb-gallery-carousel-arrow bb-gallery-carousel-arrow--next" data-gallery-arrow="next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
-    <div class="bb-gallery-carousel-dots" role="tablist" aria-label="Gallery photos">
-      <button type="button" class="bb-gallery-carousel-dot is-active" data-gallery-dot="0" aria-label="Show photo 1" aria-selected="true"></button>
-<button type="button" class="bb-gallery-carousel-dot" data-gallery-dot="1" aria-label="Show photo 2" aria-selected="false"></button>
-<button type="button" class="bb-gallery-carousel-dot" data-gallery-dot="2" aria-label="Show photo 3" aria-selected="false"></button>
-<button type="button" class="bb-gallery-carousel-dot" data-gallery-dot="3" aria-label="Show photo 4" aria-selected="false"></button>
-<button type="button" class="bb-gallery-carousel-dot" data-gallery-dot="4" aria-label="Show photo 5" aria-selected="false"></button>
+<div class="bb-follow-card">
+      <div class="bb-follow-card-media">
+        <img data-halite-path='["artists","1","galleryImages","0"]' data-halite-image="true" src="./images/ori-5.jpg" class="bb-follow-card-img" alt="Tattoo by ORI REYES" loading="lazy"/>
+        <span class="bb-follow-card-scrim" aria-hidden="true"></span>
+        <span class="bb-follow-card-name"><span data-halite-path='["artists","1","name"]'>ORI REYES</span></span>
+        <a href="ori-reyes/index.html" class="bb-follow-card-link" aria-label="View ORI REYES gallery"></a>
+      </div>
+    </div>
+<div class="bb-follow-card">
+      <div class="bb-follow-card-media">
+        <img data-halite-path='["artists","2","galleryImages","0"]' data-halite-image="true" src="./images/steph-4.jpg" class="bb-follow-card-img" alt="Tattoo by STEPHANIE AVILA" loading="lazy"/>
+        <span class="bb-follow-card-scrim" aria-hidden="true"></span>
+        <span class="bb-follow-card-name"><span data-halite-path='["artists","2","name"]'>STEPHANIE AVILA</span></span>
+        <a href="stephanie-avila/index.html" class="bb-follow-card-link" aria-label="View STEPHANIE AVILA gallery"></a>
+      </div>
+    </div>
+<div class="bb-follow-card">
+      <div class="bb-follow-card-media">
+        <img data-halite-path='["artists","3","galleryImages","0"]' data-halite-image="true" src="./images/mikey-3.jpg" class="bb-follow-card-img" alt="Tattoo by MIKE" loading="lazy"/>
+        <span class="bb-follow-card-scrim" aria-hidden="true"></span>
+        <span class="bb-follow-card-name"><span data-halite-path='["artists","3","name"]'>MIKE</span></span>
+        <a href="mike/index.html" class="bb-follow-card-link" aria-label="View MIKE gallery"></a>
+      </div>
     </div>
   </div>
   <div class="bb-gallery-actions">
@@ -2104,99 +2055,6 @@ body.bb-lightbox-open { overflow: hidden; }
   });
 
 
-
-  (function initGalleryCarousel() {
-    var carousel = document.querySelector('[data-halite-gallery-carousel]');
-    if (!carousel) return;
-
-    var viewport = carousel.querySelector('.bb-gallery-carousel-viewport');
-    var track = carousel.querySelector('.bb-gallery-carousel-track');
-    var items = carousel.querySelectorAll('.bb-gallery-strip-item');
-    var dots = carousel.querySelectorAll('.bb-gallery-carousel-dot');
-    var prevArrow = carousel.querySelector('[data-gallery-arrow="prev"]');
-    var nextArrow = carousel.querySelector('[data-gallery-arrow="next"]');
-    if (!viewport || !track || !items.length) return;
-
-    var count = items.length;
-    var index = 0;
-
-    // Slide the track. offsetPercent is a live drag offset while the finger is down.
-    function render(offsetPercent) {
-      track.style.transform = 'translate3d(' + (-index * 100 + (offsetPercent || 0)) + '%, 0, 0)';
-    }
-
-    function updateDots() {
-      dots.forEach(function(dot, dotIndex) {
-        var isActive = dotIndex === index;
-        dot.classList.toggle('is-active', isActive);
-        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
-      });
-    }
-
-    // Wraps both ways: past the last photo loops to the first, before the first loops to the last.
-    function goTo(target) {
-      index = (target % count + count) % count;
-      track.style.transition = '';
-      render(0);
-      updateDots();
-    }
-
-    dots.forEach(function(dot) {
-      dot.addEventListener('click', function() {
-        var i = Number(dot.getAttribute('data-gallery-dot'));
-        if (!Number.isNaN(i)) goTo(i);
-      });
-    });
-    if (prevArrow) prevArrow.addEventListener('click', function() { goTo(index - 1); });
-    if (nextArrow) nextArrow.addEventListener('click', function() { goTo(index + 1); });
-
-    // Hold-and-drag / swipe, finger-following like the Photos app. Works for touch and mouse.
-    var dragging = false;
-    var startX = 0;
-    var width = 1;
-    var moved = false;
-
-    function dragStart(x) {
-      dragging = true;
-      moved = false;
-      startX = x;
-      width = viewport.clientWidth || 1;
-      track.style.transition = 'none';
-      viewport.classList.add('is-dragging');
-    }
-    function dragMove(x) {
-      if (!dragging) return;
-      var delta = x - startX;
-      if (Math.abs(delta) > 3) moved = true;
-      render((delta / width) * 100);
-    }
-    function dragEnd(x) {
-      if (!dragging) return;
-      dragging = false;
-      viewport.classList.remove('is-dragging');
-      track.style.transition = '';
-      var delta = x - startX;
-      var threshold = width * 0.15;
-      if (delta <= -threshold) goTo(index + 1);
-      else if (delta >= threshold) goTo(index - 1);
-      else render(0);
-    }
-
-    viewport.addEventListener('touchstart', function(e) { dragStart(e.touches[0].clientX); }, { passive: true });
-    viewport.addEventListener('touchmove', function(e) { dragMove(e.touches[0].clientX); }, { passive: true });
-    viewport.addEventListener('touchend', function(e) { dragEnd((e.changedTouches[0] || {}).clientX || startX); });
-
-    viewport.addEventListener('pointerdown', function(e) { if (e.pointerType !== 'touch') dragStart(e.clientX); });
-    window.addEventListener('pointermove', function(e) { if (e.pointerType !== 'touch') dragMove(e.clientX); });
-    window.addEventListener('pointerup', function(e) { if (e.pointerType !== 'touch') dragEnd(e.clientX); });
-
-    // Swallow the click that ends a drag so it never counts as a tap on a photo.
-    viewport.addEventListener('click', function(e) {
-      if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
-    }, true);
-
-    goTo(0);
-  })();
 
   (function initDividerParallax() {
     var dividers = Array.prototype.slice.call(document.querySelectorAll('[data-bb-parallax]'));
