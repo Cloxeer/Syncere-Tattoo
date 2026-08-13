@@ -678,6 +678,69 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   color: #000;
 }
 
+/* Artist biography — JS-free collapsible in the profile header, above Instagram. */
+.bb-bio-toggle {
+  margin: 1.75rem auto 0.5rem;
+  width: 100%;
+  max-width: 40rem;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.bb-bio-toggle-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.05rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.15s;
+}
+
+.bb-bio-toggle-summary::-webkit-details-marker {
+  display: none;
+}
+
+.bb-bio-toggle-summary:hover {
+  color: #fff;
+}
+
+.bb-bio-toggle-chevron {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.bb-bio-toggle[open] .bb-bio-toggle-chevron {
+  transform: rotate(180deg);
+}
+
+.bb-bio-toggle-body {
+  padding: 0.25rem 0 1.75rem;
+}
+
+.bb-bio-toggle-paragraph {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.bb-bio-toggle-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-bio-toggle-chevron {
+    transition: none;
+  }
+}
+
 /* Studio */
 .bb-spaces {
   display: flex;
@@ -1512,9 +1575,24 @@ body.bb-lightbox-open { overflow: hidden; }
       <img data-halite-path='["artists","3","image"]' data-halite-image="true" src="../images/Mike.jpg" class="bb-artist-gallery-portrait-img" alt="MIKE portrait" style="object-fit:contain;transform:translate(0.38%, 16.62%) scale(1.3329);transform-origin:center center"/>
     </div>
   </div>
+    <details class="bb-bio-toggle">
+    <summary class="bb-bio-toggle-summary">
+      <span data-halite-path='["artists","3","fullBioTitle"]' class="bb-bio-toggle-title">Mike&#39;s Biography</span>
+      <svg class="bb-bio-toggle-chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="bb-bio-toggle-body">
+      <p data-halite-path='["artists","3","fullBio","0"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Hi, my name is Michael Aguirre, a tattoo artist from Las Cruces, New Mexico, at Syncere Tattoo. I&#39;ve been tattooing since 2021, specializing in high-contrast black and grey realism, horror tattoos, script, American Traditional, and religious/abstract tattoos. My goal is to live my dream by creating permanent, high-quality, meaningful art that lasts a lifetime and is appreciated by those who understand and respect the craft.</p>
+<p data-halite-path='["artists","3","fullBio","1"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Tattoos have been a part of my life for a long time, and I&#39;ve always been artistic. I&#39;ve spent years drawing, painting, working with all kinds of different mediums, and taking art classes throughout my school years. I completed a two-year apprenticeship and have been tattooing professionally for a total of four years. I love tattooing because it&#39;s a beautiful form of self-expression—an exchange of energy, connection, and trust. It&#39;s such a unique craft, and I love creating meaningful pieces and bringing people&#39;s ideas to life.</p>
+<p data-halite-path='["artists","3","fullBio","2"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">I especially enjoy doing high-contrast black and grey realism, religious, and horror pieces. I love horror movies, religious artwork, and high-contrast art, all of which are reflected in my work. I prefer creating custom designs to ensure every tattoo is original and unique to each client.</p>
+<p data-halite-path='["artists","3","fullBio","3"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Having good communication with my clients is very important to me. I believe it&#39;s essential to gather all the information and details needed to truly bring my clients&#39; visions to life. I&#39;m always transparent and honest because I respect every client who trusts me with their ideas. Designing something so meaningful shouldn&#39;t be rushed or thrown together. Here, we focus on creating a welcoming, safe, and comfortable environment for everyone.</p>
+<p data-halite-path='["artists","3","fullBio","4"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">I have four years of experience working in a professional tattoo shop and am CPR certified.</p>
+<p data-halite-path='["artists","3","fullBio","5"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Outside of tattooing, I enjoy spending time with my family and my two cats. I&#39;m a homebody, so I enjoy playing video games, cooking, watching movies, painting, and engraving mirrors.</p>
+<p data-halite-path='["artists","3","fullBio","6"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">I&#39;m always accepting new clients, whether it&#39;s your very first tattoo or you&#39;re adding another piece to your canvas. I&#39;d truly enjoy the privilege of helping bring your ideas to life through artwork that you&#39;ll wear and cherish forever.</p>
+    </div>
+  </details>
     <a href="https://www.instagram.com/_madmik3_/" target="_blank" rel="noopener noreferrer" class="bb-artist-gallery-instagram"><img src="../social/instagram/instagram.svg" alt="" class="bb-social-icon bb-social-icon--gallery" width="28" height="28" loading="lazy" decoding="async" /><span data-halite-path='["labels","followOnInstagram"]'>Follow on Instagram</span></a>
     <a href="https://forms.gle/AGt8Te1qFW8AyvBp7" target="_blank" rel="noopener noreferrer" class="appointment-link bb-artist-gallery-cta" data-booking-href="../booking/index.html" data-booking-page="booking"><span data-halite-path='["booking","formButtonLabel"]'>ONLINE REQUEST FORM</span></a>
-    <p class="bb-artist-gallery-specialty"><span data-halite-path='["artists","3","specialty"]' data-halite-rich="true">Versatile custom tattooing across multiple styles.</span></p>
+    <p class="bb-artist-gallery-specialty"><span data-halite-path='["artists","3","specialty"]' data-halite-rich="true">High-contrast black &amp; grey realism, horror, script, and traditional.</span></p>
   </div>
   <div class="bb-artist-gallery-grid">
     <figure class="bb-artist-gallery-figure">

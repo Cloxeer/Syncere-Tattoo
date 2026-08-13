@@ -678,6 +678,69 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   color: #000;
 }
 
+/* Artist biography — JS-free collapsible in the profile header, above Instagram. */
+.bb-bio-toggle {
+  margin: 1.75rem auto 0.5rem;
+  width: 100%;
+  max-width: 40rem;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.bb-bio-toggle-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.05rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.15s;
+}
+
+.bb-bio-toggle-summary::-webkit-details-marker {
+  display: none;
+}
+
+.bb-bio-toggle-summary:hover {
+  color: #fff;
+}
+
+.bb-bio-toggle-chevron {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.bb-bio-toggle[open] .bb-bio-toggle-chevron {
+  transform: rotate(180deg);
+}
+
+.bb-bio-toggle-body {
+  padding: 0.25rem 0 1.75rem;
+}
+
+.bb-bio-toggle-paragraph {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.bb-bio-toggle-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-bio-toggle-chevron {
+    transition: none;
+  }
+}
+
 /* Studio */
 .bb-spaces {
   display: flex;

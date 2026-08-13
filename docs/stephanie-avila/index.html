@@ -678,6 +678,69 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   color: #000;
 }
 
+/* Artist biography — JS-free collapsible in the profile header, above Instagram. */
+.bb-bio-toggle {
+  margin: 1.75rem auto 0.5rem;
+  width: 100%;
+  max-width: 40rem;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.bb-bio-toggle-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.05rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.15s;
+}
+
+.bb-bio-toggle-summary::-webkit-details-marker {
+  display: none;
+}
+
+.bb-bio-toggle-summary:hover {
+  color: #fff;
+}
+
+.bb-bio-toggle-chevron {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.bb-bio-toggle[open] .bb-bio-toggle-chevron {
+  transform: rotate(180deg);
+}
+
+.bb-bio-toggle-body {
+  padding: 0.25rem 0 1.75rem;
+}
+
+.bb-bio-toggle-paragraph {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.bb-bio-toggle-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-bio-toggle-chevron {
+    transition: none;
+  }
+}
+
 /* Studio */
 .bb-spaces {
   display: flex;
@@ -1509,12 +1572,28 @@ body.bb-lightbox-open { overflow: hidden; }
     <h1 class="bb-section-title bb-section-title-center"><span data-halite-path='["artists","2","name"]'>STEPHANIE AVILA</span></h1>
     <div class="bb-artist-gallery-portrait">
     <div class="bb-artist-gallery-portrait-wrap">
-      <img data-halite-path='["artists","2","image"]' data-halite-image="true" src="../images/StephanieAvila.jpg" class="bb-artist-gallery-portrait-img" alt="STEPHANIE AVILA portrait" style="object-fit:contain;transform:translate(-0.34%, 8.29%) scale(1.1901);transform-origin:center center"/>
+      <img data-halite-path='["artists","2","image"]' data-halite-image="true" src="../images/d1f0b517-c3a9-4fa0-9fad-25c910047ec5-1786643736678.jpg" class="bb-artist-gallery-portrait-img" alt="STEPHANIE AVILA portrait" style="object-fit:contain;transform:translate(-0.34%, 8.29%) scale(1.1901);transform-origin:center center"/>
     </div>
   </div>
+    <details class="bb-bio-toggle">
+    <summary class="bb-bio-toggle-summary">
+      <span data-halite-path='["artists","2","fullBioTitle"]' class="bb-bio-toggle-title">Stephanie&#39;s Biography</span>
+      <svg class="bb-bio-toggle-chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="bb-bio-toggle-body">
+      <p data-halite-path='["artists","2","fullBio","0"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Hi, I&#39;m Stephanie, a tattoo artist at Syncere Tattoo in Las Cruces, New Mexico, specializing in black and grey realism. I&#39;ve been tattooing professionally since 2020.</p>
+<p data-halite-path='["artists","2","fullBio","1"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Before pursuing tattooing, I was working toward a career in the medical field. After dedicating years to my education, I eventually realized that my true passion had always been art.</p>
+<p data-halite-path='["artists","2","fullBio","2"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Drawing has been a part of my life for as long as I can remember. What started as a hobby eventually became something I couldn&#39;t imagine living without. Choosing to turn that passion into a career has been one of the most rewarding decisions I&#39;ve ever made.</p>
+<p data-halite-path='["artists","2","fullBio","3"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Today, I&#39;m grateful to create meaningful, custom tattoos for the people who trust me with their stories. To me, tattooing is about much more than creating beautiful artwork—it&#39;s about making someone&#39;s day better than when they walked through the door. Every person who sits in my chair is placing their confidence in me, and I believe it&#39;s my responsibility to create an environment where they feel safe, comfortable, respected, and genuinely heard.</p>
+<p data-halite-path='["artists","2","fullBio","4"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Whether it&#39;s your first tattoo or your fiftieth, I want every appointment to be a positive experience where you can relax, be yourself, and leave feeling proud of what we&#39;ve created together.</p>
+<p data-halite-path='["artists","2","fullBio","5"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Being able to express my creativity and connect with the world around me is what continues to motivate me. Tattooing has taught me patience, discipline, and the importance of continuous growth. Those lessons continue to shape the way I approach every tattoo and every person I work with.</p>
+<p data-halite-path='["artists","2","fullBio","6"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">What makes tattooing especially meaningful to me is the way it allows art to become deeply personal. Every design can represent a story, a memory, a milestone, a loved one, or a moment that holds special meaning. Being trusted to transform those experiences into something permanent is a privilege I never take for granted.</p>
+<p data-halite-path='["artists","2","fullBio","7"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Knowing that my work can help someone celebrate a loved one, honor an important life experience, or simply feel more confident in their own skin is what inspires me every day. I&#39;m grateful to be able to turn something I&#39;ve loved my entire life into art that people can carry with them for a lifetime.</p>
+    </div>
+  </details>
     <a href="https://www.instagram.com/avilainkk/" target="_blank" rel="noopener noreferrer" class="bb-artist-gallery-instagram"><img src="../social/instagram/instagram.svg" alt="" class="bb-social-icon bb-social-icon--gallery" width="28" height="28" loading="lazy" decoding="async" /><span data-halite-path='["labels","followOnInstagram"]'>Follow on Instagram</span></a>
     <a href="https://forms.gle/AGt8Te1qFW8AyvBp7" target="_blank" rel="noopener noreferrer" class="appointment-link bb-artist-gallery-cta" data-booking-href="../booking/index.html" data-booking-page="booking"><span data-halite-path='["booking","formButtonLabel"]'>ONLINE REQUEST FORM</span></a>
-    <p class="bb-artist-gallery-specialty"><span data-halite-path='["artists","2","specialty"]' data-halite-rich="true">Fine line detail and custom illustrative work.</span></p>
+    <p class="bb-artist-gallery-specialty"><span data-halite-path='["artists","2","specialty"]' data-halite-rich="true">Black &amp; grey realism and custom, meaningful work.</span></p>
   </div>
   <div class="bb-artist-gallery-grid">
     <figure class="bb-artist-gallery-figure">

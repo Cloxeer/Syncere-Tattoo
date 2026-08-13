@@ -678,6 +678,69 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   color: #000;
 }
 
+/* Artist biography — JS-free collapsible in the profile header, above Instagram. */
+.bb-bio-toggle {
+  margin: 1.75rem auto 0.5rem;
+  width: 100%;
+  max-width: 40rem;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.bb-bio-toggle-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.05rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.15s;
+}
+
+.bb-bio-toggle-summary::-webkit-details-marker {
+  display: none;
+}
+
+.bb-bio-toggle-summary:hover {
+  color: #fff;
+}
+
+.bb-bio-toggle-chevron {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.bb-bio-toggle[open] .bb-bio-toggle-chevron {
+  transform: rotate(180deg);
+}
+
+.bb-bio-toggle-body {
+  padding: 0.25rem 0 1.75rem;
+}
+
+.bb-bio-toggle-paragraph {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.bb-bio-toggle-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-bio-toggle-chevron {
+    transition: none;
+  }
+}
+
 /* Studio */
 .bb-spaces {
   display: flex;
@@ -1607,8 +1670,8 @@ body.bb-lightbox-open { overflow: hidden; }
     <h3 class="bb-artist-name"><span data-halite-path='["artists","0","name"]'>DIANE BASLER-WHITE</span></h3>
     <p class="bb-artist-role"><span data-halite-path='["artists","0","role"]'>Owner</span></p>
   </div>
-  <p class="bb-artist-specialty"><span data-halite-path='["artists","0","specialty"]' data-halite-rich="true" style="font-style:italic">Specializes in black &amp; gray, floral designs, and realism.</span></p>
-  <p class="bb-artist-bio"><span data-halite-path='["artists","0","bio"]' data-halite-rich="true"><strong>Diane</strong> has been tattooing since 2004 and founded Syncere Tattoo in her hometown of Las Cruces. Known for intricate black and gray work, florals, and realism, she has guested at conventions across the country and built one of the longest-running studios in the city.</span></p>
+  <p class="bb-artist-specialty"><span data-halite-path='["artists","0","specialty"]' data-halite-rich="true" style="font-style:italic">Fine line, mandalas, dot work, black &amp; grey realism, and traditional.</span></p>
+  <p class="bb-artist-bio"><span data-halite-path='["artists","0","bio"]' data-halite-rich="true"><strong>Diane Basler-White</strong> owns Syncere Tattoo — named after her daughter — which she opened in 2007, the oldest studio in Las Cruces. A lifelong, self-taught artist, she works across many styles and has built a welcoming, inclusive shop focused on quality and pieces personal to each client.</span></p>
 </article>
 <article class="bb-artist-card">
   <div class="bb-artist-image-wrap">
@@ -1624,12 +1687,12 @@ body.bb-lightbox-open { overflow: hidden; }
     <h3 class="bb-artist-name"><span data-halite-path='["artists","1","name"]'>ORI REYES</span></h3>
     
   </div>
-  <p class="bb-artist-specialty"><span data-halite-path='["artists","1","specialty"]' data-halite-rich="true">Custom tattoos with a focus on client comfort and detail.</span></p>
-  <p class="bb-artist-bio"><span data-halite-path='["artists","1","bio"]' data-halite-rich="true">Ori is celebrated for thoughtful, detailed work and a calm, welcoming presence in the chair. Clients praise her speed, precision, and ability to make every appointment feel relaxed from start to finish.</span></p>
+  <p class="bb-artist-specialty"><span data-halite-path='["artists","1","specialty"]' data-halite-rich="true">Custom black &amp; grey — floral, gothic, and nature-inspired.</span></p>
+  <p class="bb-artist-bio"><span data-halite-path='["artists","1","bio"]' data-halite-rich="true"><strong>Ori</strong> has tattooed since 2011, specializing in custom black &amp; grey work inspired by nature, dark aesthetics, and elegant linework. She creates clean, timeless, deeply personal pieces and makes every client feel heard and comfortable from start to finish.</span></p>
 </article>
 <article class="bb-artist-card">
   <div class="bb-artist-image-wrap">
-    <img data-halite-path='["artists","2","image"]' data-halite-image="true" src="./images/StephanieAvila.jpg" alt="STEPHANIE AVILA" loading="lazy" style="object-fit:contain;transform:translate(-0.34%, 8.29%) scale(1.1901);transform-origin:center center"/>
+    <img data-halite-path='["artists","2","image"]' data-halite-image="true" src="./images/d1f0b517-c3a9-4fa0-9fad-25c910047ec5-1786643736678.jpg" alt="STEPHANIE AVILA" loading="lazy" style="object-fit:contain;transform:translate(-0.34%, 8.29%) scale(1.1901);transform-origin:center center"/>
   </div>
   <div class="bb-artist-actions">
     <a href="stephanie-avila/index.html" class="bb-artist-gallery-btn"><span data-halite-path='["labels","viewGallery"]'>VIEW GALLERY</span></a>
@@ -1641,8 +1704,8 @@ body.bb-lightbox-open { overflow: hidden; }
     <h3 class="bb-artist-name"><span data-halite-path='["artists","2","name"]'>STEPHANIE AVILA</span></h3>
     
   </div>
-  <p class="bb-artist-specialty"><span data-halite-path='["artists","2","specialty"]' data-halite-rich="true">Fine line detail and custom illustrative work.</span></p>
-  <p class="bb-artist-bio"><span data-halite-path='["artists","2","bio"]' data-halite-rich="true">Stephanie is known for walking clients through the process with care — especially helpful for first-timers. Her work shines in smaller pieces and finely detailed tattoos that hold up beautifully over time.</span></p>
+  <p class="bb-artist-specialty"><span data-halite-path='["artists","2","specialty"]' data-halite-rich="true">Black &amp; grey realism and custom, meaningful work.</span></p>
+  <p class="bb-artist-bio"><span data-halite-path='["artists","2","bio"]' data-halite-rich="true"><strong>Stephanie</strong> has tattooed since 2020, after leaving a path in the medical field to pursue the art she&#39;d always loved. She specializes in black &amp; grey realism and makes every client — first tattoo or fiftieth — feel safe, comfortable, and heard.</span></p>
 </article>
 <article class="bb-artist-card">
   <div class="bb-artist-image-wrap">
@@ -1658,8 +1721,8 @@ body.bb-lightbox-open { overflow: hidden; }
     <h3 class="bb-artist-name"><span data-halite-path='["artists","3","name"]'>MIKE</span></h3>
     
   </div>
-  <p class="bb-artist-specialty"><span data-halite-path='["artists","3","specialty"]' data-halite-rich="true">Versatile custom tattooing across multiple styles.</span></p>
-  <p class="bb-artist-bio"><span data-halite-path='["artists","3","bio"]' data-halite-rich="true">Mike brings a steady hand and collaborative approach to every piece. Whether you&#39;re building on existing work or starting something new, he works with you to refine the design until it&#39;s right.</span></p>
+  <p class="bb-artist-specialty"><span data-halite-path='["artists","3","specialty"]' data-halite-rich="true">High-contrast black &amp; grey realism, horror, script, and traditional.</span></p>
+  <p class="bb-artist-bio"><span data-halite-path='["artists","3","bio"]' data-halite-rich="true"><strong>Michael “Mike” Aguirre</strong> has tattooed since 2021, specializing in high-contrast black &amp; grey realism, horror, script, and religious work. CPR certified, he creates custom, original pieces through honest communication — meaningful art built to last a lifetime.</span></p>
 </article>
   </div>
 </section>
