@@ -14,7 +14,7 @@ theme:
   colorSurface: "#151515"
 brand:
   name: SYNCERE TATTOO
-  email: synceretattoo@gmail.com
+  email: SyncereTattoobooking@gmail.com
   phones:
     - (575) 524-0190
   address: "1900 S. Espina St #5, Las Cruces, NM 88001"
@@ -369,10 +369,10 @@ reviews:
     attribution: Client Review — Yelp
 faq:
   - question: How do I book an appointment?
-    answer: Call us at (575) 524-0190, email synceretattoo@gmail.com, or message us
-      on Instagram @synceretattoo_nm. Share your idea, any reference images,
-      preferred placement, and available dates so we can match you with the
-      right artist and get you scheduled.
+    answer: Call us at (575) 524-0190, email SyncereTattoobooking@gmail.com, or
+      message us on Instagram @synceretattoo_nm. Share your idea, any reference
+      images, preferred placement, and available dates so we can match you with
+      the right artist and get you scheduled.
   - question: HOW OLD DO I HAVE TO BE TO GET A TATTOO?
     answer: You must be at least 18 years of age. It is against New Mexico law to
       tattoo a minor, even with parental consent. Every client must present a
@@ -447,9 +447,9 @@ legalConfig:
   siteName: Syncere Tattoo
   siteUrl: https://synceretattoo.com
   hostedSiteUrl: http://localhost:3006
-  privacyEmail: synceretattoo@gmail.com
-  supportEmail: synceretattoo@gmail.com
-  copyrightEmail: synceretattoo@gmail.com
+  privacyEmail: SyncereTattoobooking@gmail.com
+  supportEmail: SyncereTattoobooking@gmail.com
+  copyrightEmail: SyncereTattoobooking@gmail.com
   phone: (575) 524-0190
   address: "1900 S. Espina St #5, Las Cruces, NM 88001"
   city: Las Cruces
@@ -499,7 +499,7 @@ legal:
           - "If you wish to report an accessibility issue, have any questions,
             or need assistance, please contact Syncere Tattoo customer support
             as follows:"
-          - "Email: synceretattoo@gmail.com"
+          - "Email: SyncereTattoobooking@gmail.com"
           - "Phone: (575) 524-0190"
           - "Address: 1900 S. Espina St #5, Las Cruces, NM 88001"
   privacyPolicy:
@@ -756,9 +756,9 @@ legal:
             you wish to withdraw your consent to our processing of your data or
             opt out of our use of your information for internal marketing
             purposes or for compiling aggregate risk reports, you may do so by
-            sending a written notice to: synceretattoo@gmail.com. Note that your
-            withdrawal of consent may prevent us from providing the Services to
-            you;"
+            sending a written notice to: SyncereTattoobooking@gmail.com. Note
+            that your withdrawal of consent may prevent us from providing the
+            Services to you;"
           - to object to the processing of your Personal Information in which
             case we may ask you to justify your request by explaining to us your
             situation;
@@ -799,7 +799,7 @@ legal:
             Syncere Tattoo
             Address: 1900 S. Espina St #5, Las Cruces, NM 88001
             Telephone: (575) 524-0190
-            Email: synceretattoo@gmail.com
+            Email: SyncereTattoobooking@gmail.com
           - We take our users' privacy concerns seriously. If you believe that
             we have not complied with this Privacy Policy with respect to your
             Personal Information, you may write to us at the address noted
@@ -953,8 +953,8 @@ legal:
                 time, limit, suspend, deactivate, or cancel your Account and/or
                 otherwise deny you access to the User Features.
               - You may cancel your Account at any time by notifying us thereof
-                by e-mail at synceretattoo@gmail.com or by contacting us by
-                telephone at (575) 524-0190.
+                by e-mail at SyncereTattoobooking@gmail.com or by contacting us
+                by telephone at (575) 524-0190.
       - title: 6. Syncere Communications
         paragraphs:
           - You acknowledge that we may from time to time and as needed
@@ -1048,7 +1048,7 @@ legal:
                 act on behalf of one, please report alleged infringements taking
                 place on or through the Platform by providing a complete Notice
                 of Alleged Infringement and delivering it to Syncere at
-                synceretattoo@gmail.com.
+                SyncereTattoobooking@gmail.com.
       - title: 9. Third Party Websites, Applications, Links, and Resources
         paragraphs:
           - The Platform may contain links to or otherwise interface or connect
@@ -1168,7 +1168,7 @@ legal:
             Syncere Tattoo
             Address: 1900 S. Espina St #5, Las Cruces, NM 88001
             Telephone: (575) 524-0190
-            Email: synceretattoo@gmail.com
+            Email: SyncereTattoobooking@gmail.com
 elementLayout:
   brand.name:
     x: 0
