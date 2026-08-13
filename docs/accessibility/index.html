@@ -679,66 +679,70 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
 }
 
 /* Artist biography — JS-free collapsible in the profile header, above Instagram. */
-.bb-bio-toggle {
-  margin: 1.75rem auto 0.5rem;
+/* Artist biography — first paragraph shows; the rest expand from a centered "view more".
+   No dividers, plain text, smooth height animation. */
+.bb-bio {
   width: 100%;
   max-width: 40rem;
+  margin: 1.75rem auto 0;
   text-align: left;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.bb-bio-toggle-summary {
+.bb-bio-paragraph {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+}
+.bb-bio-paragraph:last-child { margin-bottom: 0; }
+
+/* Collapsible rest of the bio: grid-rows 0fr → 1fr animates cleanly to natural height. */
+.bb-bio-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s ease;
+}
+.bb-bio-more-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+.bb-bio-more.open { grid-template-rows: 1fr; }
+
+/* Centered plain-text arrow toggle; sits under the first paragraph, drops to the
+   bottom of the bio once expanded (it follows the revealed paragraphs). */
+.bb-bio-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  padding: 1.05rem 0;
+  gap: 0.5rem;
+  width: 100%;
+  margin: 1.25rem 0 0;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
   cursor: pointer;
-  list-style: none;
+  font-family: var(--font-body), "Space Mono", ui-monospace, monospace;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.85);
   transition: color 0.15s;
 }
+.bb-bio-toggle:hover { color: #fff; }
 
-.bb-bio-toggle-summary::-webkit-details-marker {
-  display: none;
-}
+.bb-bio-toggle-less { display: none; }
+.bb-bio-toggle[aria-expanded="true"] .bb-bio-toggle-more { display: none; }
+.bb-bio-toggle[aria-expanded="true"] .bb-bio-toggle-less { display: inline; }
 
-.bb-bio-toggle-summary:hover {
-  color: #fff;
-}
-
-.bb-bio-toggle-chevron {
+.bb-bio-chevron {
   flex-shrink: 0;
-  transition: transform 0.25s ease;
+  transition: transform 0.3s ease;
 }
-
-.bb-bio-toggle[open] .bb-bio-toggle-chevron {
-  transform: rotate(180deg);
-}
-
-.bb-bio-toggle-body {
-  padding: 0.25rem 0 1.75rem;
-}
-
-.bb-bio-toggle-paragraph {
-  margin: 0 0 1rem;
-  font-size: 0.85rem;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.bb-bio-toggle-paragraph:last-child {
-  margin-bottom: 0;
-}
+.bb-bio-toggle[aria-expanded="true"] .bb-bio-chevron { transform: rotate(180deg); }
 
 @media (prefers-reduced-motion: reduce) {
-  .bb-bio-toggle-chevron {
-    transition: none;
-  }
+  .bb-bio-chevron { transition: none; }
+  .bb-bio-more { transition: none; }
 }
 
 /* Studio */
@@ -786,19 +790,81 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   min-height: 100vh;
   flex-direction: column;
   justify-content: center;
-  gap: 4rem;
+  align-items: center;
+  gap: 3rem;
   padding: 5rem 1.5rem;
 }
 
-.bb-press-quote {
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  line-height: 1.625;
-  letter-spacing: 0.15em;
+.bb-press-quotes {
+  width: 100%;
+  max-width: 46rem;
+  text-align: center;
 }
 
+.bb-press-quote { margin: 0; }
+.bb-press-quote:not(:last-child) { margin-bottom: 2.75rem; }
+
+/* Readable review body — sentence case at a comfortable measure. (The old all-caps
+   letter-spaced style only read well for one-liners; these reviews run longer.) */
+.bb-press-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+/* Attribution keeps the section's stylized mono accent. */
+.bb-press-cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-muted);
+}
+
+/* Collapsible extra reviews: grid-rows 0fr → 1fr animates cleanly to natural height. */
+.bb-press-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s ease;
+}
+.bb-press-more-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+.bb-press-more.open { grid-template-rows: 1fr; }
+.bb-press-more-inner > .bb-press-quote:not(:last-child) { margin-bottom: 2.75rem; }
+
+/* Down-arrow toggle */
+.bb-press-toggle {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: var(--font-body), "Space Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: opacity 0.2s ease;
+}
+.bb-press-toggle:hover { opacity: 0.65; }
+
+.bb-press-toggle-less { display: none; }
+.bb-press-toggle[aria-expanded="true"] .bb-press-toggle-more { display: none; }
+.bb-press-toggle[aria-expanded="true"] .bb-press-toggle-less { display: inline; }
+
+.bb-press-chevron { transition: transform 0.3s ease; }
+.bb-press-toggle[aria-expanded="true"] .bb-press-chevron { transform: rotate(180deg); }
+
 @media (min-width: 768px) {
-  .bb-press-quote { font-size: 1rem; }
+  .bb-press-text { font-size: 1.125rem; }
 }
 
 /* Location */
@@ -1744,6 +1810,7 @@ body.bb-lightbox-open { overflow: hidden; }
       }
     });
   });
+
 
 
 

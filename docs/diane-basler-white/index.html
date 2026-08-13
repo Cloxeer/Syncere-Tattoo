@@ -679,66 +679,70 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
 }
 
 /* Artist biography — JS-free collapsible in the profile header, above Instagram. */
-.bb-bio-toggle {
-  margin: 1.75rem auto 0.5rem;
+/* Artist biography — first paragraph shows; the rest expand from a centered "view more".
+   No dividers, plain text, smooth height animation. */
+.bb-bio {
   width: 100%;
   max-width: 40rem;
+  margin: 1.75rem auto 0;
   text-align: left;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.bb-bio-toggle-summary {
+.bb-bio-paragraph {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+}
+.bb-bio-paragraph:last-child { margin-bottom: 0; }
+
+/* Collapsible rest of the bio: grid-rows 0fr → 1fr animates cleanly to natural height. */
+.bb-bio-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s ease;
+}
+.bb-bio-more-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+.bb-bio-more.open { grid-template-rows: 1fr; }
+
+/* Centered plain-text arrow toggle; sits under the first paragraph, drops to the
+   bottom of the bio once expanded (it follows the revealed paragraphs). */
+.bb-bio-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  padding: 1.05rem 0;
+  gap: 0.5rem;
+  width: 100%;
+  margin: 1.25rem 0 0;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
   cursor: pointer;
-  list-style: none;
+  font-family: var(--font-body), "Space Mono", ui-monospace, monospace;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.85);
   transition: color 0.15s;
 }
+.bb-bio-toggle:hover { color: #fff; }
 
-.bb-bio-toggle-summary::-webkit-details-marker {
-  display: none;
-}
+.bb-bio-toggle-less { display: none; }
+.bb-bio-toggle[aria-expanded="true"] .bb-bio-toggle-more { display: none; }
+.bb-bio-toggle[aria-expanded="true"] .bb-bio-toggle-less { display: inline; }
 
-.bb-bio-toggle-summary:hover {
-  color: #fff;
-}
-
-.bb-bio-toggle-chevron {
+.bb-bio-chevron {
   flex-shrink: 0;
-  transition: transform 0.25s ease;
+  transition: transform 0.3s ease;
 }
-
-.bb-bio-toggle[open] .bb-bio-toggle-chevron {
-  transform: rotate(180deg);
-}
-
-.bb-bio-toggle-body {
-  padding: 0.25rem 0 1.75rem;
-}
-
-.bb-bio-toggle-paragraph {
-  margin: 0 0 1rem;
-  font-size: 0.85rem;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.bb-bio-toggle-paragraph:last-child {
-  margin-bottom: 0;
-}
+.bb-bio-toggle[aria-expanded="true"] .bb-bio-chevron { transform: rotate(180deg); }
 
 @media (prefers-reduced-motion: reduce) {
-  .bb-bio-toggle-chevron {
-    transition: none;
-  }
+  .bb-bio-chevron { transition: none; }
+  .bb-bio-more { transition: none; }
 }
 
 /* Studio */
@@ -786,19 +790,81 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   min-height: 100vh;
   flex-direction: column;
   justify-content: center;
-  gap: 4rem;
+  align-items: center;
+  gap: 3rem;
   padding: 5rem 1.5rem;
 }
 
-.bb-press-quote {
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  line-height: 1.625;
-  letter-spacing: 0.15em;
+.bb-press-quotes {
+  width: 100%;
+  max-width: 46rem;
+  text-align: center;
 }
 
+.bb-press-quote { margin: 0; }
+.bb-press-quote:not(:last-child) { margin-bottom: 2.75rem; }
+
+/* Readable review body — sentence case at a comfortable measure. (The old all-caps
+   letter-spaced style only read well for one-liners; these reviews run longer.) */
+.bb-press-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+/* Attribution keeps the section's stylized mono accent. */
+.bb-press-cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-muted);
+}
+
+/* Collapsible extra reviews: grid-rows 0fr → 1fr animates cleanly to natural height. */
+.bb-press-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s ease;
+}
+.bb-press-more-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+.bb-press-more.open { grid-template-rows: 1fr; }
+.bb-press-more-inner > .bb-press-quote:not(:last-child) { margin-bottom: 2.75rem; }
+
+/* Down-arrow toggle */
+.bb-press-toggle {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: var(--font-body), "Space Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: opacity 0.2s ease;
+}
+.bb-press-toggle:hover { opacity: 0.65; }
+
+.bb-press-toggle-less { display: none; }
+.bb-press-toggle[aria-expanded="true"] .bb-press-toggle-more { display: none; }
+.bb-press-toggle[aria-expanded="true"] .bb-press-toggle-less { display: inline; }
+
+.bb-press-chevron { transition: transform 0.3s ease; }
+.bb-press-toggle[aria-expanded="true"] .bb-press-chevron { transform: rotate(180deg); }
+
 @media (min-width: 768px) {
-  .bb-press-quote { font-size: 1rem; }
+  .bb-press-text { font-size: 1.125rem; }
 }
 
 /* Location */
@@ -1575,27 +1641,30 @@ body.bb-lightbox-open { overflow: hidden; }
       <img data-halite-path='["artists","0","image"]' data-halite-image="true" src="../images/DianeBaslerWhite.jpg" class="bb-artist-gallery-portrait-img" alt="DIANE BASLER-WHITE portrait"/>
     </div>
   </div>
-    <details class="bb-bio-toggle">
-    <summary class="bb-bio-toggle-summary">
-      <span data-halite-path='["artists","0","fullBioTitle"]' class="bb-bio-toggle-title">Diane&#39;s Biography</span>
-      <svg class="bb-bio-toggle-chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="bb-bio-toggle-body">
-      <p data-halite-path='["artists","0","fullBio","0"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">My name is Diane Basler-White, and I am the proud owner of Syncere Tattoo, named after my daughter. I opened the shop in 2007, and it is currently the oldest tattoo studio in Las Cruces.</p>
-<p data-halite-path='["artists","0","fullBio","1"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">I&#39;ve been an artist for as long as I can remember—probably since the moment I learned how to hold a pencil. Colored pencils and airbrush have always been two of my favorite mediums, although I&#39;ve explored just about every form of art over the years. Growing up, art was my outlet and the one thing that helped me stay focused and enjoy school. I never imagined it would eventually become my career.</p>
-<p data-halite-path='["artists","0","fullBio","2"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">I began tattooing at a time when the industry was very different. There was no social media, Google, or easy access to information. Tattooing was still a very private and coveted craft and very difficult to enter into.</p>
-<p data-halite-path='["artists","0","fullBio","3"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">After getting my first tattoo, I remember asking my artist how someone got started in tattooing. Not long after, I was offered an apprenticeship after an admittedly terrible attempt at tattooing my little sister! The artist who fixed it happened to be looking for a female artist and gave me an opportunity. Unfortunately, I wasn&#39;t able to complete the apprenticeship because I had my daughter prematurely, but I continued practicing and eventually earned my first job as a tattoo artist. Those early opportunities became the foundation of my career.</p>
-<p data-halite-path='["artists","0","fullBio","4"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Because I started in a traditional, flash-based shop, I had the opportunity to learn and practice many different styles. That experience helped me become a very versatile artist. Today, I enjoy everything from fine lines and intricate micro tattoos to detailed mandalas, geometric and dot work, cover-ups, and bold color. I also love black and grey realism, portraits, animal portraits, and traditional tattooing.</p>
-<p data-halite-path='["artists","0","fullBio","5"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">After only a couple of years of tattooing, I took a leap and opened my own shop in the back of a clothing store. That location lasted only three months before I opened my first “real” studio. Looking back, I was probably either incredibly brave or completely naïve to start my own business so early in my career—but it ended up being one of the best decisions I&#39;ve ever made.</p>
-<p data-halite-path='["artists","0","fullBio","6"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Over the years, owning a shop has come with plenty of challenges, learning curves, and growth. More importantly, it gave me the opportunity to create the kind of environment I wanted: welcoming, inclusive, safe, comfortable, and focused on quality work.</p>
-<p data-halite-path='["artists","0","fullBio","7"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">I&#39;m incredibly proud to say that I&#39;ve built that environment at Syncere Tattoo. I&#39;ve surrounded myself with talented artists who are not only passionate about their craft, but are genuinely wonderful people. Creating a space where everyone feels comfortable and respected is just as important to me as the quality of the artwork.</p>
-<p data-halite-path='["artists","0","fullBio","8"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">I believe tattoos should feel personal and unique to the person wearing them. I love working with my clients through communication, ideas, and direction to create something that is truly their own.</p>
-<p data-halite-path='["artists","0","fullBio","9"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">I also believe choosing the right artist is incredibly important. Style, experience, personality, comfort, and compatibility all play a role—you can spend many hours with your tattoo artist, so finding the right fit matters. Taking the time to review portfolios and have an initial consultation can help ensure you&#39;ve found the right artist for your project.</p>
-<p data-halite-path='["artists","0","fullBio","10"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Over the years, I&#39;ve attended conventions and seminars, continued my education, and constantly pushed myself to improve. Quality work and the experience my clients have while getting tattooed are my two biggest priorities.</p>
-<p data-halite-path='["artists","0","fullBio","11"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">One of the things I love most about tattooing is the community it has created in my life. I&#39;m grateful that after all these years, this career is still largely built on relationships, referrals, and word of mouth.</p>
-<p data-halite-path='["artists","0","fullBio","12"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Whether you&#39;re a longtime client, a returning client, or someone who was referred to us for the first time, I&#39;m excited to help create a piece of art that you&#39;ll hopefully love for a lifetime.</p>
+    <div class="bb-bio">
+    <p data-halite-path='["artists","0","fullBio","0"]' data-halite-rich="true" class="bb-bio-paragraph">My name is Diane Basler-White, and I am the proud owner of Syncere Tattoo, named after my daughter. I opened the shop in 2007, and it is currently the oldest tattoo studio in Las Cruces.</p>
+    <div class="bb-bio-more" id="bb-bio-more">
+      <div class="bb-bio-more-inner">
+        <p data-halite-path='["artists","0","fullBio","1"]' data-halite-rich="true" class="bb-bio-paragraph">I&#39;ve been an artist for as long as I can remember—probably since the moment I learned how to hold a pencil. Colored pencils and airbrush have always been two of my favorite mediums, although I&#39;ve explored just about every form of art over the years. Growing up, art was my outlet and the one thing that helped me stay focused and enjoy school. I never imagined it would eventually become my career.</p>
+<p data-halite-path='["artists","0","fullBio","2"]' data-halite-rich="true" class="bb-bio-paragraph">I began tattooing at a time when the industry was very different. There was no social media, Google, or easy access to information. Tattooing was still a very private and coveted craft and very difficult to enter into.</p>
+<p data-halite-path='["artists","0","fullBio","3"]' data-halite-rich="true" class="bb-bio-paragraph">After getting my first tattoo, I remember asking my artist how someone got started in tattooing. Not long after, I was offered an apprenticeship after an admittedly terrible attempt at tattooing my little sister! The artist who fixed it happened to be looking for a female artist and gave me an opportunity. Unfortunately, I wasn&#39;t able to complete the apprenticeship because I had my daughter prematurely, but I continued practicing and eventually earned my first job as a tattoo artist. Those early opportunities became the foundation of my career.</p>
+<p data-halite-path='["artists","0","fullBio","4"]' data-halite-rich="true" class="bb-bio-paragraph">Because I started in a traditional, flash-based shop, I had the opportunity to learn and practice many different styles. That experience helped me become a very versatile artist. Today, I enjoy everything from fine lines and intricate micro tattoos to detailed mandalas, geometric and dot work, cover-ups, and bold color. I also love black and grey realism, portraits, animal portraits, and traditional tattooing.</p>
+<p data-halite-path='["artists","0","fullBio","5"]' data-halite-rich="true" class="bb-bio-paragraph">After only a couple of years of tattooing, I took a leap and opened my own shop in the back of a clothing store. That location lasted only three months before I opened my first “real” studio. Looking back, I was probably either incredibly brave or completely naïve to start my own business so early in my career—but it ended up being one of the best decisions I&#39;ve ever made.</p>
+<p data-halite-path='["artists","0","fullBio","6"]' data-halite-rich="true" class="bb-bio-paragraph">Over the years, owning a shop has come with plenty of challenges, learning curves, and growth. More importantly, it gave me the opportunity to create the kind of environment I wanted: welcoming, inclusive, safe, comfortable, and focused on quality work.</p>
+<p data-halite-path='["artists","0","fullBio","7"]' data-halite-rich="true" class="bb-bio-paragraph">I&#39;m incredibly proud to say that I&#39;ve built that environment at Syncere Tattoo. I&#39;ve surrounded myself with talented artists who are not only passionate about their craft, but are genuinely wonderful people. Creating a space where everyone feels comfortable and respected is just as important to me as the quality of the artwork.</p>
+<p data-halite-path='["artists","0","fullBio","8"]' data-halite-rich="true" class="bb-bio-paragraph">I believe tattoos should feel personal and unique to the person wearing them. I love working with my clients through communication, ideas, and direction to create something that is truly their own.</p>
+<p data-halite-path='["artists","0","fullBio","9"]' data-halite-rich="true" class="bb-bio-paragraph">I also believe choosing the right artist is incredibly important. Style, experience, personality, comfort, and compatibility all play a role—you can spend many hours with your tattoo artist, so finding the right fit matters. Taking the time to review portfolios and have an initial consultation can help ensure you&#39;ve found the right artist for your project.</p>
+<p data-halite-path='["artists","0","fullBio","10"]' data-halite-rich="true" class="bb-bio-paragraph">Over the years, I&#39;ve attended conventions and seminars, continued my education, and constantly pushed myself to improve. Quality work and the experience my clients have while getting tattooed are my two biggest priorities.</p>
+<p data-halite-path='["artists","0","fullBio","11"]' data-halite-rich="true" class="bb-bio-paragraph">One of the things I love most about tattooing is the community it has created in my life. I&#39;m grateful that after all these years, this career is still largely built on relationships, referrals, and word of mouth.</p>
+<p data-halite-path='["artists","0","fullBio","12"]' data-halite-rich="true" class="bb-bio-paragraph">Whether you&#39;re a longtime client, a returning client, or someone who was referred to us for the first time, I&#39;m excited to help create a piece of art that you&#39;ll hopefully love for a lifetime.</p>
+      </div>
     </div>
-  </details>
+    <button type="button" class="bb-bio-toggle" id="bb-bio-toggle" aria-expanded="false" aria-controls="bb-bio-more">
+      <span class="bb-bio-toggle-text bb-bio-toggle-more"><span data-halite-path='["labels","bioViewMore"]'>View More</span></span>
+      <span class="bb-bio-toggle-text bb-bio-toggle-less"><span data-halite-path='["labels","bioViewLess"]'>View Less</span></span>
+      <svg class="bb-bio-chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </div>
     <a href="https://www.instagram.com/diane_synceretattoo/" target="_blank" rel="noopener noreferrer" class="bb-artist-gallery-instagram"><img src="../social/instagram/instagram.svg" alt="" class="bb-social-icon bb-social-icon--gallery" width="28" height="28" loading="lazy" decoding="async" /><span data-halite-path='["labels","followOnInstagram"]'>Follow on Instagram</span></a>
     <a href="https://forms.gle/AGt8Te1qFW8AyvBp7" target="_blank" rel="noopener noreferrer" class="appointment-link bb-artist-gallery-cta" data-booking-href="../booking/index.html" data-booking-page="booking"><span data-halite-path='["booking","formButtonLabel"]'>ONLINE REQUEST FORM</span></a>
     <p class="bb-artist-gallery-specialty"><span data-halite-path='["artists","0","specialty"]' data-halite-rich="true" style="font-style:italic">Fine line, mandalas, dot work, black &amp; grey realism, and traditional.</span></p>
@@ -1771,6 +1840,21 @@ body.bb-lightbox-open { overflow: hidden; }
     });
   });
 
+
+  // Shared "show first, expand the rest" disclosure: button toggles aria-expanded,
+  // panel toggles .open (CSS animates its height). Used by reviews and artist bios.
+  function wireDisclosure(btnId, panelId) {
+    var btn = document.getElementById(btnId);
+    var panel = document.getElementById(panelId);
+    if (!btn || !panel) return;
+    btn.addEventListener('click', function() {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      panel.classList.toggle('open', !isOpen);
+    });
+  }
+  
+  wireDisclosure('bb-bio-toggle', 'bb-bio-more');
 
 
   var lightbox = document.getElementById('bb-lightbox');

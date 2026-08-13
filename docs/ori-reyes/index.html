@@ -679,66 +679,70 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
 }
 
 /* Artist biography — JS-free collapsible in the profile header, above Instagram. */
-.bb-bio-toggle {
-  margin: 1.75rem auto 0.5rem;
+/* Artist biography — first paragraph shows; the rest expand from a centered "view more".
+   No dividers, plain text, smooth height animation. */
+.bb-bio {
   width: 100%;
   max-width: 40rem;
+  margin: 1.75rem auto 0;
   text-align: left;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.bb-bio-toggle-summary {
+.bb-bio-paragraph {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+}
+.bb-bio-paragraph:last-child { margin-bottom: 0; }
+
+/* Collapsible rest of the bio: grid-rows 0fr → 1fr animates cleanly to natural height. */
+.bb-bio-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s ease;
+}
+.bb-bio-more-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+.bb-bio-more.open { grid-template-rows: 1fr; }
+
+/* Centered plain-text arrow toggle; sits under the first paragraph, drops to the
+   bottom of the bio once expanded (it follows the revealed paragraphs). */
+.bb-bio-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  padding: 1.05rem 0;
+  gap: 0.5rem;
+  width: 100%;
+  margin: 1.25rem 0 0;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
   cursor: pointer;
-  list-style: none;
+  font-family: var(--font-body), "Space Mono", ui-monospace, monospace;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.85);
   transition: color 0.15s;
 }
+.bb-bio-toggle:hover { color: #fff; }
 
-.bb-bio-toggle-summary::-webkit-details-marker {
-  display: none;
-}
+.bb-bio-toggle-less { display: none; }
+.bb-bio-toggle[aria-expanded="true"] .bb-bio-toggle-more { display: none; }
+.bb-bio-toggle[aria-expanded="true"] .bb-bio-toggle-less { display: inline; }
 
-.bb-bio-toggle-summary:hover {
-  color: #fff;
-}
-
-.bb-bio-toggle-chevron {
+.bb-bio-chevron {
   flex-shrink: 0;
-  transition: transform 0.25s ease;
+  transition: transform 0.3s ease;
 }
-
-.bb-bio-toggle[open] .bb-bio-toggle-chevron {
-  transform: rotate(180deg);
-}
-
-.bb-bio-toggle-body {
-  padding: 0.25rem 0 1.75rem;
-}
-
-.bb-bio-toggle-paragraph {
-  margin: 0 0 1rem;
-  font-size: 0.85rem;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.bb-bio-toggle-paragraph:last-child {
-  margin-bottom: 0;
-}
+.bb-bio-toggle[aria-expanded="true"] .bb-bio-chevron { transform: rotate(180deg); }
 
 @media (prefers-reduced-motion: reduce) {
-  .bb-bio-toggle-chevron {
-    transition: none;
-  }
+  .bb-bio-chevron { transition: none; }
+  .bb-bio-more { transition: none; }
 }
 
 /* Studio */
@@ -786,19 +790,81 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   min-height: 100vh;
   flex-direction: column;
   justify-content: center;
-  gap: 4rem;
+  align-items: center;
+  gap: 3rem;
   padding: 5rem 1.5rem;
 }
 
-.bb-press-quote {
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  line-height: 1.625;
-  letter-spacing: 0.15em;
+.bb-press-quotes {
+  width: 100%;
+  max-width: 46rem;
+  text-align: center;
 }
 
+.bb-press-quote { margin: 0; }
+.bb-press-quote:not(:last-child) { margin-bottom: 2.75rem; }
+
+/* Readable review body — sentence case at a comfortable measure. (The old all-caps
+   letter-spaced style only read well for one-liners; these reviews run longer.) */
+.bb-press-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+/* Attribution keeps the section's stylized mono accent. */
+.bb-press-cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-muted);
+}
+
+/* Collapsible extra reviews: grid-rows 0fr → 1fr animates cleanly to natural height. */
+.bb-press-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s ease;
+}
+.bb-press-more-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+.bb-press-more.open { grid-template-rows: 1fr; }
+.bb-press-more-inner > .bb-press-quote:not(:last-child) { margin-bottom: 2.75rem; }
+
+/* Down-arrow toggle */
+.bb-press-toggle {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: var(--font-body), "Space Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: opacity 0.2s ease;
+}
+.bb-press-toggle:hover { opacity: 0.65; }
+
+.bb-press-toggle-less { display: none; }
+.bb-press-toggle[aria-expanded="true"] .bb-press-toggle-more { display: none; }
+.bb-press-toggle[aria-expanded="true"] .bb-press-toggle-less { display: inline; }
+
+.bb-press-chevron { transition: transform 0.3s ease; }
+.bb-press-toggle[aria-expanded="true"] .bb-press-chevron { transform: rotate(180deg); }
+
 @media (min-width: 768px) {
-  .bb-press-quote { font-size: 1rem; }
+  .bb-press-text { font-size: 1.125rem; }
 }
 
 /* Location */
@@ -1575,20 +1641,23 @@ body.bb-lightbox-open { overflow: hidden; }
       <img data-halite-path='["artists","1","image"]' data-halite-image="true" src="../images/OriReyes.jpg" class="bb-artist-gallery-portrait-img" alt="ORI REYES portrait" style="object-fit:cover;object-position:54.9% 18.0%"/>
     </div>
   </div>
-    <details class="bb-bio-toggle">
-    <summary class="bb-bio-toggle-summary">
-      <span data-halite-path='["artists","1","fullBioTitle"]' class="bb-bio-toggle-title">Ori&#39;s Biography</span>
-      <svg class="bb-bio-toggle-chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="bb-bio-toggle-body">
-      <p data-halite-path='["artists","1","fullBio","0"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Hi, I&#39;m Ori Reyes, a tattoo artist at Syncere Tattoo in Las Cruces, New Mexico. I&#39;ve been tattooing since 2011. I specialize in custom black and grey work, and I&#39;m passionate about creating clean, timeless tattoos that are both beautiful and deeply personal. Every piece is approached with the goal of giving clients artwork they&#39;ll be proud to wear for a lifetime.</p>
-<p data-halite-path='["artists","1","fullBio","1"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Art has always been a central part of my life, and tattooing became the perfect way to combine creativity with meaningful human connection. I love transforming ideas into custom designs that tell a story, whether it&#39;s a floral piece, a bold gothic concept, or an original custom tattoo.</p>
-<p data-halite-path='["artists","1","fullBio","2"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">My style is heavily inspired by nature, dark aesthetics, and elegant linework. I especially enjoy creating custom flash pieces, from the weird and unusual to the simple and delicate.</p>
-<p data-halite-path='["artists","1","fullBio","3"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">I believe in making a connection with each client to ensure they feel heard, comfortable, and confident throughout the entire process. Creating a relaxed, welcoming, and safe experience is just as important to me as giving you artwork you&#39;ll love forever.</p>
-<p data-halite-path='["artists","1","fullBio","4"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">When I&#39;m not tattooing, I enjoy creating new artwork, exploring creative projects, and spending time with my family. I&#39;m always looking for ways to grow as an artist and as a person.</p>
-<p data-halite-path='["artists","1","fullBio","5"]' data-halite-rich="true" class="bb-bio-toggle-paragraph">Whether you&#39;re planning your very first tattoo or adding to an existing collection, I&#39;d love to help bring your vision to life with a custom piece that&#39;s uniquely yours.</p>
+    <div class="bb-bio">
+    <p data-halite-path='["artists","1","fullBio","0"]' data-halite-rich="true" class="bb-bio-paragraph">Hi, I&#39;m Ori Reyes, a tattoo artist at Syncere Tattoo in Las Cruces, New Mexico. I&#39;ve been tattooing since 2011. I specialize in custom black and grey work, and I&#39;m passionate about creating clean, timeless tattoos that are both beautiful and deeply personal. Every piece is approached with the goal of giving clients artwork they&#39;ll be proud to wear for a lifetime.</p>
+    <div class="bb-bio-more" id="bb-bio-more">
+      <div class="bb-bio-more-inner">
+        <p data-halite-path='["artists","1","fullBio","1"]' data-halite-rich="true" class="bb-bio-paragraph">Art has always been a central part of my life, and tattooing became the perfect way to combine creativity with meaningful human connection. I love transforming ideas into custom designs that tell a story, whether it&#39;s a floral piece, a bold gothic concept, or an original custom tattoo.</p>
+<p data-halite-path='["artists","1","fullBio","2"]' data-halite-rich="true" class="bb-bio-paragraph">My style is heavily inspired by nature, dark aesthetics, and elegant linework. I especially enjoy creating custom flash pieces, from the weird and unusual to the simple and delicate.</p>
+<p data-halite-path='["artists","1","fullBio","3"]' data-halite-rich="true" class="bb-bio-paragraph">I believe in making a connection with each client to ensure they feel heard, comfortable, and confident throughout the entire process. Creating a relaxed, welcoming, and safe experience is just as important to me as giving you artwork you&#39;ll love forever.</p>
+<p data-halite-path='["artists","1","fullBio","4"]' data-halite-rich="true" class="bb-bio-paragraph">When I&#39;m not tattooing, I enjoy creating new artwork, exploring creative projects, and spending time with my family. I&#39;m always looking for ways to grow as an artist and as a person.</p>
+<p data-halite-path='["artists","1","fullBio","5"]' data-halite-rich="true" class="bb-bio-paragraph">Whether you&#39;re planning your very first tattoo or adding to an existing collection, I&#39;d love to help bring your vision to life with a custom piece that&#39;s uniquely yours.</p>
+      </div>
     </div>
-  </details>
+    <button type="button" class="bb-bio-toggle" id="bb-bio-toggle" aria-expanded="false" aria-controls="bb-bio-more">
+      <span class="bb-bio-toggle-text bb-bio-toggle-more"><span data-halite-path='["labels","bioViewMore"]'>View More</span></span>
+      <span class="bb-bio-toggle-text bb-bio-toggle-less"><span data-halite-path='["labels","bioViewLess"]'>View Less</span></span>
+      <svg class="bb-bio-chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </div>
     <a href="https://www.instagram.com/inkbyori/" target="_blank" rel="noopener noreferrer" class="bb-artist-gallery-instagram"><img src="../social/instagram/instagram.svg" alt="" class="bb-social-icon bb-social-icon--gallery" width="28" height="28" loading="lazy" decoding="async" /><span data-halite-path='["labels","followOnInstagram"]'>Follow on Instagram</span></a>
     <a href="https://forms.gle/AGt8Te1qFW8AyvBp7" target="_blank" rel="noopener noreferrer" class="appointment-link bb-artist-gallery-cta" data-booking-href="../booking/index.html" data-booking-page="booking"><span data-halite-path='["booking","formButtonLabel"]'>ONLINE REQUEST FORM</span></a>
     <p class="bb-artist-gallery-specialty"><span data-halite-path='["artists","1","specialty"]' data-halite-rich="true">Custom black &amp; grey — floral, gothic, and nature-inspired.</span></p>
@@ -1764,6 +1833,21 @@ body.bb-lightbox-open { overflow: hidden; }
     });
   });
 
+
+  // Shared "show first, expand the rest" disclosure: button toggles aria-expanded,
+  // panel toggles .open (CSS animates its height). Used by reviews and artist bios.
+  function wireDisclosure(btnId, panelId) {
+    var btn = document.getElementById(btnId);
+    var panel = document.getElementById(panelId);
+    if (!btn || !panel) return;
+    btn.addEventListener('click', function() {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      panel.classList.toggle('open', !isOpen);
+    });
+  }
+  
+  wireDisclosure('bb-bio-toggle', 'bb-bio-more');
 
 
   var lightbox = document.getElementById('bb-lightbox');
