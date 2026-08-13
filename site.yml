@@ -254,7 +254,7 @@ artists:
         piece that's uniquely yours.
   - slug: stephanie-avila
     name: STEPHANIE AVILA
-    specialty: Black & grey realism and custom, meaningful work.
+    specialty: Black & grey realism, script, portraits, animal portraits, and floral.
     bio: <strong>Stephanie</strong> has tattooed since 2020, after leaving a path in
       the medical field to pursue the art she'd always loved. She specializes in
       black & grey realism and makes every client — first tattoo or fiftieth —
@@ -270,8 +270,9 @@ artists:
     fullBioTitle: Stephanie's Biography
     fullBio:
       - Hi, I'm Stephanie, a tattoo artist at Syncere Tattoo in Las Cruces, New
-        Mexico, specializing in black and grey realism. I've been tattooing
-        professionally since 2020.
+        Mexico, specializing in black and grey realism, script, portraits,
+        animal portraits, and floral. I've been tattooing professionally since
+        2020.
       - Before pursuing tattooing, I was working toward a career in the medical
         field. After dedicating years to my education, I eventually realized
         that my true passion had always been art.
@@ -304,13 +305,13 @@ artists:
         skin is what inspires me every day. I'm grateful to be able to turn
         something I've loved my entire life into art that people can carry with
         them for a lifetime.
-  - slug: mike
-    name: MIKE
+  - slug: michael-aguirre
+    name: MICHAEL AGUIRRE
     specialty: High-contrast black & grey realism, horror, script, and traditional.
-    bio: <strong>Michael “Mike” Aguirre</strong> has tattooed since 2021,
-      specializing in high-contrast black & grey realism, horror, script, and
-      religious work. CPR certified, he creates custom, original pieces through
-      honest communication — meaningful art built to last a lifetime.
+    bio: <strong>Michael Aguirre</strong> has tattooed since 2021, specializing in
+      high-contrast black & grey realism, horror, script, and religious work. He
+      creates custom, original pieces through honest communication — meaningful
+      art built to last a lifetime.
     galleryUrl: https://www.instagram.com/_madmik3_/
     image: /images/Mike.jpg
     galleryImages:
@@ -319,7 +320,7 @@ artists:
       - /images/mikey-1.jpg
       - /images/mikey-4.jpg
       - /images/mikey-5.jpg
-    fullBioTitle: Mike's Biography
+    fullBioTitle: Michael's Biography
     fullBio:
       - Hi, my name is Michael Aguirre, a tattoo artist from Las Cruces, New
         Mexico, at Syncere Tattoo. I've been tattooing since 2021, specializing

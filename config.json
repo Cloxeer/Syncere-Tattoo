@@ -132,15 +132,15 @@
       "artistSlug": "stephanie-avila"
     },
     {
-      "id": "artist-mike",
-      "label": "Mike",
-      "path": "mike/index.html",
+      "id": "artist-michael-aguirre",
+      "label": "Michael Aguirre",
+      "path": "michael-aguirre/index.html",
       "sections": [
         "header",
         "artistGallery",
         "footer"
       ],
-      "artistSlug": "mike"
+      "artistSlug": "michael-aguirre"
     }
   ]
 }
