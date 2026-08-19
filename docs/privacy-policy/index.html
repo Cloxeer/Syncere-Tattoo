@@ -1463,39 +1463,99 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   position: fixed;
   inset: 0;
   z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.95);
-  padding: 1.5rem;
+  background: #000;
+  /* Toggled via .bb-lightbox-open-view rather than display:none, so the scroll
+     track keeps its layout and the jump to the tapped image never resets. */
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
 
-.bb-lightbox[hidden] { display: none !important; }
+.bb-lightbox.bb-lightbox-open-view {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .bb-lightbox-close {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 1.5rem;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  font-size: 2rem;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   transition: color 0.15s;
 }
 
 .bb-lightbox-close:hover { color: #fff; }
 
-.bb-lightbox-stage {
+/* Horizontal swipe track — one image per slide, positioned by transform. A JS
+   pointer-drag handler moves it; no native scroll-snap (which fights programmatic
+   jumps and can reopen the wrong image). */
+.bb-lightbox-track {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  transition: transform 0.3s ease;
+  touch-action: none;
+  will-change: transform;
+}
+
+.bb-lightbox-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
-  max-height: 90vh;
+  padding: 1.5rem;
+  box-sizing: border-box;
 }
 
-.bb-lightbox-active-image {
+.bb-lightbox-image {
   max-width: 100%;
-  max-height: 90vh;
+  max-height: 88vh;
   object-fit: contain;
+}
+
+/* Prev/next arrows — pointer devices only; touch users swipe. */
+.bb-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 2rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 50%;
+  transition: color 0.15s, background 0.15s;
+}
+
+.bb-lightbox-nav:hover { color: #fff; background: rgba(0, 0, 0, 0.55); }
+.bb-lightbox-prev { left: 0.75rem; }
+.bb-lightbox-next { right: 0.75rem; }
+
+.bb-lightbox-counter {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (min-width: 768px) {
+  .bb-lightbox-nav { display: flex; }
 }
 
 body.bb-lightbox-open { overflow: hidden; }

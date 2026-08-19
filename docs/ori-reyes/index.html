@@ -1463,39 +1463,99 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   position: fixed;
   inset: 0;
   z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.95);
-  padding: 1.5rem;
+  background: #000;
+  /* Toggled via .bb-lightbox-open-view rather than display:none, so the scroll
+     track keeps its layout and the jump to the tapped image never resets. */
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
 
-.bb-lightbox[hidden] { display: none !important; }
+.bb-lightbox.bb-lightbox-open-view {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .bb-lightbox-close {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 1.5rem;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  font-size: 2rem;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   transition: color 0.15s;
 }
 
 .bb-lightbox-close:hover { color: #fff; }
 
-.bb-lightbox-stage {
+/* Horizontal swipe track — one image per slide, positioned by transform. A JS
+   pointer-drag handler moves it; no native scroll-snap (which fights programmatic
+   jumps and can reopen the wrong image). */
+.bb-lightbox-track {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  transition: transform 0.3s ease;
+  touch-action: none;
+  will-change: transform;
+}
+
+.bb-lightbox-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
-  max-height: 90vh;
+  padding: 1.5rem;
+  box-sizing: border-box;
 }
 
-.bb-lightbox-active-image {
+.bb-lightbox-image {
   max-width: 100%;
-  max-height: 90vh;
+  max-height: 88vh;
   object-fit: contain;
+}
+
+/* Prev/next arrows — pointer devices only; touch users swipe. */
+.bb-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 2rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 50%;
+  transition: color 0.15s, background 0.15s;
+}
+
+.bb-lightbox-nav:hover { color: #fff; background: rgba(0, 0, 0, 0.55); }
+.bb-lightbox-prev { left: 0.75rem; }
+.bb-lightbox-next { right: 0.75rem; }
+
+.bb-lightbox-counter {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (min-width: 768px) {
+  .bb-lightbox-nav { display: flex; }
 }
 
 body.bb-lightbox-open { overflow: hidden; }
@@ -1697,14 +1757,18 @@ body.bb-lightbox-open { overflow: hidden; }
   <div class="bb-artist-gallery-footer">
     <a href="../index.html#artists" class="bb-artist-gallery-back"><svg class="bb-artist-gallery-back-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg><span data-halite-path='["labels","backToArtists"]'>Back to Artists</span></a>
   </div>
-  <div class="bb-lightbox" id="bb-lightbox" role="dialog" aria-modal="true" aria-label="Full size image" hidden>
+  <div class="bb-lightbox" id="bb-lightbox" role="dialog" aria-modal="true" aria-label="Full size image" aria-hidden="true">
     <button type="button" class="bb-lightbox-close" id="bb-lightbox-close" aria-label="Close">&times;</button>
-    <div class="bb-lightbox-stage" id="bb-lightbox-stage"></div>
-    <img src="../images/ori-5.jpg" alt="ORI REYES work 1" class="bb-lightbox-image" data-lightbox-image="0" hidden/>
-<img src="../images/ori-2.jpg" alt="ORI REYES work 2" class="bb-lightbox-image" data-lightbox-image="1" hidden/>
-<img src="../images/ori-3.jpg" alt="ORI REYES work 3" class="bb-lightbox-image" data-lightbox-image="2" hidden/>
-<img src="../images/ori-4.jpg" alt="ORI REYES work 4" class="bb-lightbox-image" data-lightbox-image="3" hidden/>
-<img src="../images/ori-1.jpg" alt="ORI REYES work 5" class="bb-lightbox-image" data-lightbox-image="4" hidden/>
+    <button type="button" class="bb-lightbox-nav bb-lightbox-prev" id="bb-lightbox-prev" aria-label="Previous image">&#8249;</button>
+    <div class="bb-lightbox-track" id="bb-lightbox-track">
+      <div class="bb-lightbox-slide"><img src="../images/ori-5.jpg" alt="ORI REYES work 1" class="bb-lightbox-image" data-lightbox-image="0"/></div>
+<div class="bb-lightbox-slide"><img src="../images/ori-2.jpg" alt="ORI REYES work 2" class="bb-lightbox-image" data-lightbox-image="1"/></div>
+<div class="bb-lightbox-slide"><img src="../images/ori-3.jpg" alt="ORI REYES work 3" class="bb-lightbox-image" data-lightbox-image="2"/></div>
+<div class="bb-lightbox-slide"><img src="../images/ori-4.jpg" alt="ORI REYES work 4" class="bb-lightbox-image" data-lightbox-image="3"/></div>
+<div class="bb-lightbox-slide"><img src="../images/ori-1.jpg" alt="ORI REYES work 5" class="bb-lightbox-image" data-lightbox-image="4"/></div>
+    </div>
+    <button type="button" class="bb-lightbox-nav bb-lightbox-next" id="bb-lightbox-next" aria-label="Next image">&#8250;</button>
+    <div class="bb-lightbox-counter" id="bb-lightbox-counter" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -1851,56 +1915,114 @@ body.bb-lightbox-open { overflow: hidden; }
 
 
   var lightbox = document.getElementById('bb-lightbox');
-  var lightboxStage = document.getElementById('bb-lightbox-stage');
+  var lightboxTrack = document.getElementById('bb-lightbox-track');
+  var lightboxSlides = lightboxTrack ? Array.prototype.slice.call(lightboxTrack.querySelectorAll('.bb-lightbox-slide')) : [];
   var lightboxClose = document.getElementById('bb-lightbox-close');
-  var lightboxImages = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox-image]'));
+  var lightboxPrev = document.getElementById('bb-lightbox-prev');
+  var lightboxNext = document.getElementById('bb-lightbox-next');
+  var lightboxCounter = document.getElementById('bb-lightbox-counter');
+  var lightboxIndex = 0;
+  var lightboxDragging = false;
+  var lightboxStartX = 0;
+  var lightboxDelta = 0;
+
+  function renderLightbox(animate) {
+    if (!lightboxTrack) return;
+    lightboxTrack.style.transition = animate ? 'transform 0.3s ease' : 'none';
+    lightboxTrack.style.transform = 'translateX(' + (-lightboxIndex * 100) + '%)';
+    if (lightboxCounter) {
+      lightboxCounter.textContent = (lightboxIndex + 1) + ' / ' + lightboxSlides.length;
+    }
+  }
+
+  function goToLightbox(index, animate) {
+    if (!lightboxSlides.length) return;
+    if (index < 0) index = 0;
+    if (index > lightboxSlides.length - 1) index = lightboxSlides.length - 1;
+    lightboxIndex = index;
+    renderLightbox(animate);
+  }
 
   function openLightbox(index) {
-    if (!lightbox || !lightboxStage) return;
-    var image = lightboxImages.find(function(entry) {
-      return entry.getAttribute('data-lightbox-image') === String(index);
-    });
-    if (!image) return;
-    lightboxStage.innerHTML = '';
-    var clone = image.cloneNode(true);
-    clone.hidden = false;
-    clone.removeAttribute('hidden');
-    clone.classList.add('bb-lightbox-active-image');
-    lightboxStage.appendChild(clone);
-    lightbox.hidden = false;
+    if (!lightbox || !lightboxTrack) return;
+    lightbox.classList.add('bb-lightbox-open-view');
+    lightbox.setAttribute('aria-hidden', 'false');
     document.body.classList.add('bb-lightbox-open');
+    // Pure transform positioning — lands on the tapped image every time, with no
+    // native scroll-snap to fight or "remembered slide" to reset it.
+    goToLightbox(index, false);
   }
 
   function closeLightbox() {
-    if (!lightbox || !lightboxStage) return;
-    lightbox.hidden = true;
-    lightboxStage.innerHTML = '';
+    if (!lightbox) return;
+    lightbox.classList.remove('bb-lightbox-open-view');
+    lightbox.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('bb-lightbox-open');
   }
 
   document.querySelectorAll('[data-lightbox]').forEach(function(button) {
     button.addEventListener('click', function() {
-      var index = button.getAttribute('data-lightbox');
-      if (index !== null) {
-        openLightbox(index);
-      }
+      var raw = button.getAttribute('data-lightbox');
+      if (raw === null) return;
+      var index = parseInt(raw, 10);
+      openLightbox(isNaN(index) ? 0 : index);
     });
   });
 
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', function() { goToLightbox(lightboxIndex - 1, true); });
+  }
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', function() { goToLightbox(lightboxIndex + 1, true); });
+  }
   if (lightboxClose) {
     lightboxClose.addEventListener('click', closeLightbox);
   }
-  if (lightbox) {
-    lightbox.addEventListener('click', function(event) {
-      if (event.target === lightbox) {
+
+  if (lightboxTrack) {
+    function endLightboxDrag(event) {
+      if (!lightboxDragging) return;
+      lightboxDragging = false;
+      var threshold = lightboxTrack.clientWidth * 0.2;
+      if (lightboxDelta <= -threshold) {
+        goToLightbox(lightboxIndex + 1, true);
+      } else if (lightboxDelta >= threshold) {
+        goToLightbox(lightboxIndex - 1, true);
+      } else if (Math.abs(lightboxDelta) < 6 && event.target && event.target.classList && event.target.classList.contains('bb-lightbox-slide')) {
+        // A tap (no real drag) on the backdrop around the image closes the viewer.
         closeLightbox();
+      } else {
+        renderLightbox(true);
+      }
+      lightboxDelta = 0;
+    }
+
+    // Transform-based swipe: drag the track with the finger, commit to the next or
+    // previous slide once the drag passes a fifth of the screen width.
+    lightboxTrack.addEventListener('pointerdown', function(event) {
+      lightboxDragging = true;
+      lightboxStartX = event.clientX;
+      lightboxDelta = 0;
+      lightboxTrack.style.transition = 'none';
+      if (lightboxTrack.setPointerCapture) {
+        try { lightboxTrack.setPointerCapture(event.pointerId); } catch (e) {}
       }
     });
+    lightboxTrack.addEventListener('pointermove', function(event) {
+      if (!lightboxDragging) return;
+      lightboxDelta = event.clientX - lightboxStartX;
+      var percent = -lightboxIndex * 100 + (lightboxDelta / lightboxTrack.clientWidth) * 100;
+      lightboxTrack.style.transform = 'translateX(' + percent + '%)';
+    });
+    lightboxTrack.addEventListener('pointerup', endLightboxDrag);
+    lightboxTrack.addEventListener('pointercancel', endLightboxDrag);
   }
+
   document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && lightbox && !lightbox.hidden) {
-      closeLightbox();
-    }
+    if (!lightbox || !lightbox.classList.contains('bb-lightbox-open-view')) return;
+    if (event.key === 'Escape') closeLightbox();
+    else if (event.key === 'ArrowLeft') goToLightbox(lightboxIndex - 1, true);
+    else if (event.key === 'ArrowRight') goToLightbox(lightboxIndex + 1, true);
   });
 
 
