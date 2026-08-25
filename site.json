@@ -376,6 +376,10 @@
     "governingLawState": "New Mexico",
     "arbitrationCity": "Las Cruces"
   },
+  "notFound": {
+    "title": "Page not found",
+    "body": "That page isn’t on this site. Head home for artists, booking, and the studio."
+  },
   "legal": {
     "accessibility": {
       "title": "Accessibility Statement",
