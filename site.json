@@ -2,7 +2,8 @@
   "type": "tattoo",
   "meta": {
     "title": "SyncereTattoo | Tattoo Studio",
-    "description": "Syncere Tattoo is a state-licensed tattoo studio in Las Cruces, New Mexico — custom, clean, and friendly work from a team of artists who collaborate with you on designs you'll love forever."
+    "description": "Syncere Tattoo is a state-licensed tattoo studio in Las Cruces, New Mexico — custom, clean, and friendly work from a team of artists who collaborate with you on designs you'll love forever.",
+    "favicon": "/images/SyncereTattoLogo-1785224722744.png"
   },
   "theme": {
     "fontDisplay": "Georgia",
@@ -375,10 +376,6 @@
     "state": "New Mexico",
     "governingLawState": "New Mexico",
     "arbitrationCity": "Las Cruces"
-  },
-  "notFound": {
-    "title": "Page not found",
-    "body": "That page isn’t on this site. Head home for artists, booking, and the studio."
   },
   "legal": {
     "accessibility": {

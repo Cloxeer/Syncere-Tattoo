@@ -99,16 +99,6 @@
       "legalDoc": "termsOfService"
     },
     {
-      "id": "notFound",
-      "label": "404",
-      "path": "404.html",
-      "sections": [
-        "header",
-        "notFound",
-        "footer"
-      ]
-    },
-    {
       "id": "artist-diane-basler-white",
       "label": "Diane Basler-White",
       "path": "diane-basler-white/index.html",
