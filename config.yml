@@ -1,0 +1,1495 @@
+identity:
+  id: ws_ed29002ee1d6
+project:
+  version: 2
+  projectType: tattoo
+  sections:
+    - header
+    - heroContact
+    - dividerArtists
+    - artists
+    - dividerGallery
+    - gallery
+    - dividerSpaces
+    - spaces
+    - dividerPress
+    - press
+    - dividerLocation
+    - location
+    - dividerStory
+    - story
+    - dividerFaq
+    - faq
+    - footer
+    - booking
+    - artistGallery
+    - legalPage
+  pages:
+    - id: home
+      label: Home
+      path: index.html
+      sections:
+        - header
+        - heroContact
+        - dividerArtists
+        - artists
+        - dividerGallery
+        - gallery
+        - dividerPress
+        - press
+        - dividerLocation
+        - location
+        - dividerFaq
+        - faq
+        - footer
+    - id: our-story
+      label: Our Story
+      path: our-story/index.html
+      sections:
+        - header
+        - dividerStory
+        - story
+        - footer
+    - id: booking
+      label: Booking
+      path: booking/index.html
+      sections:
+        - header
+        - booking
+        - footer
+    - id: accessibility
+      label: Accessibility
+      path: accessibility/index.html
+      sections:
+        - header
+        - legalPage
+        - footer
+      legalDoc: accessibility
+    - id: privacy-policy
+      label: Privacy Policy
+      path: privacy-policy/index.html
+      sections:
+        - header
+        - legalPage
+        - footer
+      legalDoc: privacyPolicy
+    - id: terms-of-service
+      label: Terms of Service
+      path: terms-of-service/index.html
+      sections:
+        - header
+        - legalPage
+        - footer
+      legalDoc: termsOfService
+    - id: artist-diane-basler-white
+      label: Diane Basler-White
+      path: diane-basler-white/index.html
+      sections:
+        - header
+        - artistGallery
+        - footer
+      artistSlug: diane-basler-white
+    - id: artist-ori-reyes
+      label: Ori Reyes
+      path: ori-reyes/index.html
+      sections:
+        - header
+        - artistGallery
+        - footer
+      artistSlug: ori-reyes
+    - id: artist-stephanie-avila
+      label: Stephanie Avila
+      path: stephanie-avila/index.html
+      sections:
+        - header
+        - artistGallery
+        - footer
+      artistSlug: stephanie-avila
+    - id: artist-michael-aguirre
+      label: Michael Aguirre
+      path: michael-aguirre/index.html
+      sections:
+        - header
+        - artistGallery
+        - footer
+      artistSlug: michael-aguirre
+site:
+  type: tattoo
+  meta:
+    title: SyncereTattoo | Tattoo Studio
+    description: Syncere Tattoo is a state-licensed tattoo studio in Las Cruces, New
+      Mexico — custom, clean, and friendly work from a team of artists who
+      collaborate with you on designs you'll love forever.
+    favicon: /images/SyncereTattoLogo-1785224722744.png
+  theme:
+    fontDisplay: Georgia
+    fontBody: Space Mono
+    colorText: "#ffffff"
+    colorMuted: "#999999"
+    colorAccent: "#ffffff"
+    colorBackground: "#000000"
+    colorSurface: "#151515"
+  brand:
+    name: SYNCERE TATTOO
+    email: SyncereTattoobooking@gmail.com
+    phones:
+      - (575) 524-0190
+    address: "1900 S. Espina St #5, Las Cruces, NM 88001"
+    addressLines:
+      - "1900 S. ESPINA STE #5"
+      - LAS CRUCES, NEW MEXICO
+    city: Las Cruces
+    state: New Mexico
+    hours:
+      - day: Monday
+        hours: Closed
+      - day: Tuesday
+        hours: 10:00 AM – 6:00 PM
+      - day: Wednesday
+        hours: 10:00 AM – 6:00 PM
+      - day: Thursday
+        hours: 10:00 AM – 6:00 PM
+      - day: Friday
+        hours: 10:00 AM – 6:00 PM
+      - day: Saturday
+        hours: 10:00 AM – 4:00 PM
+      - day: Sunday
+        hours: Closed
+    hoursSummary: TUESDAY – FRIDAY 10AM – 6PM | SATURDAY 10AM – 4PM
+    social:
+      instagram: https://www.instagram.com/synceretattoo_nm/
+      facebook: https://www.facebook.com/SyncereTattoo/
+    mapsUrl: https://maps.app.goo.gl/AUSnEyh7QiCyi9JD7
+    mapEmbedUrl: https://www.google.com/maps?q=1900+S.+Espina+St+%235,+Las+Cruces,+NM+88001&z=15&output=embed
+    consultationFormUrl: https://forms.gle/nXoCpWd9ETVyg5Pr5
+    socialIcons:
+      facebook: circular-long-shadow
+      instagram: circle-long-shadow
+      email: gmail
+    logoIcon: synceretattologo-1785224722744
+    logoSize: "625"
+    logoPosition: scroll
+    logoPages:
+      - home
+  assets:
+    logo: /images/syncere/logo-white.png
+    hero: /images/hero2-1786033129914.jpg
+    grandStreet: /images/syncere/grand-street.jpg
+    foreverCare: /images/syncere/forever-care.jpg
+    location: /images/syncere/location.jpg
+    artists: /images/syncere/artists-collage.jpg
+    apparel: /images/syncere/apparel-blur-1.jpeg
+    book: /images/syncere/book-cover.jpg
+  aftercare:
+    title: AFTERCARE
+    tagline: PROPER HEALING KEEPS YOUR TATTOO LOOKING SHARP FOR YEARS TO COME.
+    body: Every artist at Syncere Tattoo sends you home with clear aftercare
+      instructions. Keep your new tattoo clean, moisturized, and out of direct
+      sun until it's fully healed — and reach out if you have questions along
+      the way.
+  gallery:
+    title: FOLLOW US
+    subtitle: Fresh work, flash, and behind-the-scenes from the Syncere team
+    instagramHandle: "@synceretattoo_nm"
+    images:
+      - src: /images/diane-1.png
+        alt: Syncere Tattoo work
+      - src: /images/Gallery2.png
+        alt: Syncere Tattoo work
+      - src: /images/Gallery3.png
+        alt: Syncere Tattoo work
+      - src: /images/Gallery4.png
+        alt: Syncere Tattoo work
+      - src: /images/Gallery5.png
+        alt: Syncere Tattoo work
+  spaces:
+    title: STUDIO
+    tagline: Custom, clean, and friendly — Las Cruces' home for tattoos you'll love
+      forever
+    studioLabel: OUR STUDIO
+  press:
+    title: REVIEWS
+  story:
+    title: OUR STORY
+    paragraphs:
+      - Welcome to our tattoo Family - Established in 2007, Syncere Tattoo is
+        the oldest tattoo studio in Las Cruces, New Mexico. For nearly two
+        decades, we’ve built our reputation on exceptional craftsmanship,
+        professionalism, and creating an environment where every client feels
+        comfortable, respected, and welcome.
+      - At Syncere Tattoo, we believe getting tattooed is more than just an
+        appointment — it’s an experience. Whether you’re celebrating a
+        milestone, honoring a loved one, or simply bringing an idea to life,
+        we’re committed to creating meaningful, high-quality artwork that you’ll
+        be proud to wear for a lifetime..
+      - Our artists specialize in a wide variety of styles, including black and
+        grey realism, high-contrast black and grey, religious and faith-based
+        artwork, fine line, script, intricate micro tattoos, American
+        Traditional, bold color, geometric designs, mandalas, cover-ups, and
+        fully custom pieces. We also love creating the weird, creepy, dark, and
+        horror-inspired tattoos that let our clients’ imaginations run wild.
+      - >
+        You can find a link to each artist portfolio in the profiles below to
+        find which artist best suits you.
+      - >-
+        More than anything, we strive to be a studio where everyone feels at
+        home. From your first consultation to the final tattoo, our goal is to
+        provide an experience that’s welcoming, collaborative, and centered
+        around quality.
+
+
+        we’re honored to be part of your journey and look forward to creating
+        something truly unforgettable.
+  booking:
+    title: Looking at Booking
+    body: Your consultation form should have opened in a new tab. Fill it out there
+      and we'll get back to you as soon as you can.
+    formButtonLabel: Open Form
+    backLinkLabel: Back to Homepage
+  artists:
+    - slug: diane-basler-white
+      name: DIANE BASLER-WHITE
+      role: Owner
+      specialty: Intricate fine line dot work, mandalas and geometric, floral, bold
+        color, black & grey realism, animal portraits, and traditional.
+      bio: <strong>Diane Basler-White</strong> owns Syncere Tattoo — named after her
+        daughter — which she opened in 2007, the oldest studio in Las Cruces. A
+        lifelong, self-taught artist, she works across many styles and has built
+        a welcoming, inclusive shop focused on quality and pieces personal to
+        each client.
+      galleryUrl: https://www.instagram.com/diane_synceretattoo/
+      image: /images/DianeBaslerWhite.jpg
+      galleryImages:
+        - /images/diane-1.png
+        - /images/diane-2.jpg
+        - /images/diane-3.jpg
+        - /images/diane-4.jpg
+        - /images/diane-5.jpg
+      fullBioTitle: Diane's Biography
+      fullBio:
+        - My name is Diane Basler-White, and I am the proud owner of Syncere
+          Tattoo, named after my daughter. I opened the shop in 2007, and it is
+          currently the oldest tattoo studio in Las Cruces.
+        - I've been an artist for as long as I can remember—probably since the
+          moment I learned how to hold a pencil. Colored pencils and airbrush
+          have always been two of my favorite mediums, although I've explored
+          just about every form of art over the years. Growing up, art was my
+          outlet and the one thing that helped me stay focused and enjoy school.
+          I never imagined it would eventually become my career.
+        - I began tattooing at a time when the industry was very different.
+          There was no social media, Google, or easy access to information.
+          Tattooing was still a very private and coveted craft and very
+          difficult to enter into.
+        - After getting my first tattoo, I remember asking my artist how someone
+          got started in tattooing. Not long after, I was offered an
+          apprenticeship after an admittedly terrible attempt at tattooing my
+          little sister! The artist who fixed it happened to be looking for a
+          female artist and gave me an opportunity. Unfortunately, I wasn't able
+          to complete the apprenticeship because I had my daughter prematurely,
+          but I continued practicing and eventually earned my first job as a
+          tattoo artist. Those early opportunities became the foundation of my
+          career.
+        - Because I started in a traditional, flash-based shop, I had the
+          opportunity to learn and practice many different styles. That
+          experience helped me become a very versatile artist. Today, I enjoy
+          everything from fine lines and intricate micro tattoos to detailed
+          mandalas, geometric and dot work, cover-ups, and bold color. I also
+          love black and grey realism, portraits, animal portraits, and
+          traditional tattooing.
+        - After only a couple of years of tattooing, I took a leap and opened my
+          own shop in the back of a clothing store. That location lasted only
+          three months before I opened my first “real” studio. Looking back, I
+          was probably either incredibly brave or completely naïve to start my
+          own business so early in my career—but it ended up being one of the
+          best decisions I've ever made.
+        - "Over the years, owning a shop has come with plenty of challenges,
+          learning curves, and growth. More importantly, it gave me the
+          opportunity to create the kind of environment I wanted: welcoming,
+          inclusive, safe, comfortable, and focused on quality work."
+        - I'm incredibly proud to say that I've built that environment at
+          Syncere Tattoo. I've surrounded myself with talented artists who are
+          not only passionate about their craft, but are genuinely wonderful
+          people. Creating a space where everyone feels comfortable and
+          respected is just as important to me as the quality of the artwork.
+        - I believe tattoos should feel personal and unique to the person
+          wearing them. I love working with my clients through communication,
+          ideas, and direction to create something that is truly their own.
+        - I also believe choosing the right artist is incredibly important.
+          Style, experience, personality, comfort, and compatibility all play a
+          role—you can spend many hours with your tattoo artist, so finding the
+          right fit matters. Taking the time to review portfolios and have an
+          initial consultation can help ensure you've found the right artist for
+          your project.
+        - Over the years, I've attended conventions and seminars, continued my
+          education, and constantly pushed myself to improve. Quality work and
+          the experience my clients have while getting tattooed are my two
+          biggest priorities.
+        - One of the things I love most about tattooing is the community it has
+          created in my life. I'm grateful that after all these years, this
+          career is still largely built on relationships, referrals, and word of
+          mouth.
+        - Whether you're a longtime client, a returning client, or someone who
+          was referred to us for the first time, I'm excited to help create a
+          piece of art that you'll hopefully love for a lifetime.
+    - slug: ori-reyes
+      name: ORI REYES
+      specialty: Custom black & grey — floral, gothic, and nature-inspired.
+      bio: <strong>Ori</strong> has tattooed since 2011, specializing in custom black
+        & grey work inspired by nature, dark aesthetics, and elegant linework.
+        She creates clean, timeless, deeply personal pieces and makes every
+        client feel heard and comfortable from start to finish.
+      galleryUrl: https://www.instagram.com/inkbyori/
+      image: /images/OriReyes.jpg
+      galleryImages:
+        - /images/ori-5.jpg
+        - /images/ori-2.jpg
+        - /images/ori-3.jpg
+        - /images/ori-4.jpg
+        - /images/ori-1.jpg
+      fullBioTitle: Ori's Biography
+      fullBio:
+        - Hi, I'm Ori Reyes, a tattoo artist at Syncere Tattoo in Las Cruces,
+          New Mexico. I've been tattooing since 2011. I specialize in custom
+          black and grey work, and I'm passionate about creating clean, timeless
+          tattoos that are both beautiful and deeply personal. Every piece is
+          approached with the goal of giving clients artwork they'll be proud to
+          wear for a lifetime.
+        - Art has always been a central part of my life, and tattooing became
+          the perfect way to combine creativity with meaningful human
+          connection. I love transforming ideas into custom designs that tell a
+          story, whether it's a floral piece, a bold gothic concept, or an
+          original custom tattoo.
+        - My style is heavily inspired by nature, dark aesthetics, and elegant
+          linework. I especially enjoy creating custom flash pieces, from the
+          weird and unusual to the simple and delicate.
+        - I believe in making a connection with each client to ensure they feel
+          heard, comfortable, and confident throughout the entire process.
+          Creating a relaxed, welcoming, and safe experience is just as
+          important to me as giving you artwork you'll love forever.
+        - When I'm not tattooing, I enjoy creating new artwork, exploring
+          creative projects, and spending time with my family. I'm always
+          looking for ways to grow as an artist and as a person.
+        - Whether you're planning your very first tattoo or adding to an
+          existing collection, I'd love to help bring your vision to life with a
+          custom piece that's uniquely yours.
+    - slug: stephanie-avila
+      name: STEPHANIE AVILA
+      specialty: Black & grey realism, script, portraits, animal portraits, and floral.
+      bio: <strong>Stephanie</strong> has tattooed since 2020, after leaving a path in
+        the medical field to pursue the art she'd always loved. She specializes
+        in black & grey realism and makes every client — first tattoo or
+        fiftieth — feel safe, comfortable, and heard.
+      galleryUrl: https://www.instagram.com/avilainkk/
+      image: /images/d1f0b517-c3a9-4fa0-9fad-25c910047ec5-1786643736678.jpg
+      galleryImages:
+        - /images/steph-4.jpg
+        - /images/steph-2.jpg
+        - /images/steph-3.jpg
+        - /images/steph-1.jpg
+        - /images/steph-5.jpg
+      fullBioTitle: Stephanie's Biography
+      fullBio:
+        - Hi, I'm Stephanie, a tattoo artist at Syncere Tattoo in Las Cruces,
+          New Mexico, specializing in black and grey realism, script, portraits,
+          animal portraits, and floral. I've been tattooing professionally since
+          2020.
+        - Before pursuing tattooing, I was working toward a career in the
+          medical field. After dedicating years to my education, I eventually
+          realized that my true passion had always been art.
+        - Drawing has been a part of my life for as long as I can remember. What
+          started as a hobby eventually became something I couldn't imagine
+          living without. Choosing to turn that passion into a career has been
+          one of the most rewarding decisions I've ever made.
+        - Today, I'm grateful to create meaningful, custom tattoos for the
+          people who trust me with their stories. To me, tattooing is about much
+          more than creating beautiful artwork—it's about making someone's day
+          better than when they walked through the door. Every person who sits
+          in my chair is placing their confidence in me, and I believe it's my
+          responsibility to create an environment where they feel safe,
+          comfortable, respected, and genuinely heard.
+        - Whether it's your first tattoo or your fiftieth, I want every
+          appointment to be a positive experience where you can relax, be
+          yourself, and leave feeling proud of what we've created together.
+        - Being able to express my creativity and connect with the world around
+          me is what continues to motivate me. Tattooing has taught me patience,
+          discipline, and the importance of continuous growth. Those lessons
+          continue to shape the way I approach every tattoo and every person I
+          work with.
+        - What makes tattooing especially meaningful to me is the way it allows
+          art to become deeply personal. Every design can represent a story, a
+          memory, a milestone, a loved one, or a moment that holds special
+          meaning. Being trusted to transform those experiences into something
+          permanent is a privilege I never take for granted.
+        - Knowing that my work can help someone celebrate a loved one, honor an
+          important life experience, or simply feel more confident in their own
+          skin is what inspires me every day. I'm grateful to be able to turn
+          something I've loved my entire life into art that people can carry
+          with them for a lifetime.
+    - slug: michael-aguirre
+      name: MICHAEL AGUIRRE
+      specialty: High-contrast black & grey realism, horror, script, and traditional.
+      bio: <strong>Michael Aguirre</strong> has tattooed since 2021, specializing in
+        high-contrast black & grey realism, horror, script, and religious work.
+        He creates custom, original pieces through honest communication —
+        meaningful art built to last a lifetime.
+      galleryUrl: https://www.instagram.com/_madmik3_/
+      image: /images/Mike.jpg
+      galleryImages:
+        - /images/mikey-3.jpg
+        - /images/mikey-2.jpg
+        - /images/mikey-1.jpg
+        - /images/mikey-4.jpg
+        - /images/mikey-5.jpg
+      fullBioTitle: Michael's Biography
+      fullBio:
+        - Hi, my name is Michael Aguirre, a tattoo artist from Las Cruces, New
+          Mexico, at Syncere Tattoo. I've been tattooing since 2021,
+          specializing in high-contrast black and grey realism, horror tattoos,
+          script, American Traditional, and religious/abstract tattoos. My goal
+          is to live my dream by creating permanent, high-quality, meaningful
+          art that lasts a lifetime and is appreciated by those who understand
+          and respect the craft.
+        - Tattoos have been a part of my life for a long time, and I've always
+          been artistic. I've spent years drawing, painting, working with all
+          kinds of different mediums, and taking art classes throughout my
+          school years. I completed a two-year apprenticeship and have been
+          tattooing professionally for a total of four years. I love tattooing
+          because it's a beautiful form of self-expression—an exchange of
+          energy, connection, and trust. It's such a unique craft, and I love
+          creating meaningful pieces and bringing people's ideas to life.
+        - I especially enjoy doing high-contrast black and grey realism,
+          religious, and horror pieces. I love horror movies, religious artwork,
+          and high-contrast art, all of which are reflected in my work. I prefer
+          creating custom designs to ensure every tattoo is original and unique
+          to each client.
+        - Having good communication with my clients is very important to me. I
+          believe it's essential to gather all the information and details
+          needed to truly bring my clients' visions to life. I'm always
+          transparent and honest because I respect every client who trusts me
+          with their ideas. Designing something so meaningful shouldn't be
+          rushed or thrown together. Here, we focus on creating a welcoming,
+          safe, and comfortable environment for everyone.
+        - I have four years of experience working in a professional tattoo shop
+          and am CPR certified.
+        - Outside of tattooing, I enjoy spending time with my family and my two
+          cats. I'm a homebody, so I enjoy playing video games, cooking,
+          watching movies, painting, and engraving mirrors.
+        - I'm always accepting new clients, whether it's your very first tattoo
+          or you're adding another piece to your canvas. I'd truly enjoy the
+          privilege of helping bring your ideas to life through artwork that
+          you'll wear and cherish forever.
+  reviews:
+    - quote: I love this shop. My artist is Ori — she did and is doing an amazing job
+        with my sleeve. She takes her time and is very attentive, and made sure
+        I was okay during my session. Very light handed, with a great sense of
+        humor, and very fair with pricing. 10/10 recommend her and anyone in the
+        shop — the vibes are A1.
+      attribution: Monica Garcia — Google
+    - quote: I've been going to Stephanie for about a year and a half now, and she
+        KILLS it every time. The hospitality is amazing and she makes me feel
+        comfortable. She's the only person I will trust tattooing me. I highly
+        recommend anyone wanting a tattoo to go to her!
+      attribution: Google Review
+    - quote: Went here for my very first tattoo, highly recommended by my coworkers —
+        and I'm glad I did. Stephanie was amazing and talked me through the
+        process; she could tell I was nervous. I got a small tattoo and the
+        details came out fantastic considering the size. Very sweet girl. Thank
+        you for making it a great experience!
+      attribution: Google Review
+    - quote: "My very first tattoo, many years ago, wasn't the best experience.
+        Because of that, I always said that if I ever decided to get another
+        one, Diane would be the one to do it. I'd followed her work on social
+        media for a while and would always stop to admire the beautiful pieces
+        she created — I just didn't know what I wanted my own tattoo to
+        be.<br/><br/>Then my husband was diagnosed with lung cancer despite
+        never having smoked, and suddenly the design became clear: a white
+        ribbon to honor his fight.<br/><br/>From our very first meeting, Diane
+        understood the weight that tattoo carried for both my daughter and me
+        before I ever had to explain it. She treated it as more than just ink —
+        it was part of our story.<br/><br/>I'm so grateful she was the one who
+        brought it to life with so much care and compassion. She's an incredible
+        artist, but even more than that, she's an incredible human being. I
+        truly can't imagine trusting anyone else with something so
+        meaningful.<br/><br/>If you're looking for a tattoo artist in Las
+        Cruces, I can't recommend Diane at Syncere enough."
+      attribution: Regina Silva — Google
+    - quote: Diane is incredible — very attentive and thoughtful, and she made sure
+        the placement of my tattoo was perfect before beginning. She took her
+        time to get it right and made the whole process fun, comfortable, and
+        easy. She was also great with communication ahead of time as we were
+        scheduling.<br/><br/>I chose Syncere after doing a lot of research, and
+        my tattoo looks so cool — clean and precise. It's clear Diane cares
+        deeply about her art and her clients.
+      attribution: Matt Braddock — Google
+  faq:
+    - question: How do I book an appointment?
+      answer: Call us at (575) 524-0190, email SyncereTattoobooking@gmail.com, or
+        message us on Instagram @synceretattoo_nm. Share your idea, any
+        reference images, preferred placement, and available dates so we can
+        match you with the right artist and get you scheduled.
+    - question: HOW OLD DO I HAVE TO BE TO GET A TATTOO?
+      answer: You must be at least 18 years of age. It is against New Mexico law to
+        tattoo a minor, even with parental consent. Every client must present a
+        valid state or federal photo ID — no exceptions.
+    - question: HOW MUCH DOES A TATTOO COST?
+      answer: Pricing depends on the artist, size, detail, and placement. We offer
+        free consultations to give you an accurate estimate before you commit.
+        Reach out with your idea and we'll walk you through options.
+    - question: How can I get a price quote?
+      answer: The best way is a consultation — in person at the studio or by email
+        with reference photos and a description of size, placement, and detail.
+        We're happy to answer questions and help you plan your piece.
+    - question: Do you take walk-ins?
+      answer: Appointments are recommended. Call (575) 524-0190 to check same-day
+        availability. We'll do our best to accommodate you when the schedule
+        allows.
+    - question: Text or call us!
+      answer: (575) 524-0190 — the fastest way to reach Syncere Tattoo.
+    - question: Does it hurt?
+      answer: Yes — but most clients describe it as manageable. Eat beforehand, stay
+        hydrated, and let your artist know if you need a break. We're here to
+        keep you comfortable.
+    - question: HOW LONG DOES A TATTOO TAKE TO HEAL?
+      answer: Surface healing typically takes two to three weeks. Full skin
+        regeneration can take several months. We'll send you home with aftercare
+        instructions tailored to your piece.
+    - question: HOW DO I CARE FOR MY NEW TATTOO?
+      answer: Follow the aftercare card your artist provides. Keep it clean,
+        moisturize as directed, avoid sun and soaking until healed, and reach
+        out if you have any concerns during healing.
+    - question: WHAT FORMS OF PAYMENT ARE ACCEPTED?
+      answer: We accept cash and major credit cards. Contact us if you have questions
+        about payment before your appointment.
+    - question: Do I need to leave a deposit?
+      answer: A deposit is required to hold your appointment. Deposits are applied to
+        your final session and are non-refundable if you cancel without
+        sufficient notice. Ask when you book for current policy details.
+    - question: HOW SHOULD I PREPARE FOR MY TATTOO?
+      answer: Eat a solid meal, drink water, and get good rest the night before. Avoid
+        alcohol for 24 hours — it can increase bleeding and affect healing. Wear
+        comfortable clothing that gives easy access to the area being tattooed.
+    - question: Where are you located?
+      answer: "1900 S. Espina St #5, Las Cruces, New Mexico 88001. We're open Tuesday
+        through Friday 10AM–6PM and Saturday 10AM–4PM. Closed Sunday and
+        Monday."
+  dividers:
+    aftercare:
+      src: /images/syncere/forever-care.jpg
+      alt: Tattoo aftercare
+    artists:
+      src: /images/Divider2.jpg
+      alt: Syncere Tattoo artists
+    gallery:
+      src: /images/Divider3.jpg
+      alt: Syncere Tattoo on Instagram
+    spaces:
+      src: /images/syncere/grand-street.jpg
+      alt: Syncere Tattoo studio space
+    press:
+      src: /images/Divider5.jpg
+      alt: Syncere Tattoo client reviews
+    location:
+      src: /images/Divider6.jpg
+      alt: Syncere Tattoo location
+    story:
+      src: /images/syncere/IMG_8894.jpg
+      alt: Syncere Tattoo story
+    faq:
+      src: /images/syncere/Divider8.jpg
+      alt: Syncere Tattoo FAQ
+  legalConfig:
+    entityName: Syncere Tattoo
+    siteName: Syncere Tattoo
+    siteUrl: https://synceretattoo.com
+    hostedSiteUrl: http://localhost:3006
+    privacyEmail: SyncereTattoobooking@gmail.com
+    supportEmail: SyncereTattoobooking@gmail.com
+    copyrightEmail: SyncereTattoobooking@gmail.com
+    phone: (575) 524-0190
+    address: "1900 S. Espina St #5, Las Cruces, NM 88001"
+    city: Las Cruces
+    state: New Mexico
+    governingLawState: New Mexico
+    arbitrationCity: Las Cruces
+  legal:
+    accessibility:
+      title: Accessibility Statement
+      subtitle: Syncere Tattoo Accessibility Statement
+      lastUpdated: December 2024
+      sections:
+        - title: General
+          paragraphs:
+            - Syncere Tattoo strives to ensure that its services are accessible
+              to people with disabilities. We have invested significant
+              resources to help ensure that our website is easier to use and
+              more accessible for people with disabilities, with the strong
+              belief that every person has the right to live with dignity,
+              equality, comfort, and independence.
+        - title: Accessibility
+          paragraphs:
+            - We have taken measures to add custom coding to our site to improve
+              accessibility and compliance with the Web Content Accessibility
+              Guidelines (WCAG 2.1). We continue to review our site and update
+              content, structure, and styling to improve the experience for all
+              visitors, including those using assistive technologies.
+        - title: Disclaimer
+          paragraphs:
+            - Syncere Tattoo continues its efforts to constantly improve the
+              accessibility of its site and services in the belief that it is
+              our collective moral obligation to allow seamless, accessible, and
+              unhindered use for those of us with disabilities.
+            - Despite our efforts to make all pages and content on our website
+              fully accessible, some content may not yet have been fully adapted
+              to the strictest accessibility standards. This may be a result of
+              not having found or identified the most appropriate technological
+              solution.
+        - title: Here For You
+          paragraphs:
+            - If you are experiencing difficulty with any content on our website
+              or require assistance with any part of our site, please contact us
+              during normal business hours as detailed on our homepage and we
+              will be happy to assist.
+        - title: Contact Us
+          paragraphs:
+            - "If you wish to report an accessibility issue, have any questions,
+              or need assistance, please contact Syncere Tattoo customer support
+              as follows:"
+            - "Email: SyncereTattoobooking@gmail.com"
+            - "Phone: (575) 524-0190"
+            - "Address: 1900 S. Espina St #5, Las Cruces, NM 88001"
+    privacyPolicy:
+      title: Privacy Policy
+      subtitle: Syncere Tattoo Privacy Policy
+      lastUpdated: December 21, 2024
+      intro:
+        - Syncere Tattoo ("Syncere", "we", or "us") values our users and
+          respects their privacy. This privacy policy ("Privacy Policy") governs
+          our collection and use of data in connection with our Services (as
+          such term is defined in our Terms of Service), or otherwise. Terms
+          capitalized but not defined in this Privacy Policy shall have the
+          meaning ascribed to them in our Terms of Service ("Terms") located at
+          https://synceretattoo.com/terms-of-service.
+        - This Privacy Policy sets forth the nature, purpose, use, and sharing
+          of any Personal Information. "Personal Information" or "Personal Data"
+          as used in this Privacy Policy means information that can be used on
+          its own or with other information to identify, contact, or locate you,
+          or to identify you in context. This includes your name, physical
+          address, email address, telephone number, payment card information,
+          account username, and other identifying information. It also includes
+          other information that may be associated with your Personal
+          Information, such as your location, IP address, preferences, or
+          interests.
+        - Importantly, we may collect Personal Information directly from you
+          when you visit our Platform or access and use our Services.
+        - This Privacy Policy does not govern privacy practices of associated
+          websites or online services other than ours, or practices of third
+          parties that we do not own or control, such as our partners or
+          third-party service providers featured on the Services. We are not
+          responsible for the content or privacy practices of third-party
+          websites or integrated products to which the Services may link. You
+          should review the privacy policies of such sites before using them.
+        - Please read this Privacy Policy carefully so that you have a clear
+          understanding of how we collect, use, otherwise handle, and protect
+          your Personal Information in connection with your use of the Services.
+          IF YOU HAVE OBJECTIONS TO THE PRIVACY POLICY, YOU SHOULD IMMEDIATELY
+          DISCONTINUE USE OF THE APPLICABLE SERVICES AND FOLLOW THE PROCEDURE
+          DESCRIBED IN THE SECTION ENTITLED "YOUR PRIVACY RIGHTS."
+      sections:
+        - title: 1. Changes in Privacy Policy
+          paragraphs:
+            - Any Personal Information that we collect and maintain will be
+              subject to this Privacy Policy, as amended from time to time. We
+              may change the Privacy Policy at our sole discretion. However, if
+              at any time we make material changes to the Privacy Policy, we
+              will notify you of those changes on the Platform or through the
+              Services and through the publishing of an updated Privacy Policy.
+              If as the result of such changes you want to alter the ways in
+              which we can use your Personal Information, you can do so by
+              following the procedure described in the section entitled "Your
+              Privacy Rights."
+        - title: 2. Collection of Information
+          paragraphs:
+            - "We may collect certain information from you when you use our
+              Services. We collect and obtain your information in a few ways:
+              there is information that you choose to give to us, information we
+              obtain through your use of our Services, and information we obtain
+              from third parties."
+          listItems:
+            - We collect the Personal Information you choose to give us when you
+              use the Services, including your name, e-mail address, physical
+              address, telephone number, and the like.
+            - We automatically collect certain kinds of non-personal information
+              from you when you use the Services, including device, browser
+              type, operating system, CPU speed, referring or exit webpages,
+              click patterns, session ID, and your computer's IP address.
+            - We may on occasion supplement or correct the Personal Information
+              you submit to us and your IP address with information in our other
+              databases or information from third-party sources in order to
+              reduce errors in our database, authenticate our users, prevent
+              fraud, and prevent abuse of our Services, as well as to provide
+              more consistent, relevant experiences to our users.
+            - We may collect general information about use of the Services, such
+              as what pages visitors access, the number of visits, average time
+              spent on the Services, and other similar factors. This information
+              is generally collected in aggregate form, without identifying any
+              user individually, although IP addresses and Session ID in
+              relation to downloads may be tracked as part of our fraud
+              prevention efforts.
+        - title: 3. Location-Based Services
+          paragraphs:
+            - Some Services may contain functionality that can enable us to
+              access your location and tailor your experience based on your
+              location ("Location-based Services"). To use Location-based
+              Services, you must enable certain features of your mobile device
+              (e.g., GPS, Wi-Fi, or Bluetooth) to allow us to identify your
+              location. To the extent your location is collected through Wi-Fi
+              or Bluetooth sensors, such sensors, and the associated data
+              services, may be provided by a third party that may access such
+              information for the purpose of providing such data services to us.
+              You agree to such access by such third parties. You may enable or
+              disable such Location-based Services at any time via a menu within
+              the Services. If you choose to disable any Location-based Services
+              on your device and/or opt out of any Location-based Services
+              through the menu, you will not be able to utilize certain features
+              of the Services. By enabling Location-based Services on your
+              device, you agree and acknowledge that (i) device data we collect
+              from you is directly relevant to your use of the Services; (ii) we
+              may provide Location-based Services related to and based on your
+              then-current location; and (iii) we may use any such information
+              collected in connection with the provision of Location-based
+              Services in providing the Services. PLEASE NOTE THAT LOCATION DATA
+              MAY NOT ALWAYS BE ACCURATE, AND WE DISCLAIM ANY AND ALL WARRANTIES
+              RELATED TO LOCATION-BASED SERVICES.
+            - We may use your location to provide you with advertisements,
+              offers, and other promotional content as part of the Services.
+        - title: 4. How Your Information is Used
+          paragraphs:
+            - "Except as provided herein, we collect and use your personal and
+              non-personal information for internal purposes only or for
+              gathering aggregate and anonymized data. We may use, store, and
+              process your information in the following ways:"
+          listItems:
+            - To enable you to access and use the Services.
+            - To conduct routine business operations such as billing,
+              identification, authentication, contact purposes and general
+              research. As part of our routine business operations, we may
+              transfer your Personal Information to certain third parties with
+              whom we contract for the limited purpose of providing services
+              such as web hosting, email, and credit card processing. These
+              service providers are obligated to protect your information, and
+              they do not use your Personal Information for their own commercial
+              purposes.
+            - To employ internal marketing techniques such as tracking user
+              preferences to provide a customized experience and communicating
+              with you about Services, special offers, and other services.
+            - To enhance the Services.
+            - To gather product, location, and other contributed information to
+              make reports based on aggregate anonymized data, which we may use
+              internally, or which we may sell to others.
+            - To comply with court and governmental orders.
+            - To fulfill another legitimate interest, when not overridden by
+              your interests or, where applicable, your fundamental rights and
+              freedoms which require the protection of Personal Information.
+            - When you otherwise consent for us to do so. We may ask for your
+              consent to process your Personal Information for a specific
+              purpose that we communicate to you, for instance, to receive our
+              newsletter and other such mailings you may be interested in. When
+              you consent to our processing your Personal Information for a
+              specified purpose, you may withdraw your consent at any time, and
+              we will stop processing of your data for that purpose.
+            - The above excludes text messaging originator opt-in data and
+              consent; this information will not be shared with any third
+              parties.
+        - title: 5. Tracking, Use of Cookies, Web Beacons and Similar Devices
+          paragraphs:
+            - In order to improve our Services and provide more convenient,
+              relevant experiences to our users, we and our agents may use
+              "cookies," "web beacons," and similar devices to track your
+              activities. A cookie is a small amount of data that is transferred
+              to your browser by a web server and can only be read by the server
+              that gave it to you. It functions as your identification card and
+              enables us to record your passwords and preferences. It cannot be
+              executed as code or deliver viruses. A web beacon is a small
+              transparent .gif image that is embedded in an HTML page or email
+              used to track when the page or email has been viewed. Most
+              browsers are initially set to accept cookies, and most services
+              that include similar devices are typically initially activated to
+              collect data. You can set your browser to notify you when you
+              receive a cookie, giving you the chance to decide whether to
+              accept it. We do not support browsers' Do Not Track features. You
+              can enable or disable Do Not Track by visiting the preferences or
+              settings page of your browser. If you disable cookies, you may
+              lose some of the features and functionality of using our Platform,
+              as cookies may be necessary to track and enhance your use and
+              access.
+            - We may, either directly or indirectly, track your behavior on our
+              Services for purposes of our own user support, analytics,
+              research, product development, fraud prevention, risk assessment,
+              regulatory compliance, investigation, as well as to enable you to
+              use and access the Services and pay for your activities on the
+              Services. We may also, either directly or through third parties we
+              engage to provide services to us, track your behavior on our
+              Services.
+        - title: 6. Protecting Your Information
+          paragraphs:
+            - We use a variety of security measures, including SSL, encryption,
+              and authentication tools, to help protect your information. We do
+              not retain your Personal Information for longer than is necessary
+              for our business purposes. When we no longer need your Personal
+              Information, we dispose of it safely.
+            - Our security measures include standard international data
+              protection measures as well as those described in applicable data
+              protection regulations. These measures may also include periodic
+              system-wide password resets with high password strength
+              requirements. We strongly discourage password sharing. Due to the
+              nature of the information and related technology, we cannot be
+              held responsible if you share your own login credentials with
+              others. If we learn of a security breach, then we will immediately
+              reset your account password and attempt to notify you to take
+              appropriate steps.
+        - title: 7. Data Processing
+          paragraphs:
+            - In submitting any third-party Personal Data within the context of
+              the Services ("Third-Party Data"), the parties agree that you
+              shall be the Data Controller and you appoint us as a Data
+              Processor of such data, for the purpose of providing the Services.
+              To the extent that we are a Data Processor for you in respect of
+              such Third-Party Data, we will implement appropriate technical and
+              organizational measures to safeguard the Third-Party Data against
+              any unauthorized or unlawful access, loss, destruction, theft, use
+              or disclosure.
+            - You represent and warrant that you have all the appropriate
+              consents from data subjects whose Personal Data are submitted to
+              us in the course of the provision of the Services.
+        - title: 8. Disclosure to Third Parties
+          paragraphs:
+            - "We will not share your Personal Information with third parties
+              without your express consent, except in the limited circumstances
+              described below:"
+          listItems:
+            - We may share your Personal Information with our affiliates and
+              third-party service providers for the limited purposes described
+              in the section entitled "How Your Information is Used". However,
+              as noted above, this excludes text messaging originator opt-in
+              data and consent; this information will not be shared with any
+              third parties.
+            - We will share your Personal Information when required by law,
+              regulation, or litigation, and as necessary for purposes of
+              national security, law enforcement, or other issues of public
+              importance.
+            - We may also engage third parties to help verify your
+              identification, to conduct checks against databases, to otherwise
+              assist us with fraud prevention and risk assessment, to assist us
+              with user service, to serve targeted ads, and to facilitate the
+              payments or refunds. We may provide Personal Information about you
+              to these third parties, or give them access to this Personal
+              Information, for the limited purpose of allowing them to provide
+              these services.
+            - If we sell assets or are acquired by or merged with another
+              entity, we may provide such entity user information without
+              obtaining your further consent. We may provide to you notice of
+              such asset sales, acquisitions, or mergers.
+        - title: 9. International Transfers
+          paragraphs:
+            - If you are visiting this Platform or utilizing Services from a
+              country other than the United States, the various communications
+              you send and receive may result in the transfer of information
+              across international boundaries. If you are located in the
+              European Union, you should be aware that information you provide,
+              or which is otherwise collected on this Platform or through any
+              Services rendered may be transferred to countries (including the
+              United States) which may not have data protection laws deemed as
+              adequate as those in the EU.
+            - Notwithstanding the foregoing, the Services are intended for users
+              in the United States and those not governed by privacy policies of
+              other countries. Users outside the United States are advised not
+              to disclose Personal Information to us.
+        - title: 10. Your Privacy Rights
+          paragraphs:
+            - "We will ensure that you can exercise your rights pertaining to
+              your Personal Information, including rights as provided by various
+              data protection laws. We therefore inform you that, where
+              applicable under relevant law, you are entitled:"
+          listItems:
+            - to have access to your Personal Information upon simple request;
+            - to obtain a rectification of your Personal Information should it
+              be inaccurate, incomplete, or obsolete;
+            - to obtain the deletion of your Personal Information in the
+              situations set forth by applicable data protection law (the "right
+              to be forgotten");
+            - "to withdraw your consent to the data processing without affecting
+              the lawfulness of processing, where your Personal Information has
+              been collected and processed based on your consent. If at any time
+              you wish to withdraw your consent to our processing of your data
+              or opt out of our use of your information for internal marketing
+              purposes or for compiling aggregate risk reports, you may do so by
+              sending a written notice to: SyncereTattoobooking@gmail.com. Note
+              that your withdrawal of consent may prevent us from providing the
+              Services to you;"
+            - to object to the processing of your Personal Information in which
+              case we may ask you to justify your request by explaining to us
+              your situation;
+            - to request a limitation of the data processing in the situations
+              set forth by applicable law;
+            - for non-discrimination, as defined under relevant law, in the
+              Services or quality of Services you receive from us for exercising
+              your rights.
+        - title: 11. Your Choices
+          listItems:
+            - If at any time you are uncomfortable with our use of your Personal
+              Information for internal marketing purposes and for the purpose of
+              creating aggregate reports, you may opt-out by email as described
+              in "Your Privacy Rights." Note that if you opt not to provide us
+              with certain mandatory information, then our products and services
+              may be unavailable to you.
+            - You may similarly opt out of receiving communications from us,
+              although we may find it necessary to continue to communicate with
+              you regarding your use of the Services.
+            - For our websites, you may set your browser to refuse all or some
+              browser cookies, or to alert you when cookies are being sent. If
+              you disable or refuse cookies, please note that some parts of this
+              Platform may then be inaccessible or not function properly.
+        - title: 12. Governing Law
+          paragraphs:
+            - The terms of this Privacy Policy are governed by and in accordance
+              with the laws of the State of New Mexico, and, where applicable,
+              the laws of the countries where our servers are located. You
+              should not provide us with any Personal Information unless you
+              consent to the application of United States law and, where
+              applicable, New Mexico law, and to the use and disclosure of your
+              information in accordance with the terms of this Privacy Policy.
+        - title: 13. How to Contact Us
+          paragraphs:
+            - "If you have any questions regarding this Policy or our privacy
+              practices, you can contact us at:"
+            - |-
+              Syncere Tattoo
+              Address: 1900 S. Espina St #5, Las Cruces, NM 88001
+              Telephone: (575) 524-0190
+              Email: SyncereTattoobooking@gmail.com
+            - We take our users' privacy concerns seriously. If you believe that
+              we have not complied with this Privacy Policy with respect to your
+              Personal Information, you may write to us at the address noted
+              above.
+    termsOfService:
+      title: Terms of Service
+      subtitle: Syncere Tattoo Terms of Service
+      lastUpdated: December 21, 2024
+      intro:
+        - 'IMPORTANT: PLEASE READ ALL OF THE FOLLOWING TERMS OF SERVICE (THESE
+          "TERMS") CAREFULLY. THESE TERMS CONSTITUTE A LEGALLY BINDING AGREEMENT
+          AND CONTAIN IMPORTANT INFORMATION REGARDING YOUR LEGAL RIGHTS,
+          REMEDIES AND OBLIGATIONS. THESE INCLUDE (BUT ARE NOT LIMITED TO)
+          VARIOUS LIMITATIONS AND EXCLUSIONS, A BINDING ARBITRATION CLAUSE, A
+          CLASS ACTION WAIVER, A CLAUSE THAT GOVERNS THE JURISDICTION AND VENUE
+          OF DISPUTES, AND OBLIGATIONS TO COMPLY WITH APPLICABLE LAWS AND
+          REGULATIONS.'
+        - Syncere provides an online informational platform regarding the
+          studio's tattooing services and related offerings (the "Platform" as
+          further defined below). The Platform may be accessible by website,
+          mobile application, or otherwise.
+        - These Terms include not only the following Terms of Service, but also
+          incorporate by reference all policies, guidelines, special or
+          supplemental terms and conditions of use or service posted by us on or
+          through the Platform from time to time. Our Privacy Policy available
+          at https://synceretattoo.com/privacy-policy ("Privacy Policy") informs
+          you of Syncere's collection and use of your information in relation to
+          your use of our Platform and/or other related products or services we
+          may make available to you via or in relation to your use of the
+          Platform.
+        - By accessing, browsing, submitting any information to or through, or
+          otherwise in any manner using the Platform, and linking to these Terms
+          or by accessing, submitting any information to or through, or
+          otherwise in any manner using any service offered on or through this
+          Platform, you acknowledge that you have read and understand, and agree
+          to be bound by and to comply with all of these Terms. If you do not
+          agree to all of these Terms without any modification by you, you are
+          not authorized to and must not access or use this Platform.
+        - Any person who visits, uses, or accesses this Platform is referred to
+          as a User. Users are also referred to in these Terms as "You", "you",
+          "Your", or "your." If you accept or agree to these Terms on behalf of
+          a company or other legal entity, you represent and warrant that you
+          have the authority to bind that company or other legal entity to these
+          Terms and, in such event, "you" and "your" will refer and apply to
+          that company or other legal entity.
+      sections:
+        - title: 1. Definitions
+          paragraphs:
+            - The following terms used in these Terms with their initial letters
+              capitalized have the meanings provided throughout these Terms.
+          listItems:
+            - "\"Account\" means with respect to Users, the account created by
+              us on or through the Platform for a User's use in connection with
+              certain User Features as may be offered from time to time through
+              the Platform."
+            - '"Syncere Content" means all Content that Syncere makes available
+              through the Platform including any Content licensed from a third
+              party but excluding User Content.'
+            - '"Syncere Software" means any software, html, or other code
+              comprising the Platform or utilized by Syncere through the
+              Platform.'
+            - '"Syncere", "we", "us", or "our," shall refer to Syncere Tattoo.'
+            - '"Collective Content" means Syncere Content and User Content.'
+            - '"Content" means any text, graphics, images, music, software
+              (excluding any Syncere Software), audio, video, information, or
+              other electronically stored data.'
+            - '"Platform" has the meaning ascribed to it in the introductory
+              paragraphs of these Terms.'
+            - '"Services" means collectively all services Syncere offers through
+              the Platform to Users, including the Site, any User Feature,
+              Syncere Content, and Syncere Software, among others.'
+            - '"Site" means the website located at https://synceretattoo.com or
+              its sub-domains.'
+            - '"User Content" means all Content that a User provides, posts,
+              uploads, publishes, submits, transmits, or makes available on the
+              Platform.'
+            - '"User Feature" means any feature or functionality of the Platform
+              which Syncere may designate from time to time for use by Users.'
+            - '"User" means any person or entity that uses or accesses the
+              Platform or any User Feature.'
+        - title: 2. Acknowledgements and Disclaimers
+          subsections:
+            - title: Explanation of the Site
+              paragraphs:
+                - Syncere may provide from time to time an online interactive
+                  and informational website, the Site, through which it provides
+                  information regarding Syncere's tattooing services and related
+                  offerings. NOTWITHSTANDING THE FOREGOING, YOU AGREE AND
+                  ACKNOWLEDGE THAT THE PLATFORM IS PROVIDED FOR INFORMATIONAL
+                  PURPOSES ONLY, AND NO OTHER PURPOSE.
+            - title: Disclaimers
+              paragraphs:
+                - NEITHER WE NOR ANY OF OUR THIRD-PARTY LICENSORS OR SUPPLIERS
+                  MAKES ANY REPRESENTATIONS OR WARRANTIES OF ANY KIND, WHETHER
+                  EXPRESS, IMPLIED, STATUTORY OR OTHERWISE WITH RESPECT TO ANY
+                  ASPECT OF THE PLATFORM TO THE MAXIMUM EXTENT PERMITTED UNDER
+                  APPLICABLE LAW. WE HEREBY DISCLAIM ALL WARRANTIES, INCLUDING,
+                  WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY,
+                  SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE,
+                  NON-INFRINGEMENT, QUIET ENJOYMENT, OR ANY WARRANTIES ARISING
+                  OUT OF ANY COURSE OF DEALING OR USAGE OF TRADE.
+                - IN NO EVENT WILL SYNCERE BE LIABLE FOR DAMAGES OF ANY KIND
+                  ARISING FROM THE USE OF THE SERVICES OR ANY INFORMATION
+                  OBTAINED THROUGH THE SERVICES, INCLUDING DIRECT, INDIRECT,
+                  CONSEQUENTIAL, INCIDENTAL, SPECIAL OR PUNITIVE DAMAGES (EVEN
+                  IF SYNCERE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+                  DAMAGES), TO THE FULLEST EXTENT PERMITTED BY LAW.
+        - title: 3. Modification of Platform or Terms
+          paragraphs:
+            - Syncere reserves the right, at its sole discretion, to modify the
+              Platform or to modify these Terms at any time and without prior
+              notice, and without penalty. If we modify these Terms, we will
+              either post the modification on the Platform or otherwise provide
+              you with notice of the modification. Through continued access or
+              use of the Platform after Syncere has posted a modification
+              thereon or has provided you with notice of a modification, you are
+              indicating that you agree to be bound by the modified Terms. If
+              the modified Terms are not acceptable to you, you must discontinue
+              use of the Platform.
+        - title: 4. User Eligibility
+          paragraphs:
+            - The use of this Platform is intended for persons who are 18 years
+              of age or older. Any access to or use of any User Features, or the
+              Platform by anyone under 18 is prohibited. By accessing or
+              utilizing any User Features on or through the Platform you
+              represent and warrant that you are 18 years of age or older.
+        - title: 5. Accounts
+          subsections:
+            - title: Registration, Profile, and User Content
+              paragraphs:
+                - From time to time in order to access certain User Features you
+                  may be required to register to create an Account. As a User,
+                  your Account and your Account profile page will be created
+                  based upon the User Content you provide to us. Any information
+                  that you provide, publish or post to or through the Platform
+                  will be considered User Content. Our collection and use of
+                  personal information in connection with the Platform is as
+                  provided in Syncere's Privacy Policy located at
+                  https://synceretattoo.com/privacy-policy.
+                - As a User, you are the sole authorized user of your Account
+                  (if applicable) and are responsible for maintaining the
+                  confidentiality of any password provided by you or Syncere for
+                  accessing User Features. You are solely and fully responsible
+                  for all activities that occur under your Account, and Syncere
+                  expressly disclaims any liability arising from the
+                  unauthorized access or use of your Account.
+            - title: Limitation, Suspension, Termination, and Cancellation of Accounts
+              paragraphs:
+                - As a User, you may not have more than one (1) Account with
+                  Syncere at any given time. Syncere may, in our sole discretion
+                  and without thereby incurring any liability to you or
+                  otherwise, with or without cause, with or without prior notice
+                  and at any time, limit, suspend, deactivate, or cancel your
+                  Account and/or otherwise deny you access to the User Features.
+                - You may cancel your Account at any time by notifying us
+                  thereof by e-mail at SyncereTattoobooking@gmail.com or by
+                  contacting us by telephone at (575) 524-0190.
+        - title: 6. Syncere Communications
+          paragraphs:
+            - You acknowledge that we may from time to time and as needed
+              communicate with you by various means, including via e-mail, text
+              message, telephone calls, and push notifications to the telephone
+              number you provide to us, in relation to your use of the Platform
+              and our tattooing services and offerings, or otherwise.
+            - Where we have already received your opt-in consent to receive
+              certain communications, IF YOU WISH TO OPT-OUT OF PROMOTIONAL
+              EMAILS, TEXT MESSAGES, OR OTHER SUCH "OPT-IN" COMMUNICATIONS, YOU
+              MAY OPT-OUT BY FOLLOWING THE UNSUBSCRIBE OPTIONS THAT ARE PROVIDED
+              TO YOU ON THE PLATFORM OR VIA THE COMMUNICATION, IF APPLICABLE.
+              Standard text messaging charges applied by your telephone carrier
+              will apply to text messages we send.
+        - title: 7. User Conduct
+          paragraphs:
+            - "You understand and agree that you alone are responsible, at your
+              sole cost and expense, for compliance with any and all Laws that
+              may apply to your use of the Platform or any feature thereof. In
+              connection with your use of the Platform, you must not, and you
+              agree that you shall never do or attempt to do any of the
+              following:"
+          listItems:
+            - violate any applicable Law or these Terms;
+            - use manual or automated software, devices, scripts, robots,
+              backdoors or other means or processes to access, "scrape," "crawl"
+              or "spider" any web pages or other features or services contained
+              in or comprising the Platform;
+            - use the Platform or any part thereof for any commercial or other
+              purposes that are not expressly permitted by these Terms;
+            - interfere with or damage the Platform, or any part thereof or any
+              feature or functionality accessed on or through the Platform;
+            - use the Platform for the distribution of unsolicited commercial
+              email ("spam");
+            - stalk, harass, or bully any other user of the Platform;
+            - impersonate any person or entity, or falsify or otherwise
+              misrepresent yourself or your affiliation with any person or
+              entity;
+            - post, upload, publish, submit or transmit any Content that
+              infringes, misappropriates or violates a third party's
+              intellectual property rights or rights of publicity or privacy;
+            - attempt to probe, scan, or test the vulnerability of the Platform
+              or network or breach any security or authentication measures;
+            - attempt to decipher, decompile, disassemble, or reverse engineer
+              any of the software used to provide the Platform or any feature or
+              functionality thereof.
+        - title: 8. Intellectual Property and User License Agreement
+          subsections:
+            - title: General Intellectual Property Provisions
+              paragraphs:
+                - The Platform is protected by copyright, trademark, and other
+                  Laws of the United States and foreign countries. You
+                  acknowledge and agree that the Platform, Services, and Syncere
+                  Content, including all associated Intellectual Property
+                  Rights, are the exclusive property of Syncere and its
+                  licensors. All trademarks, trade names, and source identifiers
+                  of Syncere used on or in connection with the Platform are
+                  trademarks or registered trademarks of Syncere.
+            - title: Syncere License
+              paragraphs:
+                - Syncere grants Users a limited, non-exclusive,
+                  non-transferable right and license to (i) access and use the
+                  Platform; (ii) access and view any Syncere Content solely for
+                  your use of the Platform and (iii) access and view any User
+                  Content to which you are permitted access, solely for your use
+                  of the Platform. You agree not to use, copy, adapt, modify,
+                  prepare derivative works based upon, distribute, license,
+                  sell, transfer, publicly display, publicly perform, transmit,
+                  broadcast, or otherwise exploit the Platform or Collective
+                  Content, except as expressly permitted in these Terms.
+            - title: User Content License
+              paragraphs:
+                - By making available any User Content on or through the
+                  Platform, you hereby grant to Syncere a worldwide,
+                  irrevocable, perpetual (or for the term of the protection),
+                  non-exclusive, transferable, royalty-free license, with the
+                  right to sublicense, to use, view, copy, adapt, modify,
+                  distribute, license, sell, transfer, publicly display,
+                  publicly perform, transmit, stream, broadcast, access, view,
+                  create derivative works from, and otherwise exploit such User
+                  Content on, through, by means of, or to promote or market the
+                  Platform.
+                - You acknowledge and agree that you are solely responsible for
+                  all User Content that you make available through the Platform.
+                  Accordingly, you represent and warrant that you either are the
+                  sole and exclusive owner of all User Content that you make
+                  available through the Platform or you have all rights,
+                  licenses, consents and releases that are necessary to grant to
+                  Syncere the rights in such User Content, as contemplated under
+                  these Terms.
+            - title: Notice of Alleged Infringement
+              paragraphs:
+                - If you are an intellectual property owner, or are authorized
+                  to act on behalf of one, please report alleged infringements
+                  taking place on or through the Platform by providing a
+                  complete Notice of Alleged Infringement and delivering it to
+                  Syncere at SyncereTattoobooking@gmail.com.
+        - title: 9. Third Party Websites, Applications, Links, and Resources
+          paragraphs:
+            - The Platform may contain links to or otherwise interface or
+              connect with third party websites or resources, such as social
+              media sites and payment processors. You acknowledge and agree that
+              Syncere is not responsible or liable for (i) the availability or
+              accuracy of such websites or resources or (ii) the content,
+              products, or services on or available from such websites or
+              resources.
+            - Links to such websites or resources do not imply any endorsement
+              by Syncere of any third-party websites or resources or the
+              content, products, or services available from such websites or
+              resources. You acknowledge sole responsibility for and assume all
+              risk arising from your use of any such websites or resources or
+              the content, products, or services on or available from such
+              websites or resources.
+        - title: 10. Limitation of Liability
+          paragraphs:
+            - TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE ENTIRE RISK
+              ARISING OUT OF YOUR ACCESS TO AND USE OF THE PLATFORM, OR ANY
+              FEATURE OR SERVICE ACCESSED OR OFFERED ON, BY, OR THROUGH THE
+              PLATFORM REMAINS WITH YOU.
+            - TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, NEITHER SYNCERE
+              NOR ANY OF OUR AGENTS, REPRESENTATIVES, CONTRACTORS OR AFFILIATES,
+              SHALL BE LIABLE TO ANY USER FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
+              CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES, INCLUDING, BUT NOT
+              LIMITED TO DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, FILES,
+              DATA, CONTENT, BUSINESS, OPPORTUNITIES, REVENUES, ANTICIPATED
+              SAVINGS OR OTHERWISE (EVEN IF WE OR THEY HAVE BEEN ADVISED OF THE
+              POSSIBILITY OF SUCH DAMAGES).
+            - IN THE EVENT THAT NOTWITHSTANDING THE PROVISIONS OF THE FOREGOING
+              PARAGRAPHS OF THIS SECTION, WE (OR ANY OF OUR AGENTS,
+              REPRESENTATIVES, CONTRACTORS, AFFILIATES OR THIRD PARTY LICENSORS
+              OR SUPPLIERS) ARE FOUND LIABLE TO ANY USER FOR DAMAGES FROM ANY
+              CAUSE WHATSOEVER AND REGARDLESS OF THE FORM OF ACTION OR THEORY OF
+              LIABILITY, THE AGGREGATE AMOUNT OF ALL SUCH LIABILITY SHALL BE
+              LIMITED TO AND SHALL NOT EXCEED THE AMOUNT ACTUALLY PAID TO US BY
+              USER OR YOU (AS APPLICABLE) FOR AND WITH RESPECT TO THE PARTICULAR
+              SERVICES THAT GIVE RISE TO SUCH CLAIM IN WHICH THE CAUSE OF ACTION
+              ACCRUED.
+        - title: 11. Indemnification
+          paragraphs:
+            - You agree and must at all times indemnify, defend and hold Syncere
+              and its third party suppliers or licensors, each of our and their
+              business partners and each of our and their respective employees,
+              officers, directors, managers and representatives harmless from
+              and against any and all losses, damages, liabilities, judgments,
+              penalties, fines, costs and expenses (including attorneys' fees
+              and court costs) suffered or incurred as a result of any third
+              party claim, action, suit, or proceeding arising out of or
+              incident to (i) any User or other person's use of or access to the
+              Platform in a manner not authorized by these Terms, (ii) Content
+              including any claim involving infringement or misappropriation of
+              third party rights, (iii) any breach by User or any other person
+              of any term or condition of these Terms, or (iv) any act, omission
+              or misconduct of User or any other person using or accessing the
+              Platform.
+        - title: 12. Dispute Resolution
+          subsections:
+            - title: Arbitration
+              paragraphs:
+                - You and Syncere agree that any dispute, claim or controversy
+                  arising out of or relating to these Terms or the breach,
+                  termination, enforcement, interpretation or validity thereof,
+                  or to the use of the Platform (collectively, "Disputes") will
+                  be settled by binding arbitration, except that each party
+                  retains the right to seek injunctive or other equitable relief
+                  in a court of competent jurisdiction. You acknowledge and
+                  agree that you and Syncere are each waiving the right to a
+                  trial by jury or to participate as a plaintiff or class member
+                  in any purported class action lawsuit, class-wide arbitration,
+                  private attorney general action, or any other representative
+                  proceeding.
+            - title: Rules and Governing Law
+              paragraphs:
+                - This agreement to arbitrate evidences a transaction in
+                  interstate commerce, and thus the Federal Arbitration Act
+                  governs the interpretation and enforcement of this provision.
+                  The arbitration will be administered by the American
+                  Arbitration Association ("AAA") in accordance with the
+                  Commercial Arbitration Rules and the Supplementary Procedures
+                  for Consumer Related Disputes then in effect, except as
+                  modified by this "Dispute Resolution" section.
+            - title: Location and Procedure
+              paragraphs:
+                - Unless you and Syncere otherwise agree, the arbitration will
+                  be conducted in Las Cruces, New Mexico, United States.
+        - title: 13. General Provisions
+          subsections:
+            - title: Notices
+              paragraphs:
+                - Any notices or other communications permitted or required
+                  hereunder, including those regarding modifications to these
+                  Terms, will be in writing and given by Syncere (i) via email
+                  (in each case to the address that you provide) or (ii) by
+                  posting to the Platform.
+            - title: Controlling Law and Jurisdiction
+              paragraphs:
+                - These Terms and your use of the Services will be interpreted
+                  in accordance with the laws of the State of New Mexico and the
+                  United States of America, without regard to its
+                  conflict-of-law provisions. You and we agree to submit to the
+                  personal jurisdiction of a state court located in Las Cruces,
+                  New Mexico or a United States District Court for the District
+                  of New Mexico for any actions for which the parties retain the
+                  right to seek injunctive or other equitable relief in a court
+                  of competent jurisdiction.
+            - title: Entire Agreement
+              paragraphs:
+                - These Terms constitute the entire and exclusive understanding
+                  and agreement between Syncere and you regarding the Platform,
+                  any Services rendered via the Platform, and these Terms
+                  supersede and replace any and all prior oral or written
+                  understandings or agreements between Syncere and you regarding
+                  the Platform.
+        - title: 14. How to Contact Us
+          paragraphs:
+            - "If you have any questions regarding these Terms or our privacy
+              practices, you can contact us at:"
+            - |-
+              Syncere Tattoo
+              Address: 1900 S. Espina St #5, Las Cruces, NM 88001
+              Telephone: (575) 524-0190
+              Email: SyncereTattoobooking@gmail.com
+  elementLayout:
+    brand.name:
+      x: 0
+      y: 80
+    hero.addressLines.0:
+      x: 0
+      y: 80
+    hero.addressLines.1:
+      x: 0
+      y: 80
+    hero.cta:
+      x: 0
+      y: 80
+  textStyle:
+    artists.0.specialty:
+      italic: true
+  imageDisplay:
+    artists.1:
+      objectPosition: 54.9% 18.0%
+      rotation: 0
+      scale: 1
+      objectFit: cover
+      crop:
+        x: -28
+        y: 322.55887230514094
+      zoom: 1
+    artists.2:
+      objectPosition: 50% 50%
+      objectFit: contain
+      rotation: 0
+      scale: 1.1901
+      offset:
+        x: -0.34
+        y: 8.29
+      area:
+        x: 0.335
+        y: 1.022
+        width: 100
+        height: 84.024
+    artists.3:
+      objectPosition: 50% 50%
+      objectFit: contain
+      rotation: 0
+      scale: 1.3329
+      offset:
+        x: 0.38
+        y: 16.62
+      area:
+        x: -0.376
+        y: 0.019
+        width: 100
+        height: 75.024
+    gallery.images.4:
+      objectPosition: 50% 50%
+      objectFit: contain
+      rotation: 0
+      scale: 1.1547
+      offset:
+        x: 0
+        y: 8.57
+      area:
+        x: -22.464
+        y: -0.725
+        width: 144.928
+        height: 86.603
+    gallery.images.3:
+      objectPosition: 50% 50%
+      objectFit: contain
+      rotation: 0
+      scale: 1.0715
+      offset:
+        x: -0.71
+        y: -2.14
+      area:
+        x: -17.515
+        y: 5.338
+        width: 136.986
+        height: 93.324
+    gallery.images.2:
+      objectPosition: 50% 50%
+      objectFit: contain
+      rotation: 0
+      scale: 1.1584
+      offset:
+        x: 0
+        y: -0.38
+      area:
+        x: -17.568
+        y: 7.168
+        width: 135.135
+        height: 86.327
+    gallery.images.1:
+      objectPosition: 50% 50%
+      objectFit: contain
+      rotation: 0
+      scale: 1.0408
+      offset:
+        x: 0
+        y: 0
+      area:
+        x: -25.758
+        y: 1.959
+        width: 151.515
+        height: 96.083
+    gallery.images.0:
+      objectPosition: 50% 50%
+      objectFit: contain
+      rotation: 0
+      scale: 1.0755
+      offset:
+        x: -1.99
+        y: 0
+      area:
+        x: -22.739
+        y: 3.508
+        width: 151.515
+        height: 92.984
+    assets.hero:
+      objectPosition: 50% 50%
+      rotation: 0
+      scale: 1
+      objectFit: cover
+      mobile:
+        objectPosition: 50% 50%
+        objectFit: contain
+        rotation: 0
+        scale: 1.3326
+        offset:
+          x: 7.6
+          y: -0.28
+        area:
+          x: -7.604
+          y: 12.691
+          width: 100
+          height: 75.041
+    dividers.story:
+      objectPosition: 50% 50%
+      objectFit: contain
+      rotation: 0
+      scale: 1.8201
+      offset:
+        x: 1.59
+        y: -12.82
+      area:
+        x: 0.868
+        y: 29.572
+        width: 95.238
+        height: 54.943

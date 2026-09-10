@@ -1733,7 +1733,7 @@ body.bb-lightbox-open { overflow: hidden; }
     </button>
   </div>
     <a href="https://www.instagram.com/diane_synceretattoo/" target="_blank" rel="noopener noreferrer" class="bb-artist-gallery-instagram"><img src="../social/instagram/instagram.svg" alt="" class="bb-social-icon bb-social-icon--gallery" width="28" height="28" loading="lazy" decoding="async" /><span data-halite-path='["labels","followOnInstagram"]'>Follow on Instagram</span></a>
-    <a href="https://forms.gle/AGt8Te1qFW8AyvBp7" target="_blank" rel="noopener noreferrer" class="appointment-link bb-artist-gallery-cta" data-booking-href="../booking/index.html" data-booking-page="booking"><span data-halite-path='["booking","formButtonLabel"]'>ONLINE REQUEST FORM</span></a>
+    <a href="https://forms.gle/nXoCpWd9ETVyg5Pr5" target="_blank" rel="noopener noreferrer" class="appointment-link bb-artist-gallery-cta" data-booking-href="../booking/index.html" data-booking-page="booking"><span data-halite-path='["booking","formButtonLabel"]'>ONLINE REQUEST FORM</span></a>
     <p class="bb-artist-gallery-specialty"><span data-halite-path='["artists","0","specialty"]' data-halite-rich="true" style="font-style:italic">Intricate fine line dot work, mandalas and geometric, floral, bold color, black &amp; grey realism, animal portraits, and traditional.</span></p>
   </div>
   <div class="bb-artist-gallery-grid">
@@ -1821,7 +1821,7 @@ body.bb-lightbox-open { overflow: hidden; }
       <h2 class="bb-footer-heading"><span data-halite-path='["labels","footerContactHeading"]'>Contact</span></h2>
       <div class="bb-footer-links">
         <a href="tel:5755240190" class="bb-footer-text"><span data-halite-path='["brand","phones","0"]'>(575) 524-0190</span></a>
-        <a href="https://forms.gle/AGt8Te1qFW8AyvBp7" target="_blank" rel="noopener noreferrer" class="appointment-link bb-footer-link" data-booking-href="../booking/index.html" data-booking-page="booking"><span data-halite-path='["booking","formButtonLabel"]'>Online request form</span></a>
+        <a href="https://forms.gle/nXoCpWd9ETVyg5Pr5" target="_blank" rel="noopener noreferrer" class="appointment-link bb-footer-link" data-booking-href="../booking/index.html" data-booking-page="booking"><span data-halite-path='["booking","formButtonLabel"]'>Online request form</span></a>
         <h3 class="bb-footer-heading bb-footer-heading-spaced"><span data-halite-path='["labels","footerEmailHeading"]'>Email</span></h3>
         <a href="mailto:SyncereTattoobooking@gmail.com" class="bb-footer-link"><span data-halite-path='["brand","email"]'>SyncereTattoobooking@gmail.com</span></a>
       </div>
@@ -1873,7 +1873,7 @@ body.bb-lightbox-open { overflow: hidden; }
   });
 
 
-  document.querySelectorAll('.appointment-link').forEach(function(link) {
+  document.querySelectorAll(".appointment-link").forEach(function(link) {
     link.addEventListener('click', function(event) {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
         return;
@@ -1888,8 +1888,8 @@ body.bb-lightbox-open { overflow: hidden; }
       var path = window.location.pathname;
       var apiMatch = path.match(/^\/api\/site\/([^/]+)/);
       var projectId = apiMatch ? apiMatch[1] : null;
-      if (!projectId && path === '/api/preview') {
-        projectId = new URLSearchParams(window.location.search).get('id');
+      if (!projectId && (path === "/api/preview" || path === "/local-preview")) {
+        projectId = new URLSearchParams(window.location.search).get("id");
       }
       if (!projectId) {
         var bridge = document.querySelector('script[data-halite-preview-bridge]');

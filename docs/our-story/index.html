@@ -1769,7 +1769,7 @@ we’re honored to be part of your journey and look forward to creating somethin
       <h2 class="bb-footer-heading"><span data-halite-path='["labels","footerContactHeading"]'>Contact</span></h2>
       <div class="bb-footer-links">
         <a href="tel:5755240190" class="bb-footer-text"><span data-halite-path='["brand","phones","0"]'>(575) 524-0190</span></a>
-        <a href="https://forms.gle/AGt8Te1qFW8AyvBp7" target="_blank" rel="noopener noreferrer" class="appointment-link bb-footer-link" data-booking-href="../booking/index.html" data-booking-page="booking"><span data-halite-path='["booking","formButtonLabel"]'>Online request form</span></a>
+        <a href="https://forms.gle/nXoCpWd9ETVyg5Pr5" target="_blank" rel="noopener noreferrer" class="appointment-link bb-footer-link" data-booking-href="../booking/index.html" data-booking-page="booking"><span data-halite-path='["booking","formButtonLabel"]'>Online request form</span></a>
         <h3 class="bb-footer-heading bb-footer-heading-spaced"><span data-halite-path='["labels","footerEmailHeading"]'>Email</span></h3>
         <a href="mailto:SyncereTattoobooking@gmail.com" class="bb-footer-link"><span data-halite-path='["brand","email"]'>SyncereTattoobooking@gmail.com</span></a>
       </div>
@@ -1821,7 +1821,7 @@ we’re honored to be part of your journey and look forward to creating somethin
   });
 
 
-  document.querySelectorAll('.appointment-link').forEach(function(link) {
+  document.querySelectorAll(".appointment-link").forEach(function(link) {
     link.addEventListener('click', function(event) {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
         return;
@@ -1836,8 +1836,8 @@ we’re honored to be part of your journey and look forward to creating somethin
       var path = window.location.pathname;
       var apiMatch = path.match(/^\/api\/site\/([^/]+)/);
       var projectId = apiMatch ? apiMatch[1] : null;
-      if (!projectId && path === '/api/preview') {
-        projectId = new URLSearchParams(window.location.search).get('id');
+      if (!projectId && (path === "/api/preview" || path === "/local-preview")) {
+        projectId = new URLSearchParams(window.location.search).get("id");
       }
       if (!projectId) {
         var bridge = document.querySelector('script[data-halite-preview-bridge]');
