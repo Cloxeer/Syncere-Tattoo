@@ -1345,6 +1345,15 @@ site:
               Address: 1900 S. Espina St #5, Las Cruces, NM 88001
               Telephone: (575) 524-0190
               Email: SyncereTattoobooking@gmail.com
+  footerCredit:
+    enabled: true
+    prefix: Created by
+    haliteText: ""
+    haliteUrl: ""
+    conjunction: ""
+    arrowheadText: Fintech Lab powered by Nusenda Credit Union
+    arrowheadUrl: https://arrowheadcenter.nmsu.edu/program/nusenda_fintech_lab/index.html
+    programLogo: /images/fintech-lab-logo.png
   elementLayout:
     brand.name:
       x: 0
