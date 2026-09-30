@@ -1494,3 +1494,5 @@ site:
         y: 29.572
         width: 95.238
         height: 54.943
+  integrations:
+    customDomain: synceretattoo.com
