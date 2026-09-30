@@ -121,6 +121,7 @@ site:
       Mexico — custom, clean, and friendly work from a team of artists who
       collaborate with you on designs you'll love forever.
     favicon: /images/SyncereTattoLogo-1785224722744.png
+    shareImage: /images/share-logo.png
   theme:
     fontDisplay: Georgia
     fontBody: Space Mono
@@ -244,7 +245,7 @@ site:
     title: Looking at Booking
     body: Your consultation form should have opened in a new tab. Fill it out there
       and we'll get back to you as soon as you can.
-    formButtonLabel: Open Form
+    formButtonLabel: Booking Form
     backLinkLabel: Back to Homepage
   artists:
     - slug: diane-basler-white
@@ -1345,15 +1346,6 @@ site:
               Address: 1900 S. Espina St #5, Las Cruces, NM 88001
               Telephone: (575) 524-0190
               Email: SyncereTattoobooking@gmail.com
-  footerCredit:
-    enabled: true
-    prefix: Created by
-    haliteText: ""
-    haliteUrl: ""
-    conjunction: ""
-    arrowheadText: Fintech Lab powered by Nusenda Credit Union
-    arrowheadUrl: https://arrowheadcenter.nmsu.edu/program/nusenda_fintech_lab/index.html
-    programLogo: /images/fintech-lab-logo.png
   elementLayout:
     brand.name:
       x: 0
