@@ -1496,3 +1496,7 @@ site:
         height: 54.943
   integrations:
     customDomain: synceretattoo.com
+  footerCredit:
+    enabled: true
+    arrowheadText: Fintech Lab powered by Nusenda Credit Union
+    programLogo: /images/fintech-lab-logo.png
